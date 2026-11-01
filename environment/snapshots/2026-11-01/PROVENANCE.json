@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "collected_at_utc": "2026-10-31T17:04:35.026623+00:00",
+  "raw_source": "work_data/environment/2026-11-01_020523_JST",
+  "raw_source_file_count": 120,
+  "configuration_count_with_supplement": 102,
+  "collection_revision": null,
+  "revision_note": "Collection preceded Git initialization. This baseline includes the second collection and two supplemental probes. Do not claim the current collector is byte-identical to every probe used. Future snapshots should record the collector commit.",
+  "supplements": [
+    "desktop-supplement.json",
+    "session-supplement.json"
+  ],
+  "source_copy_verified": "All copied files SHA-256 matched the local collection source. Captured settings matched the reviewed configuration index.",
+  "credential_review": "Selected file content checked for credential assignments and private-key markers; SSH credentials and network authentication files were not collected."
+}

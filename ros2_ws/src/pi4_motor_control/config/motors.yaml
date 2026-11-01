@@ -1,0 +1,22 @@
+motor_controller:
+  ros__parameters:
+    dry_run: true
+    hardware_confirmed: false
+    # Placeholder geometry/speed: measure and calibrate before hardware use.
+    track_width: 0.20
+    max_linear: 0.30
+    max_angular: 1.0
+    max_wheel_speed: 0.40
+    max_duty: 0.35
+    command_timeout: 0.5
+    control_rate: 50.0
+    pwm_frequency: 100.0
+    # BCM numbering, [IN1, IN2, EN]. Unassigned deliberately.
+    left_front.pins: [-1, -1, -1]
+    left_rear.pins: [-1, -1, -1]
+    right_front.pins: [-1, -1, -1]
+    right_rear.pins: [-1, -1, -1]
+    left_front.invert: false
+    left_rear.invert: false
+    right_front.invert: false
+    right_rear.invert: false

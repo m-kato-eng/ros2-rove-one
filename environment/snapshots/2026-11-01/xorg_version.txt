@@ -1,0 +1,1 @@
+xserver-xorg-core	2:21.1.4-2ubuntu1.7~22.04.16

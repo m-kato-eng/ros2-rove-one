@@ -1,0 +1,12 @@
+# Observed subset only, from the 2026-08-09 investigation.
+# Not a complete config.txt and not an automatic installation template.
+arm_boost=1
+dtoverlay=vc4-fkms-v3d
+disable_fw_kms_setup=1
+hdmi_force_hotplug=1
+hdmi_group=2
+hdmi_mode=82
+gpu_mem=256
+dtparam=i2c_arm=on
+dtparam=spi=on
+arm_64bit=1

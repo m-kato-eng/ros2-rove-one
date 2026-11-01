@@ -1,0 +1,2 @@
+xfce4	4.16
+xfce4-session	4.16.0-1ubuntu2

@@ -1,0 +1,3 @@
+# Recorded addition to ~/.bashrc on 2026-10-28.
+# Add to an existing file; do not replace the complete ~/.bashrc with this file.
+source /opt/ros/humble/setup.bash

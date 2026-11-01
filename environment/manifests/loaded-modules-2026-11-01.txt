@@ -1,0 +1,89 @@
+Module                  Size  Used by
+rfcomm                 98304  4
+cmac                   16384  3
+algif_hash             20480  1
+aes_arm64              16384  3
+algif_skcipher         20480  1
+af_alg                 32768  6 algif_hash,algif_skcipher
+bnep                   32768  2
+hci_uart              155648  1
+btqca                  24576  1 hci_uart
+btrtl                  24576  1 hci_uart
+btbcm                  28672  1 hci_uart
+btintel                45056  1 hci_uart
+binfmt_misc            24576  1
+btsdio                 20480  0
+bluetooth             720896  35 btrtl,btqca,btsdio,btintel,hci_uart,btbcm,bnep,rfcomm
+joydev                 32768  0
+ecdh_generic           16384  2 bluetooth
+ecc                    36864  1 ecdh_generic
+input_leds             16384  0
+brcmfmac              421888  0
+brcmutil               28672  1 brcmfmac
+vc4                   339968  8
+v3d                    94208  9
+snd_bcm2835            36864  2
+cfg80211              974848  1 brcmfmac
+crct10dif_ce           20480  1
+snd_soc_hdmi_codec     24576  0
+gpu_sched              49152  1 v3d
+snd_seq_midi           24576  0
+snd_seq_midi_event     16384  1 snd_seq_midi
+bcm2835_codec          53248  0
+raspberrypi_hwmon      16384  0
+bcm2835_v4l2           49152  0
+bcm2835_isp            36864  0
+snd_soc_core          319488  2 vc4,snd_soc_hdmi_codec
+v4l2_mem2mem           45056  1 bcm2835_codec
+snd_rawmidi            49152  1 snd_seq_midi
+bcm2835_mmal_vchiq     40960  3 bcm2835_codec,bcm2835_v4l2,bcm2835_isp
+videobuf2_vmalloc      20480  1 bcm2835_v4l2
+videobuf2_dma_contig    24576  2 bcm2835_codec,bcm2835_isp
+snd_compress           28672  1 snd_soc_core
+videobuf2_memops       20480  2 videobuf2_vmalloc,videobuf2_dma_contig
+videobuf2_v4l2         32768  4 bcm2835_codec,bcm2835_v4l2,v4l2_mem2mem,bcm2835_isp
+ac97_bus               16384  1 snd_soc_core
+videobuf2_common       81920  8 bcm2835_codec,videobuf2_vmalloc,videobuf2_dma_contig,videobuf2_v4l2,bcm2835_v4l2,v4l2_mem2mem,videobuf2_memops,bcm2835_isp
+snd_pcm_dmaengine      24576  1 snd_soc_core
+snd_seq                90112  2 snd_seq_midi,snd_seq_midi_event
+snd_pcm               167936  5 snd_bcm2835,snd_soc_hdmi_codec,snd_compress,snd_soc_core,snd_pcm_dmaengine
+snd_seq_device         20480  3 snd_seq,snd_seq_midi,snd_rawmidi
+vc_sm_cma              45056  2 bcm2835_mmal_vchiq,bcm2835_isp
+videodev              282624  6 bcm2835_codec,videobuf2_v4l2,bcm2835_v4l2,videobuf2_common,v4l2_mem2mem,bcm2835_isp
+bcm2835_gpiomem        16384  0
+drm_kms_helper        344064  3 vc4
+snd_timer              45056  2 snd_seq,snd_pcm
+cec                    86016  2 drm_kms_helper,vc4
+snd                   126976  13 snd_seq,snd_seq_device,snd_bcm2835,snd_soc_hdmi_codec,snd_timer,snd_compress,snd_soc_core,snd_pcm,snd_rawmidi
+mc                     73728  6 videodev,bcm2835_codec,videobuf2_v4l2,videobuf2_common,v4l2_mem2mem,bcm2835_isp
+fb_sys_fops            20480  1 drm_kms_helper
+rpivid_mem             16384  0
+syscopyarea            16384  1 drm_kms_helper
+sysfillrect            20480  1 drm_kms_helper
+nvmem_rmem             16384  0
+sysimgblt              16384  1 drm_kms_helper
+uio_pdrv_genirq        20480  0
+uio                    24576  1 uio_pdrv_genirq
+sch_fq_codel           24576  7
+drm                   651264  21 gpu_sched,drm_kms_helper,v3d,vc4
+ip_tables              36864  0
+x_tables               65536  1 ip_tables
+autofs4                49152  2
+btrfs                1630208  0
+blake2b_generic        24576  0
+xor                    20480  1 btrfs
+xor_neon               16384  1 xor
+zstd_compress         229376  1 btrfs
+hid_generic            16384  0
+usbhid                 73728  0
+raid6_pq              114688  1 btrfs
+libcrc32c              16384  1 btrfs
+spidev                 28672  0
+dwc2                  315392  0
+roles                  20480  1 dwc2
+i2c_bcm2835            20480  0
+udc_core               77824  1 dwc2
+spi_bcm2835            28672  0
+xhci_pci               24576  0
+xhci_pci_renesas       24576  1 xhci_pci
+phy_generic            20480  1

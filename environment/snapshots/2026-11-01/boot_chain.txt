@@ -1,0 +1,20 @@
+The time when unit became active or started is printed after the "@" character.
+The time the unit took to start is printed after the "+" character.
+
+graphical.target @38.862s
+`-multi-user.target @38.861s
+  `-cups-browsed.service @40.207s
+    `-cups.service @40.144s +52ms
+      `-cups.socket @40.138s
+        `-sysinit.target @9.165s
+          `-snapd.apparmor.service @8.326s +838ms
+            `-apparmor.service @7.169s +1.052s
+              `-local-fs.target @7.164s
+                `-run-user-1000-gvfs.mount @31.038s
+                  `-run-user-1000.mount @16.627s
+                    `-swap.target @7.258s
+                      `-swapfile.swap @7.195s +33ms
+                        `-systemd-remount-fs.service @1.122s +112ms
+                          `-systemd-journald.socket @1.054s
+                            `-system.slice @1.037s
+                              `--.slice @1.036s

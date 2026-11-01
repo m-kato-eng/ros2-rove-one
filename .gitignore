@@ -1,0 +1,17 @@
+# Credentials must never be committed, including accidental copies.
+**/.codex-ssh/
+.env
+.env.*
+!.env.example
+*.pem
+*.pfx
+*.p12
+id_rsa
+id_ed25519
+**/__pycache__/
+**/.pytest_cache/
+*.pyc
+**/build/
+**/install/
+**/log/
+**/logs/

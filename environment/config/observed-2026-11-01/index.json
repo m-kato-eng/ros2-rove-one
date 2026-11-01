@@ -1,0 +1,1647 @@
+{
+  "collected_at_utc": "2026-10-31T17:04:35.026623+00:00",
+  "kernel": "5.15.0-1110-raspi",
+  "architecture": "aarch64",
+  "files": [
+    {
+      "path": "/etc/os-release",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": "../usr/lib/os-release",
+      "sha256": "594d5ddd35aedb47f00d9c34d140017907a5b9f93c975aba125fc924daac5c07",
+      "stored_as": "files/etc/os-release"
+    },
+    {
+      "path": "/boot/firmware/config.txt",
+      "status": "captured",
+      "mode": "0o755",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "8511d7b7f05f5da7d8c1015802b5e6d379c5aeb96b745b2aa87475982156676d",
+      "stored_as": "files/boot/firmware/config.txt"
+    },
+    {
+      "path": "/boot/firmware/usercfg.txt",
+      "status": "missing"
+    },
+    {
+      "path": "/boot/firmware/syscfg.txt",
+      "status": "missing"
+    },
+    {
+      "path": "/boot/firmware/cmdline.txt",
+      "status": "captured",
+      "mode": "0o755",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "0936663668aaf2d921c3ebb3000cef9093c9874d4227f69f8b5591d00e692e59",
+      "stored_as": "files/boot/firmware/cmdline.txt"
+    },
+    {
+      "path": "/etc/X11/default-display-manager",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "d4789869746ebc4ada9bd8c5abae3f1dfb24d94558309d151e8c0b1403b5178f",
+      "stored_as": "files/etc/X11/default-display-manager"
+    },
+    {
+      "path": "/etc/gdm3/custom.conf",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "9fb4277ab3e12a25d3914d51d9235b990ad33f4d345d9bac9b9c690059022027",
+      "stored_as": "files/etc/gdm3/custom.conf"
+    },
+    {
+      "path": "/etc/gdm3/daemon.conf",
+      "status": "missing"
+    },
+    {
+      "path": "/etc/lightdm/lightdm.conf",
+      "status": "missing"
+    },
+    {
+      "path": "/etc/sysctl.conf",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "3928dfdaf13a8ca3a6309c3eb2aaf09bcbe059f7dd261304260d436c97b77954",
+      "stored_as": "files/etc/sysctl.conf"
+    },
+    {
+      "path": "/etc/fstab",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "c94540e3e31cc621a5d988d21f83d4de6d078e0674221cc7d366da7b24860506",
+      "stored_as": "files/etc/fstab"
+    },
+    {
+      "path": "/etc/dphys-swapfile",
+      "status": "missing"
+    },
+    {
+      "path": "/etc/modules",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "08ebeaa1660b9aa8e383f9a519d33893ebc728ba823d81b6b907159488990614",
+      "stored_as": "files/etc/modules"
+    },
+    {
+      "path": "/etc/default/keyboard",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "9d2d64b5b738ef55ecc80e236cd00caba19d3afe1921c74fa7d73c9477ebe6eb",
+      "stored_as": "files/etc/default/keyboard"
+    },
+    {
+      "path": "/etc/default/locale",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "033252d5100cbb0028d7c15e075f63e4eb5ff7f1a923cd5cb547bcfd6b024f5b",
+      "stored_as": "files/etc/default/locale"
+    },
+    {
+      "path": "/etc/environment",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "3d88795b8d42b87bbbf91f8d30dae43b6db9ecd4b1eb93a883062352c902ff5d",
+      "stored_as": "files/etc/environment"
+    },
+    {
+      "path": "/etc/default/grub",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "70a5d423ad2dd3d95f1c30eced7848bf6d79b474e8412f2b52d436651f0cde32",
+      "stored_as": "files/etc/default/grub"
+    },
+    {
+      "path": "/etc/sysctl.d/10-ipv6-privacy.conf",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "e07c86211944a534c6418fe0eb5896926e09a13b56162d8cb642866f37e83b04",
+      "stored_as": "files/etc/sysctl.d/10-ipv6-privacy.conf"
+    },
+    {
+      "path": "/etc/sysctl.d/10-console-messages.conf",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "14524a83a266454d517b7cdbfb2141dbc4b884570543da5f65e3f08da0b814c0",
+      "stored_as": "files/etc/sysctl.d/10-console-messages.conf"
+    },
+    {
+      "path": "/etc/sysctl.d/10-magic-sysrq.conf",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "f9107778c619246fb2a5a7e2a05c9419951752238ede04c771173832dd296128",
+      "stored_as": "files/etc/sysctl.d/10-magic-sysrq.conf"
+    },
+    {
+      "path": "/etc/sysctl.d/10-network-security.conf",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "258805ec72eada3c24a923de1c5bd8ed0fd11fe21f3673628ec78f221c31e934",
+      "stored_as": "files/etc/sysctl.d/10-network-security.conf"
+    },
+    {
+      "path": "/etc/sysctl.d/10-kernel-hardening.conf",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "2bbc2c5684414517eba9da8d2fbff0a678026d944eb8fcfd6287281e11282e2f",
+      "stored_as": "files/etc/sysctl.d/10-kernel-hardening.conf"
+    },
+    {
+      "path": "/etc/sysctl.d/10-zeropage.conf",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "6b689092cfa2ff457f7049adbda056c33d3789a099b5ff73b46d7e66a20443e3",
+      "stored_as": "files/etc/sysctl.d/10-zeropage.conf"
+    },
+    {
+      "path": "/etc/sysctl.d/99-sysctl.conf",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": "../sysctl.conf",
+      "sha256": "3928dfdaf13a8ca3a6309c3eb2aaf09bcbe059f7dd261304260d436c97b77954",
+      "stored_as": "files/etc/sysctl.d/99-sysctl.conf"
+    },
+    {
+      "path": "/etc/sysctl.d/10-ptrace.conf",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "4add0d9ecbcc91e4018ed08e8dc66c69d4d9d142f9e31461178dcd7da0fd73c2",
+      "stored_as": "files/etc/sysctl.d/10-ptrace.conf"
+    },
+    {
+      "path": "/etc/modules-load.d/modules.conf",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": "../modules",
+      "sha256": "08ebeaa1660b9aa8e383f9a519d33893ebc728ba823d81b6b907159488990614",
+      "stored_as": "files/etc/modules-load.d/modules.conf"
+    },
+    {
+      "path": "/etc/modprobe.d/disable-algif_aead.conf",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "3edb721c3498e104e490b3a96195fe49dc0d88846c50d48605907cbe0b7fbf7a",
+      "stored_as": "files/etc/modprobe.d/disable-algif_aead.conf"
+    },
+    {
+      "path": "/etc/modprobe.d/blacklist-firewire.conf",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "37c8be8a4b292b28bf683edf18ca2ad77467d0384b6c5c030c11f8d1de4e822d",
+      "stored_as": "files/etc/modprobe.d/blacklist-firewire.conf"
+    },
+    {
+      "path": "/etc/modprobe.d/blacklist-modem.conf",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "3830817ba47d81c7f646bc172a8f2d434d226cb1c5909c7f2b23ffaf68af863f",
+      "stored_as": "files/etc/modprobe.d/blacklist-modem.conf"
+    },
+    {
+      "path": "/etc/modprobe.d/blacklist.conf",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "6854dbe3a233ab035ae6593c9bb577d1859d32a934e6fb2d60aaba99a4e45cb8",
+      "stored_as": "files/etc/modprobe.d/blacklist.conf"
+    },
+    {
+      "path": "/etc/modprobe.d/blacklist-rare-network.conf",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "d63190beb14c3ab0ad848d9ad17cf7eafecf3df9814fe390107ce68659d4d73c",
+      "stored_as": "files/etc/modprobe.d/blacklist-rare-network.conf"
+    },
+    {
+      "path": "/etc/modprobe.d/blacklist-oss.conf",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": "/lib/linux-sound-base/noOSS.modprobe.conf",
+      "sha256": "eae9a7b260d5a361699e8b20d874a29a68a4639b2da7770e7cc432232e34120a",
+      "stored_as": "files/etc/modprobe.d/blacklist-oss.conf"
+    },
+    {
+      "path": "/etc/modprobe.d/alsa-base.conf",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "f852fba1cee11675a1ff194ff1ad7983bc2041c2ba448c34d1977ff0ac8c6a5d",
+      "stored_as": "files/etc/modprobe.d/alsa-base.conf"
+    },
+    {
+      "path": "/etc/modprobe.d/blacklist-framebuffer.conf",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "383278f65de289767c8c0564fa31038a3980e76223160c4c3fb70ddc6fcf403a",
+      "stored_as": "files/etc/modprobe.d/blacklist-framebuffer.conf"
+    },
+    {
+      "path": "/etc/modprobe.d/iwlwifi.conf",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "ff7191f16a3d71e46b980fccabae0b20cfefe9254119e84e4fd6b85ebf3e8170",
+      "stored_as": "files/etc/modprobe.d/iwlwifi.conf"
+    },
+    {
+      "path": "/etc/modprobe.d/blacklist-ath_pci.conf",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "1bca34650bd5b96b3b0a5c880f04e01e8151cae85af7d69c9a00adfaaca6c5bd",
+      "stored_as": "files/etc/modprobe.d/blacklist-ath_pci.conf"
+    },
+    {
+      "path": "/etc/gdm3/greeter.dconf-defaults",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "cd8223a6dec5308e8c6c846637c273f2c9b5ae615fec7d057a3177d0d248fa76",
+      "stored_as": "files/etc/gdm3/greeter.dconf-defaults"
+    },
+    {
+      "path": "/etc/systemd/system/dbus-org.freedesktop.resolve1.service",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": "/lib/systemd/system/systemd-resolved.service",
+      "sha256": "b14431545835ed3d90754d487cbfe7a93a845648065662234aa7541ddb8e933d",
+      "stored_as": "files/etc/systemd/system/dbus-org.freedesktop.resolve1.service"
+    },
+    {
+      "path": "/etc/systemd/system/dbus-org.freedesktop.ModemManager1.service",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": "/lib/systemd/system/ModemManager.service",
+      "sha256": "7440e1296cf610dd3847641c2bc93cadf210b4021964d07b7a59b6cf3d5aee06",
+      "stored_as": "files/etc/systemd/system/dbus-org.freedesktop.ModemManager1.service"
+    },
+    {
+      "path": "/etc/systemd/system/grub-common.service",
+      "status": "not_regular"
+    },
+    {
+      "path": "/etc/systemd/system/syslog.service",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": "/lib/systemd/system/rsyslog.service",
+      "sha256": "726b9641b81ede267adc4180b3e25b85122a4e798e0f748cac0e9e3a414e1622",
+      "stored_as": "files/etc/systemd/system/syslog.service"
+    },
+    {
+      "path": "/etc/systemd/system/snap.mesa-2404.component-monitor.service",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "8fc890e640709724847ffc9afef563002f4ca858ae6791692333ad73fc6b49b8",
+      "stored_as": "files/etc/systemd/system/snap.mesa-2404.component-monitor.service"
+    },
+    {
+      "path": "/etc/systemd/system/grub-initrd-fallback.service",
+      "status": "not_regular"
+    },
+    {
+      "path": "/etc/systemd/system/dbus-fi.w1.wpa_supplicant1.service",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": "/lib/systemd/system/wpa_supplicant.service",
+      "sha256": "435205ace207fc22db0b0518fc67fdaa98c726753351f26e916fa714a359ac1a",
+      "stored_as": "files/etc/systemd/system/dbus-fi.w1.wpa_supplicant1.service"
+    },
+    {
+      "path": "/etc/systemd/system/sshd.service",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": "/lib/systemd/system/ssh.service",
+      "sha256": "35b2858970feb78e985900b33ba8cb84249dfadbf296155e5639cafcf1dd40a3",
+      "stored_as": "files/etc/systemd/system/sshd.service"
+    },
+    {
+      "path": "/etc/systemd/system/blk-availability.service",
+      "status": "not_regular"
+    },
+    {
+      "path": "/etc/systemd/system/dbus-org.freedesktop.timesync1.service",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": "/lib/systemd/system/systemd-timesyncd.service",
+      "sha256": "0e2cc5ea697a01cf8eef93cbadaaa029d23fb9759af459315ee0b3a349214303",
+      "stored_as": "files/etc/systemd/system/dbus-org.freedesktop.timesync1.service"
+    },
+    {
+      "path": "/etc/systemd/system/dbus-org.freedesktop.Avahi.service",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": "/lib/systemd/system/avahi-daemon.service",
+      "sha256": "2e8784f74603b0e7b03147eada1f1f8ec190fdef0c3fa1041201ac71ac2c0a7d",
+      "stored_as": "files/etc/systemd/system/dbus-org.freedesktop.Avahi.service"
+    },
+    {
+      "path": "/etc/systemd/system/sudo.service",
+      "status": "not_regular"
+    },
+    {
+      "path": "/etc/systemd/system/dbus-org.freedesktop.oom1.service",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": "/lib/systemd/system/systemd-oomd.service",
+      "sha256": "464f2acfa13842b2270c940ac7dc0c2514a04e0a334a1ec7dc39820da709dc00",
+      "stored_as": "files/etc/systemd/system/dbus-org.freedesktop.oom1.service"
+    },
+    {
+      "path": "/etc/systemd/system/dbus-org.freedesktop.nm-dispatcher.service",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": "/lib/systemd/system/NetworkManager-dispatcher.service",
+      "sha256": "88abd15e8cfe1f09f7cc4eb23561b86a14b6b56a13ed847f77c7e03cb27b8a39",
+      "stored_as": "files/etc/systemd/system/dbus-org.freedesktop.nm-dispatcher.service"
+    },
+    {
+      "path": "/etc/systemd/system/dbus-org.bluez.service",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": "/lib/systemd/system/bluetooth.service",
+      "sha256": "440afd7133efeb647ac62c7b5169070855f59dc412c03c92ea6a747484efb134",
+      "stored_as": "files/etc/systemd/system/dbus-org.bluez.service"
+    },
+    {
+      "path": "/etc/systemd/system/lvm2-monitor.service",
+      "status": "not_regular"
+    },
+    {
+      "path": "/etc/systemd/system/display-manager.service",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": "/lib/systemd/system/gdm3.service",
+      "sha256": "fd99a9bfde5a9034c4048abbe653375f120399a64baa246864117462c1cf8bdb",
+      "stored_as": "files/etc/systemd/system/display-manager.service"
+    },
+    {
+      "path": "/etc/udev/rules.d/70-snap.snap-store.rules",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "f24a09d9d18e88dabccf034a88f354da0272583b2783e37f0055e4b516c5d062",
+      "stored_as": "files/etc/udev/rules.d/70-snap.snap-store.rules"
+    },
+    {
+      "path": "/etc/udev/rules.d/70-snap.snapd.rules",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "76ba34b32931fa5adccb6544e8a082019403e486893125fd3e4b54efb891c842",
+      "stored_as": "files/etc/udev/rules.d/70-snap.snapd.rules"
+    },
+    {
+      "path": "/etc/udev/rules.d/70-snap.snapd-desktop-integration.rules",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "b463abb7fb5c51d795b4a8c1834e0f6be72cd1aeb64d6883fd84ac979d6a9319",
+      "stored_as": "files/etc/udev/rules.d/70-snap.snapd-desktop-integration.rules"
+    },
+    {
+      "path": "/etc/udev/rules.d/70-snap.firefox.rules",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "f75f2c242a65891b6712960a7ba39f31b324315c3d0848758ebc11a9e47fcaee",
+      "stored_as": "files/etc/udev/rules.d/70-snap.firefox.rules"
+    },
+    {
+      "path": "/etc/xdg/autostart/org.gnome.SettingsDaemon.MediaKeys.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "8e37dc908bcbceafd885e3398b6ed4af04555d305507f4f364d528e77c12455b",
+      "stored_as": "files/etc/xdg/autostart/org.gnome.SettingsDaemon.MediaKeys.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/org.gnome.SettingsDaemon.Datetime.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "9adcab3e73b0c297e58cd8b6039428ae7772630340b9e819de32f5950d4d421d",
+      "stored_as": "files/etc/xdg/autostart/org.gnome.SettingsDaemon.Datetime.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/org.gnome.SettingsDaemon.DiskUtilityNotify.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "95190d689af8806511ffeb2fd1096aab0f31f8593bb0ae48ed12caf678bbdbb2",
+      "stored_as": "files/etc/xdg/autostart/org.gnome.SettingsDaemon.DiskUtilityNotify.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/xfce4-notifyd.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "f148bd1b1b3745c92497c5d2103365c133fe5d9ad079f367ecedcf6174bae711",
+      "stored_as": "files/etc/xdg/autostart/xfce4-notifyd.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/org.gnome.SettingsDaemon.Power.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "73142397eefe6dbe9bd75fb90c8d591b90a7970256a497f8a27629ce2f3a797e",
+      "stored_as": "files/etc/xdg/autostart/org.gnome.SettingsDaemon.Power.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/xdg-user-dirs.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "6ee6a41fb890d7b58a0285416a053740f9e5bc67d3c3d41e7f0b770efb99d1f3",
+      "stored_as": "files/etc/xdg/autostart/xdg-user-dirs.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/tracker-miner-fs-3.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "d6eecf890facde65c1f5a8e2e3e5a9c511eee8c257a5fbb41d71fb85b2e02bed",
+      "stored_as": "files/etc/xdg/autostart/tracker-miner-fs-3.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/xscreensaver.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "e9129b959bed0a43ac5ce761d9d17059a9047c409d6f3f9da2c1b8d2c41c69cd",
+      "stored_as": "files/etc/xdg/autostart/xscreensaver.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/org.gnome.SettingsDaemon.A11ySettings.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "0d86b007a570902b320d8ced486fdcebe67c7c6945c08afb9f49262bd159f180",
+      "stored_as": "files/etc/xdg/autostart/org.gnome.SettingsDaemon.A11ySettings.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/org.gnome.SettingsDaemon.XSettings.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "50bf92a585a48dc54ad6bf4d332eef5270b30fc2eaad5ce04367be88853a6cf8",
+      "stored_as": "files/etc/xdg/autostart/org.gnome.SettingsDaemon.XSettings.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/org.gnome.DejaDup.Monitor.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "b71cd6c3e874db8275b2b264685f56b81aac06bbd0449c98820989490cd0bd3d",
+      "stored_as": "files/etc/xdg/autostart/org.gnome.DejaDup.Monitor.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/gnome-keyring-secrets.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "3142485b0cc7190aba8f3ab4a3e9da10d1bf2175e5c5a0db7e68ee6263822960",
+      "stored_as": "files/etc/xdg/autostart/gnome-keyring-secrets.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/xfce4-clipman-plugin-autostart.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "38463dca5fe73af59093171478bbbb314976d4ccde7a9605ee4108c8a76dd9ed",
+      "stored_as": "files/etc/xdg/autostart/xfce4-clipman-plugin-autostart.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/print-applet.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "c83e686d02c148f8f7f4d5545f3ce1893288b728e170a394b2b3631796cbce75",
+      "stored_as": "files/etc/xdg/autostart/print-applet.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/ubuntu-advantage-notification.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "ee7d9e6988dabd1a5280d256cf9162eb77ce154e314c9fa54ffbfc70b288df84",
+      "stored_as": "files/etc/xdg/autostart/ubuntu-advantage-notification.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/user-dirs-update-gtk.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "fbab15d6ab33c11abfdc95a29da438134fb4533201cb299952024ba8b901e413",
+      "stored_as": "files/etc/xdg/autostart/user-dirs-update-gtk.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/org.gnome.SettingsDaemon.Smartcard.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "3f5f6daa2856d8d534b156f2f18682098bf8c98aa2b7b2ba3c54fa0982ba1622",
+      "stored_as": "files/etc/xdg/autostart/org.gnome.SettingsDaemon.Smartcard.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/xiccd.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "a5347552a74e26b2bbc1c6b238891b339714c0b4fa8553c06b516e7ff3eeb635",
+      "stored_as": "files/etc/xdg/autostart/xiccd.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/org.gnome.SettingsDaemon.Rfkill.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "d59a4295c0926da90580ac6aea10ee4daaf0a516261f548a15e27014ec444011",
+      "stored_as": "files/etc/xdg/autostart/org.gnome.SettingsDaemon.Rfkill.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/ubuntu-report-on-upgrade.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "eed3bb35c53bbf972b993d0782e7e308bee70fe90a3dfa0212edd4d1d53f25d8",
+      "stored_as": "files/etc/xdg/autostart/ubuntu-report-on-upgrade.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/org.gnome.Evolution-alarm-notify.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "77dbec2c3fcea01ecdd41c44ef539b0db41c2824eb227ca853b5e4f905fde410",
+      "stored_as": "files/etc/xdg/autostart/org.gnome.Evolution-alarm-notify.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/org.gnome.SettingsDaemon.Sharing.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "c78c880ecaf71562c9a410231877d5cc2b2651ff22b087ef2fd88362b937849c",
+      "stored_as": "files/etc/xdg/autostart/org.gnome.SettingsDaemon.Sharing.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/spice-vdagent.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "931234b8b0cb88a105700977e75ca0ce31114af9322da6c3d21557205e92c453",
+      "stored_as": "files/etc/xdg/autostart/spice-vdagent.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/org.gnome.SettingsDaemon.Housekeeping.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "5aa7a28de0cb5f13de8977c71ba20063b38783d6873753f73bbbd47642c09dce",
+      "stored_as": "files/etc/xdg/autostart/org.gnome.SettingsDaemon.Housekeeping.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/orca-autostart.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "24e23f08a82a5b798993cc49266fd97ebafde148b7b3b267e1ecebdab9d3b76a",
+      "stored_as": "files/etc/xdg/autostart/orca-autostart.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/xfce4-power-manager.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "102e7e996a1e2f76a2f22b4262cb159816bb88032ee943f26c40403890e3702f",
+      "stored_as": "files/etc/xdg/autostart/xfce4-power-manager.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/org.gnome.SettingsDaemon.Sound.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "306d464a83c0ae60cee7da60fc3252959e98731cc7fd233429ec4b2287a0b1f3",
+      "stored_as": "files/etc/xdg/autostart/org.gnome.SettingsDaemon.Sound.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/at-spi-dbus-bus.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "193c665542076f0305b6204c6c94f22280857e36bbf4670de50d1e0ddf6d3042",
+      "stored_as": "files/etc/xdg/autostart/at-spi-dbus-bus.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/org.gnome.SettingsDaemon.Keyboard.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "9f0c68006eae0f4f03189a5f9b7224ca7e146647c28af7832988368f4159a90f",
+      "stored_as": "files/etc/xdg/autostart/org.gnome.SettingsDaemon.Keyboard.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/org.gnome.SettingsDaemon.Wacom.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "d5b1c5b8181c2d39c822da68b1f97a217340ef9e79cc0f70a6b2d9b2c6eef128",
+      "stored_as": "files/etc/xdg/autostart/org.gnome.SettingsDaemon.Wacom.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/org.gnome.SettingsDaemon.Color.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "1a3dfba603610409d630e5d1a88e492b0ff8a6cfb84f6cdd6b5d9d8bfe45feb5",
+      "stored_as": "files/etc/xdg/autostart/org.gnome.SettingsDaemon.Color.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/snap-userd-autostart.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "cef50dcfca7099c8b168a32daa2f06ba746f952bcd1fb92cf01b9a41ff39ec07",
+      "stored_as": "files/etc/xdg/autostart/snap-userd-autostart.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/pulseaudio.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "374df1d2b6737e69aee2a4614b37af7bc9301682805d7f46b374bac92b90bc95",
+      "stored_as": "files/etc/xdg/autostart/pulseaudio.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/im-launch.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "d3fe7ebd5153aeb291c144987b1a68489698fa5559a1a782da8e79da999d5fb8",
+      "stored_as": "files/etc/xdg/autostart/im-launch.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/geoclue-demo-agent.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "250ca8799e193f7713a8213a7ad8f121976a046e6b95a278c22dc192de3c1482",
+      "stored_as": "files/etc/xdg/autostart/geoclue-demo-agent.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/gnome-initial-setup-first-login.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "0071ad4a20248658e8ed3953954bbba2efa082d2a3ffb141c5701eb61e9132b9",
+      "stored_as": "files/etc/xdg/autostart/gnome-initial-setup-first-login.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/nm-applet.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "e507d2cc2044537d49534aea113ddbc8f70511093ae8c21b659ac5c5592fe1ba",
+      "stored_as": "files/etc/xdg/autostart/nm-applet.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/org.gnome.SettingsDaemon.UsbProtection.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "58b7cda8a4d4f5b600d489bb21c1d3aa759f1d90a7f67092db2f9cf6ec54276f",
+      "stored_as": "files/etc/xdg/autostart/org.gnome.SettingsDaemon.UsbProtection.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/org.gnome.SettingsDaemon.ScreensaverProxy.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "6290c7f6b6c7f5ef7a23ed1512d1e82b6d29f6ad3942cd81cef82c019cc2822d",
+      "stored_as": "files/etc/xdg/autostart/org.gnome.SettingsDaemon.ScreensaverProxy.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/gnome-initial-setup-copy-worker.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "01b6535c0b5dd299b670b82743956720e5439b43c1eb2b519fc0a71b09e434a6",
+      "stored_as": "files/etc/xdg/autostart/gnome-initial-setup-copy-worker.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/gnome-keyring-ssh.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "dd17ed872e99d8eca2a023c9e5819ffa4bce5e0c29fa5462e8aa1aa5ced1e3c3",
+      "stored_as": "files/etc/xdg/autostart/gnome-keyring-ssh.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/gnome-shell-overrides-migration.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "24937a9220ce14a59edb704e137bf36f5ab09fd02e6f3f543f7ad8f2bf24e300",
+      "stored_as": "files/etc/xdg/autostart/gnome-shell-overrides-migration.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/org.gnome.SettingsDaemon.Wwan.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "fd9b6ad447ee4fe64c1a1c9eaf77af0fd271eba09247c75ae04ef88a7ff36491",
+      "stored_as": "files/etc/xdg/autostart/org.gnome.SettingsDaemon.Wwan.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/org.gnome.SettingsDaemon.PrintNotifications.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "d54bdb423d07c1724f34457d777a441177846be85c56040f88e2f5966c4aabc2",
+      "stored_as": "files/etc/xdg/autostart/org.gnome.SettingsDaemon.PrintNotifications.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/gnome-keyring-pkcs11.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "530d8cb3afdc7bf6c34e190f738a257e1bb387fade8924778206bf7bec287f19",
+      "stored_as": "files/etc/xdg/autostart/gnome-keyring-pkcs11.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/xfsettingsd.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "c9d4b3f072b1425dbfa093882dd8c207f225a4eeb189104615ab139e04717a2b",
+      "stored_as": "files/etc/xdg/autostart/xfsettingsd.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/xfce4-screensaver.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "839d3b1d5b8ebd70add3c12f34290c421170076f0b32e63bf34b1319d4026955",
+      "stored_as": "files/etc/xdg/autostart/xfce4-screensaver.desktop"
+    },
+    {
+      "path": "/etc/xdg/autostart/update-notifier.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "5913c8228632d5eb89967ec3b0f687b148b4d9def418a2c2e99589c27c0d99fc",
+      "stored_as": "files/etc/xdg/autostart/update-notifier.desktop"
+    },
+    {
+      "path": "/home/mk/.config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml",
+      "status": "captured",
+      "mode": "0o664",
+      "uid": 1000,
+      "gid": 1000,
+      "symlink_target": null,
+      "sha256": "a938bf6fdb614383ada12306b75cf99a283addc8f8ee190b6974131f4be74750",
+      "stored_as": "files/home/mk/.config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml"
+    },
+    {
+      "path": "/home/mk/.config/xfce4/xfconf/xfce-perchannel-xml/displays.xml",
+      "status": "captured",
+      "mode": "0o664",
+      "uid": 1000,
+      "gid": 1000,
+      "symlink_target": null,
+      "sha256": "b1d7b69ec2d699a398a0ebd9351d206485850c6ccefd8d337e9fb08e05beea2e",
+      "stored_as": "files/home/mk/.config/xfce4/xfconf/xfce-perchannel-xml/displays.xml"
+    },
+    {
+      "path": "/home/mk/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml",
+      "status": "captured",
+      "mode": "0o664",
+      "uid": 1000,
+      "gid": 1000,
+      "symlink_target": null,
+      "sha256": "b62d281874c85bb99077b17e4d58dc576db165a73a0fac56db9aa432dbe8e1fc",
+      "stored_as": "files/home/mk/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml"
+    },
+    {
+      "path": "/usr/share/xsessions/xfce.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "8b044fdee251f83974281138c0a5a4b12ee52211fe4ca7f7c47abda2ee4e7f1d",
+      "stored_as": "files/usr/share/xsessions/xfce.desktop"
+    },
+    {
+      "path": "/usr/share/xsessions/ubuntu-xorg.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "354ceca1cf826dbc180e1af985f172cce2b8b55877eb1b34e4f5087468255d39",
+      "stored_as": "files/usr/share/xsessions/ubuntu-xorg.desktop"
+    },
+    {
+      "path": "/usr/share/xsessions/ubuntu.desktop",
+      "status": "captured",
+      "mode": "0o644",
+      "uid": 0,
+      "gid": 0,
+      "symlink_target": null,
+      "sha256": "c26199770e060a22228233ccfc8b8971e2779a3cd6e7c3bed90afab0367d19c3",
+      "stored_as": "files/usr/share/xsessions/ubuntu.desktop"
+    },
+    {
+      "path": "/home/mk/.xsession",
+      "status": "missing"
+    },
+    {
+      "path": "/home/mk/.xsessionrc",
+      "status": "missing"
+    },
+    {
+      "path": "/home/mk/.xinitrc",
+      "status": "missing"
+    },
+    {
+      "path": "/home/mk/.dmrc",
+      "status": "missing"
+    }
+  ],
+  "systemd_links": [
+    {
+      "path": "/etc/systemd/system/blk-availability.service",
+      "target": "/dev/null"
+    },
+    {
+      "path": "/etc/systemd/system/bluetooth.target.wants/bluetooth.service",
+      "target": "/lib/systemd/system/bluetooth.service"
+    },
+    {
+      "path": "/etc/systemd/system/cloud-final.service.wants/snapd.seeded.service",
+      "target": "/lib/systemd/system/snapd.seeded.service"
+    },
+    {
+      "path": "/etc/systemd/system/dbus-fi.w1.wpa_supplicant1.service",
+      "target": "/lib/systemd/system/wpa_supplicant.service"
+    },
+    {
+      "path": "/etc/systemd/system/dbus-org.bluez.service",
+      "target": "/lib/systemd/system/bluetooth.service"
+    },
+    {
+      "path": "/etc/systemd/system/dbus-org.freedesktop.Avahi.service",
+      "target": "/lib/systemd/system/avahi-daemon.service"
+    },
+    {
+      "path": "/etc/systemd/system/dbus-org.freedesktop.ModemManager1.service",
+      "target": "/lib/systemd/system/ModemManager.service"
+    },
+    {
+      "path": "/etc/systemd/system/dbus-org.freedesktop.nm-dispatcher.service",
+      "target": "/lib/systemd/system/NetworkManager-dispatcher.service"
+    },
+    {
+      "path": "/etc/systemd/system/dbus-org.freedesktop.oom1.service",
+      "target": "/lib/systemd/system/systemd-oomd.service"
+    },
+    {
+      "path": "/etc/systemd/system/dbus-org.freedesktop.resolve1.service",
+      "target": "/lib/systemd/system/systemd-resolved.service"
+    },
+    {
+      "path": "/etc/systemd/system/dbus-org.freedesktop.timesync1.service",
+      "target": "/lib/systemd/system/systemd-timesyncd.service"
+    },
+    {
+      "path": "/etc/systemd/system/default.target",
+      "target": "/lib/systemd/system/graphical.target"
+    },
+    {
+      "path": "/etc/systemd/system/display-manager.service",
+      "target": "/lib/systemd/system/gdm3.service"
+    },
+    {
+      "path": "/etc/systemd/system/dm-event.socket",
+      "target": "/dev/null"
+    },
+    {
+      "path": "/etc/systemd/system/emergency.target.wants/grub-initrd-fallback.service",
+      "target": "/lib/systemd/system/grub-initrd-fallback.service"
+    },
+    {
+      "path": "/etc/systemd/system/final.target.wants/snapd.system-shutdown.service",
+      "target": "/lib/systemd/system/snapd.system-shutdown.service"
+    },
+    {
+      "path": "/etc/systemd/system/getty.target.wants/getty@tty1.service",
+      "target": "/lib/systemd/system/getty@.service"
+    },
+    {
+      "path": "/etc/systemd/system/graphical.target.wants/accounts-daemon.service",
+      "target": "/lib/systemd/system/accounts-daemon.service"
+    },
+    {
+      "path": "/etc/systemd/system/graphical.target.wants/power-profiles-daemon.service",
+      "target": "/lib/systemd/system/power-profiles-daemon.service"
+    },
+    {
+      "path": "/etc/systemd/system/graphical.target.wants/switcheroo-control.service",
+      "target": "/lib/systemd/system/switcheroo-control.service"
+    },
+    {
+      "path": "/etc/systemd/system/graphical.target.wants/udisks2.service",
+      "target": "/lib/systemd/system/udisks2.service"
+    },
+    {
+      "path": "/etc/systemd/system/grub-common.service",
+      "target": "/dev/null"
+    },
+    {
+      "path": "/etc/systemd/system/grub-initrd-fallback.service",
+      "target": "/dev/null"
+    },
+    {
+      "path": "/etc/systemd/system/lvm2-lvmpolld.socket",
+      "target": "/dev/null"
+    },
+    {
+      "path": "/etc/systemd/system/lvm2-monitor.service",
+      "target": "/dev/null"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/ModemManager.service",
+      "target": "/lib/systemd/system/ModemManager.service"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/NetworkManager.service",
+      "target": "/lib/systemd/system/NetworkManager.service"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/anacron.service",
+      "target": "/lib/systemd/system/anacron.service"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/avahi-daemon.service",
+      "target": "/lib/systemd/system/avahi-daemon.service"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/console-setup.service",
+      "target": "/lib/systemd/system/console-setup.service"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/cron.service",
+      "target": "/lib/systemd/system/cron.service"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/cups-browsed.service",
+      "target": "/lib/systemd/system/cups-browsed.service"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/cups.path",
+      "target": "/lib/systemd/system/cups.path"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/cups.service",
+      "target": "/lib/systemd/system/cups.service"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/dmesg.service",
+      "target": "/lib/systemd/system/dmesg.service"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/e2scrub_reap.service",
+      "target": "/lib/systemd/system/e2scrub_reap.service"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/grub-common.service",
+      "target": "/lib/systemd/system/grub-common.service"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/grub-initrd-fallback.service",
+      "target": "/lib/systemd/system/grub-initrd-fallback.service"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/hciuart.service",
+      "target": "/lib/systemd/system/hciuart.service"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/irqbalance.service",
+      "target": "/lib/systemd/system/irqbalance.service"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/kerneloops.service",
+      "target": "/lib/systemd/system/kerneloops.service"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/lm-sensors.service",
+      "target": "/lib/systemd/system/lm-sensors.service"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/networkd-dispatcher.service",
+      "target": "/lib/systemd/system/networkd-dispatcher.service"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/openvpn.service",
+      "target": "/lib/systemd/system/openvpn.service"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/remote-fs.target",
+      "target": "/lib/systemd/system/remote-fs.target"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/rpi-eeprom-update.service",
+      "target": "/lib/systemd/system/rpi-eeprom-update.service"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/rsyslog.service",
+      "target": "/lib/systemd/system/rsyslog.service"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/secureboot-db.service",
+      "target": "/lib/systemd/system/secureboot-db.service"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/snap-bare-5.mount",
+      "target": "/etc/systemd/system/snap-bare-5.mount"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/snap-core22-1614.mount",
+      "target": "/etc/systemd/system/snap-core22-1614.mount"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/snap-core24-2125.mount",
+      "target": "/etc/systemd/system/snap-core24-2125.mount"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/snap-firefox-7764.mount",
+      "target": "/etc/systemd/system/snap-firefox-7764.mount"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/snap-firefox-7965.mount",
+      "target": "/etc/systemd/system/snap-firefox-7965.mount"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/snap-gnome\\x2d42\\x2d2204-178.mount",
+      "target": "/etc/systemd/system/snap-gnome\\x2d42\\x2d2204-178.mount"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/snap-gnome\\x2d46\\x2d2404-176.mount",
+      "target": "/etc/systemd/system/snap-gnome\\x2d46\\x2d2404-176.mount"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/snap-gtk\\x2dcommon\\x2dthemes-1535.mount",
+      "target": "/etc/systemd/system/snap-gtk\\x2dcommon\\x2dthemes-1535.mount"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/snap-mesa\\x2d2404-1836.mount",
+      "target": "/etc/systemd/system/snap-mesa\\x2d2404-1836.mount"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/snap-snap\\x2dstore-1217.mount",
+      "target": "/etc/systemd/system/snap-snap\\x2dstore-1217.mount"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/snap-snap\\x2dstore-1469.mount",
+      "target": "/etc/systemd/system/snap-snap\\x2dstore-1469.mount"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/snap-snapd-25939.mount",
+      "target": "/etc/systemd/system/snap-snapd-25939.mount"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/snap-snapd-28255.mount",
+      "target": "/etc/systemd/system/snap-snapd-28255.mount"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/snap-snapd\\x2ddesktop\\x2dintegration-180.mount",
+      "target": "/etc/systemd/system/snap-snapd\\x2ddesktop\\x2dintegration-180.mount"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/snap-snapd\\x2ddesktop\\x2dintegration-346.mount",
+      "target": "/etc/systemd/system/snap-snapd\\x2ddesktop\\x2dintegration-346.mount"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/snapd.apparmor.service",
+      "target": "/lib/systemd/system/snapd.apparmor.service"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/snapd.autoimport.service",
+      "target": "/lib/systemd/system/snapd.autoimport.service"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/snapd.core-fixup.service",
+      "target": "/lib/systemd/system/snapd.core-fixup.service"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/snapd.recovery-chooser-trigger.service",
+      "target": "/lib/systemd/system/snapd.recovery-chooser-trigger.service"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/snapd.seeded.service",
+      "target": "/lib/systemd/system/snapd.seeded.service"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/snapd.service",
+      "target": "/lib/systemd/system/snapd.service"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/ssh.service",
+      "target": "/lib/systemd/system/ssh.service"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/sssd.service",
+      "target": "/lib/systemd/system/sssd.service"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/systemd-oomd.service",
+      "target": "/lib/systemd/system/systemd-oomd.service"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/systemd-resolved.service",
+      "target": "/lib/systemd/system/systemd-resolved.service"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/ua-reboot-cmds.service",
+      "target": "/lib/systemd/system/ua-reboot-cmds.service"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/ubuntu-advantage.service",
+      "target": "/lib/systemd/system/ubuntu-advantage.service"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/ufw.service",
+      "target": "/lib/systemd/system/ufw.service"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/unattended-upgrades.service",
+      "target": "/lib/systemd/system/unattended-upgrades.service"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/whoopsie.path",
+      "target": "/lib/systemd/system/whoopsie.path"
+    },
+    {
+      "path": "/etc/systemd/system/multi-user.target.wants/wpa_supplicant.service",
+      "target": "/lib/systemd/system/wpa_supplicant.service"
+    },
+    {
+      "path": "/etc/systemd/system/network-online.target.wants/NetworkManager-wait-online.service",
+      "target": "/lib/systemd/system/NetworkManager-wait-online.service"
+    },
+    {
+      "path": "/etc/systemd/system/paths.target.wants/apport-autoreport.path",
+      "target": "/lib/systemd/system/apport-autoreport.path"
+    },
+    {
+      "path": "/etc/systemd/system/printer.target.wants/cups.service",
+      "target": "/lib/systemd/system/cups.service"
+    },
+    {
+      "path": "/etc/systemd/system/rescue.target.wants/grub-initrd-fallback.service",
+      "target": "/lib/systemd/system/grub-initrd-fallback.service"
+    },
+    {
+      "path": "/etc/systemd/system/sleep.target.wants/grub-common.service",
+      "target": "/lib/systemd/system/grub-common.service"
+    },
+    {
+      "path": "/etc/systemd/system/sleep.target.wants/grub-initrd-fallback.service",
+      "target": "/lib/systemd/system/grub-initrd-fallback.service"
+    },
+    {
+      "path": "/etc/systemd/system/snapd.mounts.target.wants/snap-bare-5.mount",
+      "target": "/etc/systemd/system/snap-bare-5.mount"
+    },
+    {
+      "path": "/etc/systemd/system/snapd.mounts.target.wants/snap-core22-1614.mount",
+      "target": "/etc/systemd/system/snap-core22-1614.mount"
+    },
+    {
+      "path": "/etc/systemd/system/snapd.mounts.target.wants/snap-core24-2125.mount",
+      "target": "/etc/systemd/system/snap-core24-2125.mount"
+    },
+    {
+      "path": "/etc/systemd/system/snapd.mounts.target.wants/snap-firefox-7764.mount",
+      "target": "/etc/systemd/system/snap-firefox-7764.mount"
+    },
+    {
+      "path": "/etc/systemd/system/snapd.mounts.target.wants/snap-firefox-7965.mount",
+      "target": "/etc/systemd/system/snap-firefox-7965.mount"
+    },
+    {
+      "path": "/etc/systemd/system/snapd.mounts.target.wants/snap-gnome\\x2d42\\x2d2204-178.mount",
+      "target": "/etc/systemd/system/snap-gnome\\x2d42\\x2d2204-178.mount"
+    },
+    {
+      "path": "/etc/systemd/system/snapd.mounts.target.wants/snap-gnome\\x2d46\\x2d2404-176.mount",
+      "target": "/etc/systemd/system/snap-gnome\\x2d46\\x2d2404-176.mount"
+    },
+    {
+      "path": "/etc/systemd/system/snapd.mounts.target.wants/snap-gtk\\x2dcommon\\x2dthemes-1535.mount",
+      "target": "/etc/systemd/system/snap-gtk\\x2dcommon\\x2dthemes-1535.mount"
+    },
+    {
+      "path": "/etc/systemd/system/snapd.mounts.target.wants/snap-mesa\\x2d2404-1836.mount",
+      "target": "/etc/systemd/system/snap-mesa\\x2d2404-1836.mount"
+    },
+    {
+      "path": "/etc/systemd/system/snapd.mounts.target.wants/snap-snap\\x2dstore-1217.mount",
+      "target": "/etc/systemd/system/snap-snap\\x2dstore-1217.mount"
+    },
+    {
+      "path": "/etc/systemd/system/snapd.mounts.target.wants/snap-snap\\x2dstore-1469.mount",
+      "target": "/etc/systemd/system/snap-snap\\x2dstore-1469.mount"
+    },
+    {
+      "path": "/etc/systemd/system/snapd.mounts.target.wants/snap-snapd-25939.mount",
+      "target": "/etc/systemd/system/snap-snapd-25939.mount"
+    },
+    {
+      "path": "/etc/systemd/system/snapd.mounts.target.wants/snap-snapd-28255.mount",
+      "target": "/etc/systemd/system/snap-snapd-28255.mount"
+    },
+    {
+      "path": "/etc/systemd/system/snapd.mounts.target.wants/snap-snapd\\x2ddesktop\\x2dintegration-180.mount",
+      "target": "/etc/systemd/system/snap-snapd\\x2ddesktop\\x2dintegration-180.mount"
+    },
+    {
+      "path": "/etc/systemd/system/snapd.mounts.target.wants/snap-snapd\\x2ddesktop\\x2dintegration-346.mount",
+      "target": "/etc/systemd/system/snap-snapd\\x2ddesktop\\x2dintegration-346.mount"
+    },
+    {
+      "path": "/etc/systemd/system/sockets.target.wants/apport-forward.socket",
+      "target": "/lib/systemd/system/apport-forward.socket"
+    },
+    {
+      "path": "/etc/systemd/system/sockets.target.wants/avahi-daemon.socket",
+      "target": "/lib/systemd/system/avahi-daemon.socket"
+    },
+    {
+      "path": "/etc/systemd/system/sockets.target.wants/cups.socket",
+      "target": "/lib/systemd/system/cups.socket"
+    },
+    {
+      "path": "/etc/systemd/system/sockets.target.wants/dm-event.socket",
+      "target": "/lib/systemd/system/dm-event.socket"
+    },
+    {
+      "path": "/etc/systemd/system/sockets.target.wants/snapd.socket",
+      "target": "/lib/systemd/system/snapd.socket"
+    },
+    {
+      "path": "/etc/systemd/system/sockets.target.wants/uuidd.socket",
+      "target": "/lib/systemd/system/uuidd.socket"
+    },
+    {
+      "path": "/etc/systemd/system/sshd.service",
+      "target": "/lib/systemd/system/ssh.service"
+    },
+    {
+      "path": "/etc/systemd/system/sssd.service.wants/sssd-autofs.socket",
+      "target": "/lib/systemd/system/sssd-autofs.socket"
+    },
+    {
+      "path": "/etc/systemd/system/sssd.service.wants/sssd-nss.socket",
+      "target": "/lib/systemd/system/sssd-nss.socket"
+    },
+    {
+      "path": "/etc/systemd/system/sssd.service.wants/sssd-pac.socket",
+      "target": "/lib/systemd/system/sssd-pac.socket"
+    },
+    {
+      "path": "/etc/systemd/system/sssd.service.wants/sssd-pam-priv.socket",
+      "target": "/lib/systemd/system/sssd-pam-priv.socket"
+    },
+    {
+      "path": "/etc/systemd/system/sssd.service.wants/sssd-pam.socket",
+      "target": "/lib/systemd/system/sssd-pam.socket"
+    },
+    {
+      "path": "/etc/systemd/system/sssd.service.wants/sssd-ssh.socket",
+      "target": "/lib/systemd/system/sssd-ssh.socket"
+    },
+    {
+      "path": "/etc/systemd/system/sssd.service.wants/sssd-sudo.socket",
+      "target": "/lib/systemd/system/sssd-sudo.socket"
+    },
+    {
+      "path": "/etc/systemd/system/sudo.service",
+      "target": "/dev/null"
+    },
+    {
+      "path": "/etc/systemd/system/sysinit.target.wants/apparmor.service",
+      "target": "/lib/systemd/system/apparmor.service"
+    },
+    {
+      "path": "/etc/systemd/system/sysinit.target.wants/blk-availability.service",
+      "target": "/lib/systemd/system/blk-availability.service"
+    },
+    {
+      "path": "/etc/systemd/system/sysinit.target.wants/keyboard-setup.service",
+      "target": "/lib/systemd/system/keyboard-setup.service"
+    },
+    {
+      "path": "/etc/systemd/system/sysinit.target.wants/lvm2-lvmpolld.socket",
+      "target": "/lib/systemd/system/lvm2-lvmpolld.socket"
+    },
+    {
+      "path": "/etc/systemd/system/sysinit.target.wants/lvm2-monitor.service",
+      "target": "/lib/systemd/system/lvm2-monitor.service"
+    },
+    {
+      "path": "/etc/systemd/system/sysinit.target.wants/setvtrgb.service",
+      "target": "/lib/systemd/system/setvtrgb.service"
+    },
+    {
+      "path": "/etc/systemd/system/sysinit.target.wants/systemd-pstore.service",
+      "target": "/lib/systemd/system/systemd-pstore.service"
+    },
+    {
+      "path": "/etc/systemd/system/sysinit.target.wants/systemd-timesyncd.service",
+      "target": "/lib/systemd/system/systemd-timesyncd.service"
+    },
+    {
+      "path": "/etc/systemd/system/syslog.service",
+      "target": "/lib/systemd/system/rsyslog.service"
+    },
+    {
+      "path": "/etc/systemd/system/timers.target.wants/anacron.timer",
+      "target": "/lib/systemd/system/anacron.timer"
+    },
+    {
+      "path": "/etc/systemd/system/timers.target.wants/apport-autoreport.timer",
+      "target": "/lib/systemd/system/apport-autoreport.timer"
+    },
+    {
+      "path": "/etc/systemd/system/timers.target.wants/apt-daily-upgrade.timer",
+      "target": "/lib/systemd/system/apt-daily-upgrade.timer"
+    },
+    {
+      "path": "/etc/systemd/system/timers.target.wants/apt-daily.timer",
+      "target": "/lib/systemd/system/apt-daily.timer"
+    },
+    {
+      "path": "/etc/systemd/system/timers.target.wants/dpkg-db-backup.timer",
+      "target": "/lib/systemd/system/dpkg-db-backup.timer"
+    },
+    {
+      "path": "/etc/systemd/system/timers.target.wants/e2scrub_all.timer",
+      "target": "/lib/systemd/system/e2scrub_all.timer"
+    },
+    {
+      "path": "/etc/systemd/system/timers.target.wants/fstrim.timer",
+      "target": "/lib/systemd/system/fstrim.timer"
+    },
+    {
+      "path": "/etc/systemd/system/timers.target.wants/fwupd-refresh.timer",
+      "target": "/lib/systemd/system/fwupd-refresh.timer"
+    },
+    {
+      "path": "/etc/systemd/system/timers.target.wants/logrotate.timer",
+      "target": "/lib/systemd/system/logrotate.timer"
+    },
+    {
+      "path": "/etc/systemd/system/timers.target.wants/man-db.timer",
+      "target": "/lib/systemd/system/man-db.timer"
+    },
+    {
+      "path": "/etc/systemd/system/timers.target.wants/motd-news.timer",
+      "target": "/lib/systemd/system/motd-news.timer"
+    },
+    {
+      "path": "/etc/systemd/system/timers.target.wants/snapd.snap-repair.timer",
+      "target": "/lib/systemd/system/snapd.snap-repair.timer"
+    },
+    {
+      "path": "/etc/systemd/system/timers.target.wants/ua-timer.timer",
+      "target": "/lib/systemd/system/ua-timer.timer"
+    },
+    {
+      "path": "/etc/systemd/system/timers.target.wants/update-notifier-download.timer",
+      "target": "/lib/systemd/system/update-notifier-download.timer"
+    },
+    {
+      "path": "/etc/systemd/system/timers.target.wants/update-notifier-motd.timer",
+      "target": "/lib/systemd/system/update-notifier-motd.timer"
+    }
+  ],
+  "accounts_xsession": {
+    "returncode": 0,
+    "stdout": "s \"\"\n",
+    "stderr": ""
+  },
+  "source_snapshot": "work_data/environment/2026-11-01_020523_JST/snapshot.json"
+}

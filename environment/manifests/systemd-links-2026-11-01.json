@@ -1,0 +1,558 @@
+[
+  {
+    "path": "/etc/systemd/system/blk-availability.service",
+    "target": "/dev/null"
+  },
+  {
+    "path": "/etc/systemd/system/bluetooth.target.wants/bluetooth.service",
+    "target": "/lib/systemd/system/bluetooth.service"
+  },
+  {
+    "path": "/etc/systemd/system/cloud-final.service.wants/snapd.seeded.service",
+    "target": "/lib/systemd/system/snapd.seeded.service"
+  },
+  {
+    "path": "/etc/systemd/system/dbus-fi.w1.wpa_supplicant1.service",
+    "target": "/lib/systemd/system/wpa_supplicant.service"
+  },
+  {
+    "path": "/etc/systemd/system/dbus-org.bluez.service",
+    "target": "/lib/systemd/system/bluetooth.service"
+  },
+  {
+    "path": "/etc/systemd/system/dbus-org.freedesktop.Avahi.service",
+    "target": "/lib/systemd/system/avahi-daemon.service"
+  },
+  {
+    "path": "/etc/systemd/system/dbus-org.freedesktop.ModemManager1.service",
+    "target": "/lib/systemd/system/ModemManager.service"
+  },
+  {
+    "path": "/etc/systemd/system/dbus-org.freedesktop.nm-dispatcher.service",
+    "target": "/lib/systemd/system/NetworkManager-dispatcher.service"
+  },
+  {
+    "path": "/etc/systemd/system/dbus-org.freedesktop.oom1.service",
+    "target": "/lib/systemd/system/systemd-oomd.service"
+  },
+  {
+    "path": "/etc/systemd/system/dbus-org.freedesktop.resolve1.service",
+    "target": "/lib/systemd/system/systemd-resolved.service"
+  },
+  {
+    "path": "/etc/systemd/system/dbus-org.freedesktop.timesync1.service",
+    "target": "/lib/systemd/system/systemd-timesyncd.service"
+  },
+  {
+    "path": "/etc/systemd/system/default.target",
+    "target": "/lib/systemd/system/graphical.target"
+  },
+  {
+    "path": "/etc/systemd/system/display-manager.service",
+    "target": "/lib/systemd/system/gdm3.service"
+  },
+  {
+    "path": "/etc/systemd/system/dm-event.socket",
+    "target": "/dev/null"
+  },
+  {
+    "path": "/etc/systemd/system/emergency.target.wants/grub-initrd-fallback.service",
+    "target": "/lib/systemd/system/grub-initrd-fallback.service"
+  },
+  {
+    "path": "/etc/systemd/system/final.target.wants/snapd.system-shutdown.service",
+    "target": "/lib/systemd/system/snapd.system-shutdown.service"
+  },
+  {
+    "path": "/etc/systemd/system/getty.target.wants/getty@tty1.service",
+    "target": "/lib/systemd/system/getty@.service"
+  },
+  {
+    "path": "/etc/systemd/system/graphical.target.wants/accounts-daemon.service",
+    "target": "/lib/systemd/system/accounts-daemon.service"
+  },
+  {
+    "path": "/etc/systemd/system/graphical.target.wants/power-profiles-daemon.service",
+    "target": "/lib/systemd/system/power-profiles-daemon.service"
+  },
+  {
+    "path": "/etc/systemd/system/graphical.target.wants/switcheroo-control.service",
+    "target": "/lib/systemd/system/switcheroo-control.service"
+  },
+  {
+    "path": "/etc/systemd/system/graphical.target.wants/udisks2.service",
+    "target": "/lib/systemd/system/udisks2.service"
+  },
+  {
+    "path": "/etc/systemd/system/grub-common.service",
+    "target": "/dev/null"
+  },
+  {
+    "path": "/etc/systemd/system/grub-initrd-fallback.service",
+    "target": "/dev/null"
+  },
+  {
+    "path": "/etc/systemd/system/lvm2-lvmpolld.socket",
+    "target": "/dev/null"
+  },
+  {
+    "path": "/etc/systemd/system/lvm2-monitor.service",
+    "target": "/dev/null"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/ModemManager.service",
+    "target": "/lib/systemd/system/ModemManager.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/NetworkManager.service",
+    "target": "/lib/systemd/system/NetworkManager.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/anacron.service",
+    "target": "/lib/systemd/system/anacron.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/avahi-daemon.service",
+    "target": "/lib/systemd/system/avahi-daemon.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/console-setup.service",
+    "target": "/lib/systemd/system/console-setup.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/cron.service",
+    "target": "/lib/systemd/system/cron.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/cups-browsed.service",
+    "target": "/lib/systemd/system/cups-browsed.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/cups.path",
+    "target": "/lib/systemd/system/cups.path"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/cups.service",
+    "target": "/lib/systemd/system/cups.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/dmesg.service",
+    "target": "/lib/systemd/system/dmesg.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/e2scrub_reap.service",
+    "target": "/lib/systemd/system/e2scrub_reap.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/grub-common.service",
+    "target": "/lib/systemd/system/grub-common.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/grub-initrd-fallback.service",
+    "target": "/lib/systemd/system/grub-initrd-fallback.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/hciuart.service",
+    "target": "/lib/systemd/system/hciuart.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/irqbalance.service",
+    "target": "/lib/systemd/system/irqbalance.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/kerneloops.service",
+    "target": "/lib/systemd/system/kerneloops.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/lm-sensors.service",
+    "target": "/lib/systemd/system/lm-sensors.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/networkd-dispatcher.service",
+    "target": "/lib/systemd/system/networkd-dispatcher.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/openvpn.service",
+    "target": "/lib/systemd/system/openvpn.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/remote-fs.target",
+    "target": "/lib/systemd/system/remote-fs.target"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/rpi-eeprom-update.service",
+    "target": "/lib/systemd/system/rpi-eeprom-update.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/rsyslog.service",
+    "target": "/lib/systemd/system/rsyslog.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/secureboot-db.service",
+    "target": "/lib/systemd/system/secureboot-db.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/snap-bare-5.mount",
+    "target": "/etc/systemd/system/snap-bare-5.mount"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/snap-core22-1614.mount",
+    "target": "/etc/systemd/system/snap-core22-1614.mount"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/snap-core24-2125.mount",
+    "target": "/etc/systemd/system/snap-core24-2125.mount"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/snap-firefox-7764.mount",
+    "target": "/etc/systemd/system/snap-firefox-7764.mount"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/snap-firefox-7965.mount",
+    "target": "/etc/systemd/system/snap-firefox-7965.mount"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/snap-gnome\\x2d42\\x2d2204-178.mount",
+    "target": "/etc/systemd/system/snap-gnome\\x2d42\\x2d2204-178.mount"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/snap-gnome\\x2d46\\x2d2404-176.mount",
+    "target": "/etc/systemd/system/snap-gnome\\x2d46\\x2d2404-176.mount"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/snap-gtk\\x2dcommon\\x2dthemes-1535.mount",
+    "target": "/etc/systemd/system/snap-gtk\\x2dcommon\\x2dthemes-1535.mount"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/snap-mesa\\x2d2404-1836.mount",
+    "target": "/etc/systemd/system/snap-mesa\\x2d2404-1836.mount"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/snap-snap\\x2dstore-1217.mount",
+    "target": "/etc/systemd/system/snap-snap\\x2dstore-1217.mount"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/snap-snap\\x2dstore-1469.mount",
+    "target": "/etc/systemd/system/snap-snap\\x2dstore-1469.mount"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/snap-snapd-25939.mount",
+    "target": "/etc/systemd/system/snap-snapd-25939.mount"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/snap-snapd-28255.mount",
+    "target": "/etc/systemd/system/snap-snapd-28255.mount"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/snap-snapd\\x2ddesktop\\x2dintegration-180.mount",
+    "target": "/etc/systemd/system/snap-snapd\\x2ddesktop\\x2dintegration-180.mount"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/snap-snapd\\x2ddesktop\\x2dintegration-346.mount",
+    "target": "/etc/systemd/system/snap-snapd\\x2ddesktop\\x2dintegration-346.mount"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/snapd.apparmor.service",
+    "target": "/lib/systemd/system/snapd.apparmor.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/snapd.autoimport.service",
+    "target": "/lib/systemd/system/snapd.autoimport.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/snapd.core-fixup.service",
+    "target": "/lib/systemd/system/snapd.core-fixup.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/snapd.recovery-chooser-trigger.service",
+    "target": "/lib/systemd/system/snapd.recovery-chooser-trigger.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/snapd.seeded.service",
+    "target": "/lib/systemd/system/snapd.seeded.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/snapd.service",
+    "target": "/lib/systemd/system/snapd.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/ssh.service",
+    "target": "/lib/systemd/system/ssh.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/sssd.service",
+    "target": "/lib/systemd/system/sssd.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/systemd-oomd.service",
+    "target": "/lib/systemd/system/systemd-oomd.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/systemd-resolved.service",
+    "target": "/lib/systemd/system/systemd-resolved.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/ua-reboot-cmds.service",
+    "target": "/lib/systemd/system/ua-reboot-cmds.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/ubuntu-advantage.service",
+    "target": "/lib/systemd/system/ubuntu-advantage.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/ufw.service",
+    "target": "/lib/systemd/system/ufw.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/unattended-upgrades.service",
+    "target": "/lib/systemd/system/unattended-upgrades.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/whoopsie.path",
+    "target": "/lib/systemd/system/whoopsie.path"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/wpa_supplicant.service",
+    "target": "/lib/systemd/system/wpa_supplicant.service"
+  },
+  {
+    "path": "/etc/systemd/system/network-online.target.wants/NetworkManager-wait-online.service",
+    "target": "/lib/systemd/system/NetworkManager-wait-online.service"
+  },
+  {
+    "path": "/etc/systemd/system/paths.target.wants/apport-autoreport.path",
+    "target": "/lib/systemd/system/apport-autoreport.path"
+  },
+  {
+    "path": "/etc/systemd/system/printer.target.wants/cups.service",
+    "target": "/lib/systemd/system/cups.service"
+  },
+  {
+    "path": "/etc/systemd/system/rescue.target.wants/grub-initrd-fallback.service",
+    "target": "/lib/systemd/system/grub-initrd-fallback.service"
+  },
+  {
+    "path": "/etc/systemd/system/sleep.target.wants/grub-common.service",
+    "target": "/lib/systemd/system/grub-common.service"
+  },
+  {
+    "path": "/etc/systemd/system/sleep.target.wants/grub-initrd-fallback.service",
+    "target": "/lib/systemd/system/grub-initrd-fallback.service"
+  },
+  {
+    "path": "/etc/systemd/system/snapd.mounts.target.wants/snap-bare-5.mount",
+    "target": "/etc/systemd/system/snap-bare-5.mount"
+  },
+  {
+    "path": "/etc/systemd/system/snapd.mounts.target.wants/snap-core22-1614.mount",
+    "target": "/etc/systemd/system/snap-core22-1614.mount"
+  },
+  {
+    "path": "/etc/systemd/system/snapd.mounts.target.wants/snap-core24-2125.mount",
+    "target": "/etc/systemd/system/snap-core24-2125.mount"
+  },
+  {
+    "path": "/etc/systemd/system/snapd.mounts.target.wants/snap-firefox-7764.mount",
+    "target": "/etc/systemd/system/snap-firefox-7764.mount"
+  },
+  {
+    "path": "/etc/systemd/system/snapd.mounts.target.wants/snap-firefox-7965.mount",
+    "target": "/etc/systemd/system/snap-firefox-7965.mount"
+  },
+  {
+    "path": "/etc/systemd/system/snapd.mounts.target.wants/snap-gnome\\x2d42\\x2d2204-178.mount",
+    "target": "/etc/systemd/system/snap-gnome\\x2d42\\x2d2204-178.mount"
+  },
+  {
+    "path": "/etc/systemd/system/snapd.mounts.target.wants/snap-gnome\\x2d46\\x2d2404-176.mount",
+    "target": "/etc/systemd/system/snap-gnome\\x2d46\\x2d2404-176.mount"
+  },
+  {
+    "path": "/etc/systemd/system/snapd.mounts.target.wants/snap-gtk\\x2dcommon\\x2dthemes-1535.mount",
+    "target": "/etc/systemd/system/snap-gtk\\x2dcommon\\x2dthemes-1535.mount"
+  },
+  {
+    "path": "/etc/systemd/system/snapd.mounts.target.wants/snap-mesa\\x2d2404-1836.mount",
+    "target": "/etc/systemd/system/snap-mesa\\x2d2404-1836.mount"
+  },
+  {
+    "path": "/etc/systemd/system/snapd.mounts.target.wants/snap-snap\\x2dstore-1217.mount",
+    "target": "/etc/systemd/system/snap-snap\\x2dstore-1217.mount"
+  },
+  {
+    "path": "/etc/systemd/system/snapd.mounts.target.wants/snap-snap\\x2dstore-1469.mount",
+    "target": "/etc/systemd/system/snap-snap\\x2dstore-1469.mount"
+  },
+  {
+    "path": "/etc/systemd/system/snapd.mounts.target.wants/snap-snapd-25939.mount",
+    "target": "/etc/systemd/system/snap-snapd-25939.mount"
+  },
+  {
+    "path": "/etc/systemd/system/snapd.mounts.target.wants/snap-snapd-28255.mount",
+    "target": "/etc/systemd/system/snap-snapd-28255.mount"
+  },
+  {
+    "path": "/etc/systemd/system/snapd.mounts.target.wants/snap-snapd\\x2ddesktop\\x2dintegration-180.mount",
+    "target": "/etc/systemd/system/snap-snapd\\x2ddesktop\\x2dintegration-180.mount"
+  },
+  {
+    "path": "/etc/systemd/system/snapd.mounts.target.wants/snap-snapd\\x2ddesktop\\x2dintegration-346.mount",
+    "target": "/etc/systemd/system/snap-snapd\\x2ddesktop\\x2dintegration-346.mount"
+  },
+  {
+    "path": "/etc/systemd/system/sockets.target.wants/apport-forward.socket",
+    "target": "/lib/systemd/system/apport-forward.socket"
+  },
+  {
+    "path": "/etc/systemd/system/sockets.target.wants/avahi-daemon.socket",
+    "target": "/lib/systemd/system/avahi-daemon.socket"
+  },
+  {
+    "path": "/etc/systemd/system/sockets.target.wants/cups.socket",
+    "target": "/lib/systemd/system/cups.socket"
+  },
+  {
+    "path": "/etc/systemd/system/sockets.target.wants/dm-event.socket",
+    "target": "/lib/systemd/system/dm-event.socket"
+  },
+  {
+    "path": "/etc/systemd/system/sockets.target.wants/snapd.socket",
+    "target": "/lib/systemd/system/snapd.socket"
+  },
+  {
+    "path": "/etc/systemd/system/sockets.target.wants/uuidd.socket",
+    "target": "/lib/systemd/system/uuidd.socket"
+  },
+  {
+    "path": "/etc/systemd/system/sshd.service",
+    "target": "/lib/systemd/system/ssh.service"
+  },
+  {
+    "path": "/etc/systemd/system/sssd.service.wants/sssd-autofs.socket",
+    "target": "/lib/systemd/system/sssd-autofs.socket"
+  },
+  {
+    "path": "/etc/systemd/system/sssd.service.wants/sssd-nss.socket",
+    "target": "/lib/systemd/system/sssd-nss.socket"
+  },
+  {
+    "path": "/etc/systemd/system/sssd.service.wants/sssd-pac.socket",
+    "target": "/lib/systemd/system/sssd-pac.socket"
+  },
+  {
+    "path": "/etc/systemd/system/sssd.service.wants/sssd-pam-priv.socket",
+    "target": "/lib/systemd/system/sssd-pam-priv.socket"
+  },
+  {
+    "path": "/etc/systemd/system/sssd.service.wants/sssd-pam.socket",
+    "target": "/lib/systemd/system/sssd-pam.socket"
+  },
+  {
+    "path": "/etc/systemd/system/sssd.service.wants/sssd-ssh.socket",
+    "target": "/lib/systemd/system/sssd-ssh.socket"
+  },
+  {
+    "path": "/etc/systemd/system/sssd.service.wants/sssd-sudo.socket",
+    "target": "/lib/systemd/system/sssd-sudo.socket"
+  },
+  {
+    "path": "/etc/systemd/system/sudo.service",
+    "target": "/dev/null"
+  },
+  {
+    "path": "/etc/systemd/system/sysinit.target.wants/apparmor.service",
+    "target": "/lib/systemd/system/apparmor.service"
+  },
+  {
+    "path": "/etc/systemd/system/sysinit.target.wants/blk-availability.service",
+    "target": "/lib/systemd/system/blk-availability.service"
+  },
+  {
+    "path": "/etc/systemd/system/sysinit.target.wants/keyboard-setup.service",
+    "target": "/lib/systemd/system/keyboard-setup.service"
+  },
+  {
+    "path": "/etc/systemd/system/sysinit.target.wants/lvm2-lvmpolld.socket",
+    "target": "/lib/systemd/system/lvm2-lvmpolld.socket"
+  },
+  {
+    "path": "/etc/systemd/system/sysinit.target.wants/lvm2-monitor.service",
+    "target": "/lib/systemd/system/lvm2-monitor.service"
+  },
+  {
+    "path": "/etc/systemd/system/sysinit.target.wants/setvtrgb.service",
+    "target": "/lib/systemd/system/setvtrgb.service"
+  },
+  {
+    "path": "/etc/systemd/system/sysinit.target.wants/systemd-pstore.service",
+    "target": "/lib/systemd/system/systemd-pstore.service"
+  },
+  {
+    "path": "/etc/systemd/system/sysinit.target.wants/systemd-timesyncd.service",
+    "target": "/lib/systemd/system/systemd-timesyncd.service"
+  },
+  {
+    "path": "/etc/systemd/system/syslog.service",
+    "target": "/lib/systemd/system/rsyslog.service"
+  },
+  {
+    "path": "/etc/systemd/system/timers.target.wants/anacron.timer",
+    "target": "/lib/systemd/system/anacron.timer"
+  },
+  {
+    "path": "/etc/systemd/system/timers.target.wants/apport-autoreport.timer",
+    "target": "/lib/systemd/system/apport-autoreport.timer"
+  },
+  {
+    "path": "/etc/systemd/system/timers.target.wants/apt-daily-upgrade.timer",
+    "target": "/lib/systemd/system/apt-daily-upgrade.timer"
+  },
+  {
+    "path": "/etc/systemd/system/timers.target.wants/apt-daily.timer",
+    "target": "/lib/systemd/system/apt-daily.timer"
+  },
+  {
+    "path": "/etc/systemd/system/timers.target.wants/dpkg-db-backup.timer",
+    "target": "/lib/systemd/system/dpkg-db-backup.timer"
+  },
+  {
+    "path": "/etc/systemd/system/timers.target.wants/e2scrub_all.timer",
+    "target": "/lib/systemd/system/e2scrub_all.timer"
+  },
+  {
+    "path": "/etc/systemd/system/timers.target.wants/fstrim.timer",
+    "target": "/lib/systemd/system/fstrim.timer"
+  },
+  {
+    "path": "/etc/systemd/system/timers.target.wants/fwupd-refresh.timer",
+    "target": "/lib/systemd/system/fwupd-refresh.timer"
+  },
+  {
+    "path": "/etc/systemd/system/timers.target.wants/logrotate.timer",
+    "target": "/lib/systemd/system/logrotate.timer"
+  },
+  {
+    "path": "/etc/systemd/system/timers.target.wants/man-db.timer",
+    "target": "/lib/systemd/system/man-db.timer"
+  },
+  {
+    "path": "/etc/systemd/system/timers.target.wants/motd-news.timer",
+    "target": "/lib/systemd/system/motd-news.timer"
+  },
+  {
+    "path": "/etc/systemd/system/timers.target.wants/snapd.snap-repair.timer",
+    "target": "/lib/systemd/system/snapd.snap-repair.timer"
+  },
+  {
+    "path": "/etc/systemd/system/timers.target.wants/ua-timer.timer",
+    "target": "/lib/systemd/system/ua-timer.timer"
+  },
+  {
+    "path": "/etc/systemd/system/timers.target.wants/update-notifier-download.timer",
+    "target": "/lib/systemd/system/update-notifier-download.timer"
+  },
+  {
+    "path": "/etc/systemd/system/timers.target.wants/update-notifier-motd.timer",
+    "target": "/lib/systemd/system/update-notifier-motd.timer"
+  }
+]
