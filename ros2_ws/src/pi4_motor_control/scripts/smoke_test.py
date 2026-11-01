@@ -12,6 +12,8 @@ import subprocess
 import time
 
 import rclpy
+from rclpy.parameter import Parameter
+from rcl_interfaces.srv import SetParameters
 from geometry_msgs.msg import Twist
 from std_msgs.msg import String
 from std_srvs.srv import SetBool
@@ -124,10 +126,14 @@ def main():
                 print('PASS invalid command: ' + label, flush=True)
 
             # Enable simulated ROS time without a /clock publisher.
-            paused = subprocess.run(
-                ['ros2', 'param', 'set', '/motor_controller', 'use_sim_time', 'true'],
-                capture_output=True, text=True, timeout=15)
-            assert paused.returncode == 0, paused.stdout + paused.stderr
+            parameters = node.create_client(
+                SetParameters, '/motor_controller/set_parameters')
+            assert parameters.wait_for_service(timeout_sec=10)
+            paused = parameters.call_async(SetParameters.Request(parameters=[
+                Parameter('use_sim_time', value=True).to_parameter_msg()]))
+            wait_for(paused.done)
+            results = paused.result().results
+            assert len(results) == 1 and results[0].successful, results
             assert service(enable, True).success
             command(0.2)
             clear()
