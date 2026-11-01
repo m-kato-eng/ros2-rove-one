@@ -7,7 +7,7 @@ Windowsの操作画面からSSH経由でPi上のROS 2へ指令を送り、4モ�
 PowerShellで次を実行します。
 
 ```powershell
-cd C:\_Project\_RaspPi4_ROS\managed\pc_controller
+cd C:\_Project\_RaspPi4_ROS\ros2-rove-one\pc_controller
 .\start.ps1
 ```
 
@@ -29,7 +29,7 @@ Codex同梱Pythonがあれば自動使用します。別環境ではTkinter付�
 
 `log_directory`もJSONからの相対パスで指定し、現在は管理対象の外側にある`../../work_data/pc_controller/logs`へ記録します。省略時はプログラムと同じ場所の`logs/`を使用します。
 
-Pi上には`pi4_motor_control`がビルド済みで、`~/ros2_ws/src/pi4_motor_control/scripts/pc_bridge.py`が必要です。接続時に自動でブリッジと専用のモーター制御ノードを起動し、切断時に終了します。
+Pi上には`pi4_motor_control`がビルド済みで、`~/ros2-rove-one/ros2_ws/src/pi4_motor_control/scripts/pc_bridge.py`が必要です。接続時に自動でブリッジと専用のモーター制御ノードを起動し、切断時に終了します。
 
 ## 構成と停止動作
 

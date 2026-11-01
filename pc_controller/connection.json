@@ -3,6 +3,6 @@
   "key": "../../前回の作業ログ/.codex-ssh/id_ed25519_codex_host",
   "known_hosts": "../../前回の作業ログ/.codex-ssh/known_hosts",
   "log_directory": "../../work_data/pc_controller/logs",
-  "remote_workspace": "/home/mk/ros2_ws",
+  "remote_workspace": "/home/mk/ros2-rove-one/ros2_ws",
   "ros_domain_id": 88
 }
