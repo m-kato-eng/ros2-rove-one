@@ -9,11 +9,22 @@
 |Windowsの新しいGit作業コピー|`C:\_Project\_RaspPi4_ROS\ros2-rove-one`|
 |PiのGit作業コピー|`/home/mk/ros2-rove-one`|
 |Piの新しいROSワークスペース|`/home/mk/ros2-rove-one/ros2_ws`|
-|Piの旧ワークスペース|`/home/mk/ros2_ws`（変更せず保持）|
-|Pi上の別保存|`/home/mk/backups/ros2_ws_before_git_20261101_141035`|
-|旧PC作業コピー|`C:\_Project\_RaspPi4_ROS\managed`（削除せず保持）|
+|Piの旧ワークスペース|`/home/mk/ros2_ws`（移行検証後、ユーザー指示で削除済み）|
+|Pi上の別保存|`/home/mk/backups/ros2_ws_before_git_20261101_141035`（同じく削除済み）|
+|旧PC作業コピー|`C:\_Project\_RaspPi4_ROS\managed`（内容削除済み、空ディレクトリの使用中ロックあり）|
 
-バックアップは旧ワークスペース全体を`cp -a`でコピーし、通常ファイルのSHA-256とシンボリックリンク先の全138件が一致することを確認した。新しいビルドでは旧install/buildを流用しない。
+移行時には旧ワークスペース全体を`cp -a`でコピーし、通常ファイルのSHA-256とリンク先の全138件の一致を確認した。その後、新配置での検証完了とユーザーの削除指示を受けて旧環境・別保存を削除した。現在はこれらのバックアップからの復元はできない。新しいビルドでは旧install/buildを流用していない。
+
+## Piの必要ディレクトリだけを展開
+
+```bash
+git -C ~/ros2-rove-one sparse-checkout list
+# ros2_ws
+```
+
+coneモードでros2_wsを選択済み。ルートのREADME・.gitignoreとGitの管理データも残る。pc_controller / environment / docsはPiの作業ツリーには展開されない。これらはGitHubとPC側に保持される。
+
+初回のsparse-checkout init時に一時的にROSワークスペースが除外され、Git管理外のbuild/install等も消えたため、選択設定後に新規ビルド・単体16件・ROS統合を再実行して合格を確認した。今後は必要なくinitをやり直さない。
 
 ## PiのGit認証
 
@@ -55,14 +66,14 @@ cd C:\_Project\_RaspPi4_ROS\ros2-rove-one\pc_controller
 
 鍵と実行ログは新旧のPC作業コピーの外側に置くため、Gitで取得されない。別PCで使う場合はconnection.jsonの鍵・known_hosts・ログ・接続先をそのPCに合わせる。
 
-## 旧版へ戻す
+## ソースの版を戻す場合
 
 1. PCの操作画面を切断して閉じる。
-2. PCのconnection.jsonでremote_workspaceを`/home/mk/ros2_ws`へ戻す。
-3. 旧ワークスペースを使って模擬動作を確認する。旧ワークスペースを直接変更していないため、通常はバックアップからの上書き復元は不要。
-4. 旧ワークスペースも壊れた場合は、別保存先を別名の復旧ディレクトリへコピーし、そこにあるソースから再ビルドする。installには絶対パスが含まれ得るので、コピー先のinstallをそのまま流用しない。
+2. 現行Git作業コピーに未保存変更がないか確認する。
+3. Gitの履歴から対象のコミットを選び、その版のソースから再ビルドする。
+4. 同じ版に対応するPCソフトから模擬動作を確認する。旧ワークスペースやSDバックアップは削除済みなので、そのパスへ戻す方法は使用できない。
 
-managedは旧PC作業コピーとして保持している。新構成での合格結果、未コミット変更、外部ファイルの参照を確認後に削除できるが、この移行作業では削除しない。
+PCのmanagedはGit履歴への保存・未コミット変更なし・無視ファイルなしを確認して内容を削除した。空フォルダーだけは他プロセスの使用中ロックにより削除できず、ロックを持つ端末やアプリを閉じた後で削除する。SSH鍵と作業ログ、GitHub上のコードは保持している。PCのSDカード全体バックアップzip（約5.8 GB）もユーザーの指示で削除済み。
 
 ## 移行後の検証結果
 

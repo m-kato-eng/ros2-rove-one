@@ -21,6 +21,6 @@ ros2-rove-one/
 - [Linux環境の構成管理](environment/README.md)
 - [Git作業コピーへの移行・復旧手順](docs/Git作業コピーへの移行.md)
 
-Windowsの作業履歴とSSH鍵は親の`前回の作業ログ/`、PC実行ログ・検証結果は親の`work_data/`に置く。Piの稼働ワークスペースは`/home/mk/ros2-rove-one/ros2_ws`。旧`/home/mk/ros2_ws`と別保存したバックアップは復旧用に残す。
+Windowsの作業履歴とSSH鍵は親の`前回の作業ログ/`、PC実行ログ・検証結果は親の`work_data/`に置く。Piの稼働ワークスペースは`/home/mk/ros2-rove-one/ros2_ws`。Piはsparse checkoutでros2_wsとルートファイルのみを展開し、PCソフト・環境記録・docsは展開しない。移行後、ユーザーの依頼により旧Piワークスペースと移行用バックアップ、PCのSDカードバックアップは削除済み。
 
 Linux環境の記録は`environment/`へ追加済み。保存履歴に加え、2026-11-01に実機から採取した設定原本と構成一覧を含む。クリーン環境からの再構築はまだ未検証。SDカードイメージ等の大容量バックアップは管理対象外に保管する。
