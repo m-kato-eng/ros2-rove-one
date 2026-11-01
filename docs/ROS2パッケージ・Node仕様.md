@@ -11,8 +11,8 @@
 |実行環境|Raspberry Pi 4 / Ubuntu 22.04 arm64 / ROS 2 Humble|
 |独自パッケージ|`pi4_motor_control`、バージョン0.1.0|
 |言語・ビルド|Python 3、ament_python、colcon|
-|Pi上のソース|`/home/mk/ros2_ws/src/pi4_motor_control`|
-|Windows上のソース|`C:\_Project\_RaspPi4_ROS\managed\ros2_ws\src\pi4_motor_control`|
+|Pi上のソース|`/home/mk/ros2-rove-one/ros2_ws/src/pi4_motor_control`|
+|Windows上のソース|`C:\_Project\_RaspPi4_ROS\ros2-rove-one\ros2_ws\src\pi4_motor_control`|
 |登録されたROS実行ファイル|`motor_controller` → `pi4_motor_control.node:main`|
 |Launch|`motors.launch.py`、引数`config`でパラメーターファイルを指定|
 |既定設定ファイル|`config/motors.yaml`|
@@ -210,7 +210,7 @@ Pi単独での模擬起動：
 
 ```bash
 source /opt/ros/humble/setup.bash
-source ~/ros2_ws/install/setup.bash
+source ~/ros2-rove-one/ros2_ws/install/setup.bash
 ros2 launch pi4_motor_control motors.launch.py
 ```
 
@@ -224,7 +224,7 @@ ros2 topic echo /motor_controller/status
 ros2 param list /motor_controller
 ```
 
-PC操作時はWindowsのプロジェクトルートから`managed/pc_controller/start.ps1`を起動しSSH接続する。Piで同じグラフを調べる場合は`export ROS_DOMAIN_ID=88`を設定し、実際のnamespaceを`ros2 node list`で確認してから完全名を指定する。
+PC操作時はWindowsのプロジェクトルートから`ros2-rove-one/pc_controller/start.ps1`を起動しSSH接続する。Piで同じグラフを調べる場合は`export ROS_DOMAIN_ID=88`を設定し、実際のnamespaceを`ros2 node list`で確認してから完全名を指定する。
 
 ## 9. 検証・関連資料
 

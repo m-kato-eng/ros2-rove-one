@@ -8,13 +8,13 @@
 
 ```bash
 source /opt/ros/humble/setup.bash
-cd ~/ros2_ws
+cd ~/ros2-rove-one/ros2_ws
 colcon build --packages-select pi4_motor_control
 source install/setup.bash
 ros2 launch pi4_motor_control motors.launch.py
 ```
 
-別ターミナルでも`source ~/ros2_ws/install/setup.bash`を実行してください。新しいSSHセッションでは基本のHumble環境のみ自動で読み込まれます。
+別ターミナルでも`source ~/ros2-rove-one/ros2_ws/install/setup.bash`を実行してください。新しいSSHセッションでは基本のHumble環境のみ自動で読み込まれます。
 
 ## 模擬走行
 
@@ -83,7 +83,7 @@ PWMはRPi.GPIOのソフトウェアPWMです。Linux負荷でジッターがあ�
 ## 検証
 
 ```bash
-cd ~/ros2_ws
+cd ~/ros2-rove-one/ros2_ws
 colcon test --packages-select pi4_motor_control --event-handlers console_direct+
 colcon test-result --verbose
 # インストール済みlaunch・topic・serviceを実際に検証（GPIOなし）
