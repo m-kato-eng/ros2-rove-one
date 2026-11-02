@@ -78,6 +78,17 @@ ros2 service call /motor_controller/emergency_stop std_srvs/srv/SetBool '{data: 
 ros2 launch pi4_motor_control motors.launch.py config:=/home/mk/motors-hardware.yaml
 ```
 
+## GPIOのテスター確認（モーター電源なし）
+
+`config/motors.yaml`には確定したBCM割り当てを記入済みですが、通常設定は`dry_run: true`のままです。GPIOを一時的に出力して測るには、Pi上で全モーター用電池を外したうえで、次を実行します。指定した1本だけが約3.3Vになり、数秒後LOWへ戻ります。
+
+```bash
+cd ~/ros2-rove-one/ros2_ws
+python3 src/pi4_motor_control/scripts/gpio_probe.py 17
+```
+
+`17`を確認したいBCM番号（4, 5, 6, 12, 13, 16, 17, 18, 19, 20, 21, 22）に置き換えます。テスターの黒リードをPiのGND、赤リードを対象GPIOへ当てます。GPIO信号は3.3Vです。5V端子へは当てず、GPIOへ5Vを加えないでください。各ピンを個別に実行してください。この確認スクリプトはROSノードやdry-run設定を変更しません。
+
 PWMはRPi.GPIOのソフトウェアPWMです。Linux負荷でジッターがあり、実時間保証はありません。通常終了時は停止処理を行いますが、SIGKILL・OS停止・電源異常ではソフトウェア停止を保証できません。ソフトウェア緊急停止サービスは物理非常停止の代わりにはなりません。現在は自動起動登録やGPIOの実出力を行っていません。
 
 ## 検証

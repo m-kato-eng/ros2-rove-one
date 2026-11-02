@@ -10,10 +10,13 @@ import time
 
 
 class Connection:
-    def __init__(self, config_path=None, log_name='pc-events.jsonl'):
+    def __init__(self, config_path=None, log_name='pc-events.jsonl', dry_run=None):
         self.base = Path(__file__).resolve().parent
         config_path = Path(config_path) if config_path else self.base / 'connection.json'
         self.config = json.loads(config_path.read_text(encoding='utf-8'))
+        self.dry_run = self.config.get('dry_run', True) if dry_run is None else dry_run
+        if type(self.dry_run) is not bool:
+            raise ValueError('dry_run must be boolean')
         for field in ('key', 'known_hosts'):
             self.config[field] = str((config_path.resolve().parent / self.config[field]).resolve())
             if not Path(self.config[field]).is_file():
@@ -49,7 +52,8 @@ class Connection:
             'source /opt/ros/humble/setup.bash',
             'source ' + shlex.quote(workspace + '/install/setup.bash'),
             'export ROS_DOMAIN_ID=' + str(self.config['ros_domain_id']),
-            'exec python3 -u ' + shlex.quote(workspace + '/src/pi4_motor_control/scripts/pc_bridge.py'),
+            'exec python3 -u ' + shlex.quote(workspace + '/src/pi4_motor_control/scripts/pc_bridge.py') +
+            ('' if self.dry_run else ' --hardware'),
         ])
         args = ['ssh', '-T', '-i', self.config['key'],
                 '-o', 'UserKnownHostsFile=' + self.config['known_hosts'],
@@ -62,7 +66,7 @@ class Connection:
             text=True, encoding='utf-8', errors='replace', bufsize=1,
             creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
         process = self.process
-        self.record({'type': 'connect', 'host': self.config['host'], 'dry_run': True})
+        self.record({'type': 'connect', 'host': self.config['host'], 'dry_run': self.dry_run})
         threading.Thread(target=self._read, args=(process,), daemon=True).start()
         threading.Thread(target=self._errors, args=(process,), daemon=True).start()
 
@@ -77,13 +81,13 @@ class Connection:
                     self.events.put({'type': 'error', 'message': 'Invalid bridge output: ' + line[:200]})
                     continue
                 if message.get('type') == 'ready':
-                    if message.get('dry_run') is not True:
-                        self.events.put({'type': 'error', 'message': 'Hardware mode refused'})
+                    if message.get('dry_run') is not self.dry_run:
+                        self.events.put({'type': 'error', 'message': 'Bridge mode mismatch'})
                         process.terminate()
                         break
                     self.ready = True
                 elif message.get('type') == 'status':
-                    if message['status'].get('dry_run') is not True:
+                    if message['status'].get('dry_run') is not self.dry_run:
                         self.ready = False
                         process.terminate()
                         break
@@ -117,6 +121,16 @@ class Connection:
         if not all(math.isfinite(v) for v in (linear, angular)):
             raise ValueError('drive values must be finite')
         self.send({'op': 'drive', 'linear': float(linear), 'angular': float(angular)})
+
+    def wheel(self, motor, speed):
+        if motor not in ('left_front', 'left_rear', 'right_front', 'right_rear') or not math.isfinite(speed) or abs(speed) > 0.3:
+            raise ValueError('invalid wheel command')
+        self.send({'op': 'wheel', 'motor': motor, 'speed': float(speed)})
+
+    def steer(self, speed=0.0, turn=0.0):
+        if any(not math.isfinite(v) or abs(v) > 0.3 for v in (speed, turn)):
+            raise ValueError('invalid steering command')
+        self.send({'op': 'steer', 'speed': float(speed), 'turn': float(turn)})
 
     def request(self, op, value):
         if op not in ('enable', 'estop') or type(value) is not bool:

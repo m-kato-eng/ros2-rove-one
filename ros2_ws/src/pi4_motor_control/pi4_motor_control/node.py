@@ -51,6 +51,8 @@ class MotorNode(Node):
         self.publisher = self.create_publisher(String, '~/status', 1)
         self.subscription = self.create_subscription(
             Twist, 'cmd_vel', self.on_command, QoSProfile(depth=1))
+        self.wheel_subscription = self.create_subscription(
+            String, 'wheel_command', self.on_wheel_command, QoSProfile(depth=1))
         self.enable_service = self.create_service(SetBool, '~/enable', self.on_enable)
         self.estop_service = self.create_service(
             SetBool, '~/emergency_stop', self.on_estop)
@@ -77,6 +79,24 @@ class MotorNode(Node):
         self.on_tick()
         return response
 
+    def on_wheel_command(self, msg):
+        try:
+            command = json.loads(msg.data)
+            if command.get('mode') == 'steer':
+                speed, turn = command['speed'], command['turn']
+                if any(type(v) not in (int, float) for v in (speed, turn)):
+                    raise ValueError('invalid steering command')
+                self.control.steer_command(speed, turn)
+                self.on_tick()
+                return
+            motor, speed = command['motor'], command['speed']
+            if type(motor) is not str or type(speed) not in (int, float):
+                raise ValueError('invalid wheel command')
+            self.control.wheel_command(motor, speed)
+        except (ValueError, KeyError, TypeError):
+            self.control.stop('invalid_command')
+        self.on_tick()
+
     def on_estop(self, request, response):
         self.control.emergency_stop(request.data)
         self.on_tick()
@@ -85,8 +105,7 @@ class MotorNode(Node):
         return response
 
     def on_tick(self):
-        left, right = self.control.tick()
-        duties = [left, left, right, right]
+        duties = self.control.outputs()
         self.backend.write([-v if inv else v for v, inv in zip(duties, self.invert)])
 
     def publish_status(self):

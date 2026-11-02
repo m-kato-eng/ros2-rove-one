@@ -1,0 +1,23 @@
+motor_controller:
+  ros__parameters:
+    # Temporary bench test only. Keep wheels raised and motor supply off
+    # until the user explicitly connects it and requests a short movement.
+    dry_run: false
+    hardware_confirmed: true
+    track_width: 0.20
+    max_linear: 0.30
+    max_angular: 1.0
+    max_wheel_speed: 0.40
+    max_duty: 0.80
+    command_timeout: 0.5
+    control_rate: 50.0
+    pwm_frequency: 100.0
+    # BCM [IN1, IN2, EN]: FL, RL, FR, RR
+    left_front.pins: [4, 5, 6]
+    left_rear.pins: [12, 13, 16]
+    right_front.pins: [17, 18, 19]
+    right_rear.pins: [20, 21, 22]
+    left_front.invert: false
+    left_rear.invert: false
+    right_front.invert: false
+    right_rear.invert: false

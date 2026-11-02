@@ -11,11 +11,11 @@ motor_controller:
     command_timeout: 0.5
     control_rate: 50.0
     pwm_frequency: 100.0
-    # BCM numbering, [IN1, IN2, EN]. Unassigned deliberately.
-    left_front.pins: [-1, -1, -1]
-    left_rear.pins: [-1, -1, -1]
-    right_front.pins: [-1, -1, -1]
-    right_rear.pins: [-1, -1, -1]
+    # BCM numbering, [IN1, IN2, EN]. GPIO output remains disabled in dry-run.
+    left_front.pins: [4, 5, 6]
+    left_rear.pins: [12, 13, 16]
+    right_front.pins: [17, 18, 19]
+    right_rear.pins: [20, 21, 22]
     left_front.invert: false
     left_rear.invert: false
     right_front.invert: false

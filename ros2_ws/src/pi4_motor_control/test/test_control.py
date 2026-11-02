@@ -86,6 +86,24 @@ def valid_pins():
     return dict(zip(MOTORS, [(4, 5, 6), (12, 13, 16), (17, 18, 19), (20, 21, 22)]))
 
 
+@pytest.mark.parametrize('speed,turn,expected', [
+    (0, 0.1, [-0.2, 0, 0.2, 0]),
+    (0, -0.1, [0.2, 0, -0.2, 0]),
+    (0.1, 0.1, [0.14, 0.2, 0.26, 0.2]),
+    (-0.1, 0.1, [-0.14, -0.2, -0.26, -0.2]),
+    (0.3, -0.3, [0.78, 0.6, 0.42, 0.6]),
+])
+def test_front_steering_preserves_rear_drive(speed, turn, expected):
+    now = [0.0]
+    controller = Controller(Limits(max_duty=0.8), clock=lambda: now[0])
+    controller.enable(True)
+    controller.steer_command(speed, turn)
+    assert controller.outputs() == pytest.approx(expected)
+    now[0] += 0.5
+    assert controller.outputs() == [0, 0, 0, 0]
+    assert not controller.enabled
+
+
 def test_gpio_gates_validate_before_import_or_access():
     with pytest.raises(ValueError, match='hardware_confirmed'):
         GpioBackend(valid_pins(), 100)
