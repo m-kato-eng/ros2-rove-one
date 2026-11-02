@@ -70,11 +70,14 @@ class GpioBackend(DryRunBackend):
         DryRunBackend.write(self, duties)
         signs = [1 if v > 0 else -1 if v < 0 else 0 for v in duties]
         if signs != self.signs:
-            for pwm in self.pwms:
-                pwm.ChangeDutyCycle(0)
+            changed = [i for i, (old, new) in enumerate(zip(self.signs, signs)) if old != new]
+            for i in changed:
+                self.pwms[i].ChangeDutyCycle(0)
             # EN off before any direction change, including a reverse through zero.
             self.sleep(0.02)
-            for (in1, in2, _), sign in zip(self.pins, signs):
+            for i in changed:
+                in1, in2, _ = self.pins[i]
+                sign = signs[i]
                 self.gpio.output(in1, self.gpio.HIGH if sign > 0 else self.gpio.LOW)
                 self.gpio.output(in2, self.gpio.HIGH if sign < 0 else self.gpio.LOW)
             self.signs = signs
