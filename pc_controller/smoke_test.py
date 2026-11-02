@@ -6,7 +6,7 @@ from transport import Connection
 
 
 def main():
-    connection = Connection(log_name='pc-smoke-events.jsonl')
+    connection = Connection(log_name='pc-smoke-events.jsonl', dry_run=True)
     events = []
 
     def pump():
@@ -60,6 +60,20 @@ def main():
         print('PASS PC turn', flush=True)
         state(lambda s: s['enabled'] and zero(s))
         print('PASS PC release to zero', flush=True)
+        for motor in ('left_front', 'left_rear', 'right_front', 'right_rear'):
+            for speed in (0.1, -0.1):
+                deadline = time.monotonic() + 0.7
+                while time.monotonic() < deadline:
+                    connection.wheel(motor, speed)
+                    if (connection.status and connection.status['enabled'] and
+                            all((value * speed > 0) if name == motor else value == 0
+                                for name, value in connection.status['duties'].items())):
+                        break
+                    time.sleep(0.05)
+                else:
+                    raise AssertionError('wheel command failed: ' + motor + ' ' + str(speed))
+                state(lambda s: s['enabled'] and zero(s))
+        print('PASS PC each wheel forward/reverse and release to zero', flush=True)
         request('estop', True)
         state(lambda s: s['emergency_stop'] and not s['enabled'] and zero(s))
         request('enable', True, expected=False)

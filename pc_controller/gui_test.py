@@ -4,6 +4,7 @@ import tkinter as tk
 from unittest.mock import patch
 
 from controller import App
+from transport import Connection
 
 
 def main():
@@ -30,7 +31,8 @@ def main():
         return status() and not status()['enabled'] and not any(status()['duties'].values())
 
     try:
-        app.connect()
+        with patch('controller.Connection', side_effect=lambda **kwargs: Connection(dry_run=True)):
+            app.connect()
         wait_for(lambda: app.connection and app.connection.ready and stopped(), timeout=30)
         print('PASS GUI connect and feedback', flush=True)
         app.request('enable', True)
@@ -42,6 +44,31 @@ def main():
         app.release()
         wait_for(lambda: status() and not any(status()['duties'].values()))
         print('PASS GUI button release sends zero', flush=True)
+        for key, sign in (('Up', 1), ('Down', -1), ('Left', -1), ('Right', 1)):
+            app.arrow_press(key)
+            wait_for(lambda: status() and status()['enabled'] and
+                     status()['duties']['left_front'] * sign > 0)
+            app.arrow_release(key)
+            wait_for(lambda: status() and not any(status()['duties'].values()))
+        app.arrow_press('Up')
+        wait_for(moving)
+        app.arrow_release('Up')
+        app.arrow_press('Up')  # A repeat press cancels the pending release.
+        time.sleep(0.06)
+        root.update()
+        assert app.vector[0] > 0
+        app.arrow_release('Up')
+        wait_for(lambda: status() and not any(status()['duties'].values()))
+        print('PASS GUI arrow keys, release, and key repeat', flush=True)
+        for motor in ('left_front', 'left_rear', 'right_front', 'right_rear'):
+            for direction in (1, -1):
+                app.hold_wheel(motor, direction)
+                wait_for(lambda: status() and status()['enabled'] and
+                         all((value * direction > 0) if name == motor else value == 0
+                             for name, value in status()['duties'].items()))
+                app.release()
+                wait_for(lambda: status() and not any(status()['duties'].values()))
+        print('PASS GUI individual wheel forward/reverse and release', flush=True)
         app.hold((-1, 0))
         wait_for(lambda: moving() and status()['duties']['left_front'] < 0)
         app.stop()

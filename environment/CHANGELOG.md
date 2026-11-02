@@ -2,6 +2,21 @@
 
 保存済み記録からの復元。日付不明・会話による二次的な要約・実機確認を区別する。設定例を実施済みとはみなさない。
 
+## 2026-11-02：GPIOシャットダウンボタンの修正
+
+- GPIO3（物理5番）とGND（物理9番）のボタンを対象に実機調査。gpio-shutdown overlayと入力デバイス`/dev/input/event0`を確認。11:12:39 JSTのlogindログに`Power key pressed`があり、押下がOSに届くことを確認。
+- Xfce Power Manager 4.16が`handle-power-key`の抑止を保持していた。ユーザーmkの`/xfce4-power-manager/logind-handle-power-key`をtrueに設定し、電源キーをlogindへ委譲。
+- 修正直後に抑止の解除とlogindの`HandlePowerKey=poweroff`を確認。設定反映のための再起動は実行していない。その後、ユーザーより物理ボタンによるシャットダウン成功の確認報告あり。OS停止後の5 V電源遮断を意味するものではない。
+- 変更前XMLはPiの`/home/mk/shutdown-button-backup-20261102/xfce4-power-manager.xml`へ保存。
+- 再現コマンド（mkのXfceセッションに接続できる環境で実行）：
+
+  ```bash
+  xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/logind-handle-power-key -n -t bool -s true
+  systemd-inhibit --list --no-pager
+  ```
+
+- [Xfce公式の設定説明](https://docs.xfce.org/xfce/xfce4-power-manager/faq#how_can_i_make_logind_handle_button_events_instead_of_xfce4-power-manager)。
+
 ## 2026-08-09以前：初期環境
 
 - Ubuntu 22.04系arm64をRaspberry Pi 4 Model Bへ導入済み。
