@@ -6,14 +6,15 @@ import tkinter as tk
 from tkinter import ttk
 
 from transport import Connection
+from camera_preview import CameraPanel
 
 
 class App:
     def __init__(self, root):
         self.root = root
         root.title('ROS 2 Control Trial — DRY RUN')
-        root.geometry('720x790')
-        root.minsize(660, 740)
+        root.geometry('1280x820')
+        root.minsize(1180, 780)
         self.dry_run = tk.BooleanVar(value=True)
         self.mode = 'ドライラン / GPIO出力なし'
         root.title('ROS 2 Control Trial — ' + self.mode)
@@ -28,7 +29,9 @@ class App:
         self.speed = tk.DoubleVar(value=0.1)
         self.last_tick = time.monotonic()
         panel = ttk.Frame(root, padding=20)
-        panel.pack(fill='both', expand=True)
+        panel.pack(side='left', fill='both', expand=True)
+        self.camera = CameraPanel(root)
+        self.camera.frame.pack(side='right', fill='both', padx=(0, 16), pady=20)
         ttk.Label(panel, text='ROS 2 モーター制御テスト', font=('', 19, 'bold')).pack(anchor='w')
         self.mode_label = tk.StringVar(value=self.mode + ' • 押している間だけ方向指令')
         ttk.Label(panel, textvariable=self.mode_label,
@@ -41,6 +44,13 @@ class App:
             toolbar, text='ドライラン（GPIO出力なし）', variable=self.dry_run,
             command=self.update_mode)
         self.mode_checkbox.pack(side='left', padx=16)
+        self.command_source = tk.StringVar(value='manual')
+        source_row = ttk.Frame(panel)
+        source_row.pack(fill='x', pady=6)
+        ttk.Label(source_row, text='走行指令元（切替後は再有効化）').pack(side='left')
+        for label, value in (('PC手動', 'manual'), ('自動走行', 'auto')):
+            ttk.Radiobutton(source_row, text=label, value=value, variable=self.command_source,
+                            command=lambda: self.request('source', self.command_source.get())).pack(side='left')
         ttk.Label(panel, textvariable=self.message, wraplength=660).pack(anchor='w', pady=10)
         ttk.Separator(panel).pack(fill='x')
         ttk.Label(panel, textvariable=self.state, font=('', 12, 'bold')).pack(anchor='w', pady=(12, 4))
@@ -108,6 +118,8 @@ class App:
             self.update_mode()
             self.connection = Connection(dry_run=self.dry_run.get())
             self.connection.connect()
+            if isinstance(getattr(self.connection, 'config', None), dict):
+                self.camera.start(self.connection.config)
             self.mode_checkbox.state(['disabled'])
             self.message.set('SSH接続中…（専用ROSセッションを準備）')
         except Exception as exc:
@@ -125,7 +137,7 @@ class App:
 
     def hold(self, vector):
         if self.connection and self.connection.ready and self.connection.status:
-            if self.connection.status.get('enabled'):
+            if self.connection.status.get('enabled') and self.connection.status.get('command_source', 'manual') == 'manual':
                 try:
                     speed = self.speed.get()
                     if not 0.02 <= speed <= 0.3:
@@ -173,7 +185,7 @@ class App:
 
     def hold_wheel(self, motor, direction):
         if self.connection and self.connection.ready and self.connection.status:
-            if self.connection.status.get('enabled'):
+            if self.connection.status.get('enabled') and self.connection.status.get('command_source', 'manual') == 'manual':
                 try:
                     speed = self.speed.get()
                     if not 0.02 <= speed <= 0.3:
@@ -213,6 +225,7 @@ class App:
                     break
                 kind = event.get('type')
                 if kind == 'ready':
+                    self.command_source.set('manual')
                     self.message.set('接続済み / ' + self.mode + ' / 有効化して操作できます')
                 elif kind == 'response':
                     self.message.set(('成功: ' if event['ok'] else '拒否: ') + event['message'])
@@ -238,7 +251,14 @@ class App:
                 if status:
                     self.state.set(('有効' if status['enabled'] else '無効') +
                                    (' / 緊急停止中' if status['emergency_stop'] else '') +
-                                   ' / ' + status['reason'])
+                                   ' / ' + status.get('command_source', 'manual') + ' / ' + status['reason'])
+                    auto = status.get('autonomous')
+                    if status.get('command_source') == 'auto' and isinstance(auto, dict):
+                        distance = auto.get('relative_distance')
+                        detail = auto.get('reason', 'unknown')
+                        if isinstance(distance, (int, float)):
+                            detail += f" / 相対距離 {distance:.2f} / 速度 {auto['speed']:.2f} m/s"
+                        self.state.set(self.state.get() + ' / ' + detail)
                     values = list(status['duties'].values())
                     self.duties.set('   '.join(f'{name} {value:+.3f}' for name, value in
                                               zip(('LF', 'LR', 'RF', 'RR'), values)))
@@ -250,6 +270,7 @@ class App:
 
     def disconnect(self):
         self.release()
+        self.camera.stop()
         if self.connection:
             self.connection.close()
             self.connection = None
@@ -266,9 +287,12 @@ class App:
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--gui-check', action='store_true')
+    parser.add_argument('--camera', action='store_true', help='Open camera preview without connecting motors')
     args = parser.parse_args()
     root = tk.Tk()
     app = App(root)
+    if args.camera:
+        root.after(200, app.camera.start)
     if args.gui_check:
         from unittest.mock import MagicMock, patch
         root.update()

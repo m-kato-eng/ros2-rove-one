@@ -4,7 +4,10 @@
 
 ## 1. 構成概要
 
-独自に作成したROSパッケージは`pi4_motor_control`の1つ。通常のPC操作セッションでは、Pi上で`pc_bridge`と`motor_controller`の2つのNodeが動作する。
+独自に作成したROSパッケージは`pi4_motor_control`と、2026-11-02追加の`pi4_camera_vision`。
+通常のモーター用PC操作セッションでは、Pi上で`pc_bridge`と`motor_controller`の2つのNodeが動作する。
+カメラは別起動で、`camera_capture`・`object_recognition`と任意の`camera_http_bridge`が動作する。
+カメラの詳細は[カメラ・認識ノード仕様](../ros2_ws/src/pi4_camera_vision/README.md)を参照。以下の既存表はモーター制御の仕様。
 
 |項目|仕様|
 |---|---|
@@ -263,3 +266,8 @@ PC操作時はWindowsのプロジェクトルートから`ros2-rove-one/pc_contr
 - [PC操作プログラム説明](../pc_controller/README.md)
 - [構成図](ROS2構成図.md)
 - [開発・失敗・再試行記録](../../前回の作業ログ/2026-10-28_モーター制御開発.md)
+
+## 自動走行の追加
+
+`object_recognition` → `/vision/ground_target` → `autonomous_driving` → `autonomous/command` → `pc_bridge`（PCで手動／自動を選択）→ `motor_controller`。
+PCの停止・緊急停止と通信監視は両モード共通。[自動走行ノード仕様](自動走行ノード仕様.md)を参照。

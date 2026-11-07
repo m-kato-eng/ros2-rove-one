@@ -65,6 +65,17 @@ def main():
         assert app.vector == (0, 0)
         app.release()
         assert not app.arrow_keys and not app.arrow_release_jobs
+        app.connection.status['command_source'] = 'auto'
+        app.hold((1, 0))
+        app.hold_wheel('left_front', 1)
+        assert app.vector == (0, 0) and app.wheel is None
+        app.command_source.set('auto')
+        app.request('source', 'auto')
+        app.connection.request.assert_called_with('source', 'auto')
+        app.stop()
+        app.connection.request.assert_called_with('enable', False)
+        app.request('estop', True)
+        app.connection.request.assert_called_with('estop', True)
     finally:
         app.close()
     print('PASS front steering, rear duties, saturation, timeout, key chords and release')

@@ -16,5 +16,6 @@ setup(
     license='Apache-2.0',
     entry_points={'console_scripts': [
         'motor_controller = pi4_motor_control.node:main',
+        'autonomous_driving = pi4_motor_control.autonomous_node:main',
     ]},
 )

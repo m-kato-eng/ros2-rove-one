@@ -133,7 +133,8 @@ class Connection:
         self.send({'op': 'steer', 'speed': float(speed), 'turn': float(turn)})
 
     def request(self, op, value):
-        if op not in ('enable', 'estop') or type(value) is not bool:
+        if not ((op in ('enable', 'estop') and type(value) is bool) or
+                (op == 'source' and value in ('manual', 'auto'))):
             raise ValueError('invalid request')
         self.sequence += 1
         self.send({'op': op, 'value': value, 'id': self.sequence})

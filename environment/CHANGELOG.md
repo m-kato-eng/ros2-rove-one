@@ -2,6 +2,49 @@
 
 保存済み記録からの復元。日付不明・会話による二次的な要約・実機確認を区別する。設定例を実施済みとはみなさない。
 
+## 2026-11-02：下半分の明部認識・PC内カメラ表示
+
+- 地面は平坦・水平、画像中央を水平線、下半分を地面と仮定する仕様を確定。
+  PC画像中央に赤い線を表示し、カメラ取付を手動で合わせる。
+- BrightGroundDetectorを追加。PillowとNumPyはPiに既に導入済みで、APT・pipの追加導入なし。
+  既定はlight_spot、最大10fps、結果の有効期限300ms。明部の輝度重心・矩形・左右ずれを提供する。
+  上半分・境界・過度な白飛びを除外し、複数候補は曖昧さ、消失時は無効として扱う。
+- /vision/ground_target、/vision/debug/image/compressed、HTTPの/target、/debug/frame.jpg、/debug/streamを追加。
+  PCに映像を埋め込み、専用のSSHトンネル・受信スレッドで取得。モーター通信とは分離。
+- Piで26件の試験、PCで実SSH映像・中央線の位置・停止時の画像消去の試験が合格。
+  映像受信中の既存GUI操作・停止・フォーカス喪失・通信断をドライランで確認。
+- 実カメラの画像40枚と認識結果39件を受信し、画像10fpsを確認。
+  配信タイマーと認識待ちを削減し、JPEG完成時の即時配信と認識入力到着時の処理開始へ変更。
+- 修正後80件の参考測定：認識処理の中央値57.67ms・95パーセンタイル60.65ms、
+  JPEG受領→結果生成の中央値110.31ms・95パーセンタイル163.67ms・最大167.24ms。
+  最終状態はambiguous。場面によって処理負荷が変わる。露光・カメラ内処理・PC描画は含まない。
+  実ライトを動かした際の100ms以内の応答は未検証。達成済みとは扱わない。
+- 起動切り替えで旧プロセスが残ったためカメラ関連だけ整理し、停止スクリプトstop_camera.pyを追加。
+  認識からの自動走行・実距離校正は未接続。カメラ設定やモーターの実出力設定は変更しない。
+- PC画面のスクリーンショットによる確認はアプリ承認のタイムアウトで取得できず、
+  Tk上の実映像・Canvas座標を使った機能試験で確認。Gitコミット・pushは実施していない。
+
+## 2026-11-02：USBカメラ取得・画像認識基盤の追加（初版の記録）
+
+- 実機でLogitech C310（USB 046d:081b、by-id末尾video-index0）を確認。
+  Cheeseではフレーム遅延とUSBリセットがあり、GStreamerによるMJPEG取得へ変更。
+- `pi4_camera_vision`をPC作業コピーとPiの`/home/mk/ros2-rove-one/ros2_ws/src/`へ追加し、
+  Piでcolcon build --symlink-installを実施。既存のGStreamer・ROS Python・sensor_msgsを利用し、追加APT導入なし。
+- `camera_capture`がカメラを単独所有し、`object_recognition`が最新画像を最大2fpsで処理する。
+  対象未定のため認識器はnone、結果はrecognition_disabled。モデル・OpenCVは未導入。
+- `camera_http_bridge`がROS画像と認識結果をlocalhost:8765で提供。
+  以前の単体プレビューを終了し、3ノードをROS_DOMAIN_ID=88、http_preview=true、local_preview=trueで起動。
+  SSHトンネル・PCブラウザー・Piローカル表示の経路を継続。pc_controllerのコードは変更なし。
+- 新規パッケージの試験19件合格。実カメラでROS画像40枚・結果9件を受信し、実効約9.75fps、
+  JPEGサイズ320×240、時刻の単調増加、認識未設定の明示を確認。
+  PCからSSH経由で/health・/results・/frame.jpgの取得を確認。
+- 取得用GStreamerのSIGSTOPによる停止模擬で、期限切れ時の結果空配列・frame=null、
+  スナップショットHTTP 503、自動再接続を確認。画像再開まで約10秒。
+  初回起動時も一度フレーム待ちタイムアウトがあり、自動再試行後に配信開始。
+- 起動方法・設定・API・制限は[カメラREADME](../ros2_ws/src/pi4_camera_vision/README.md)。
+  自動起動サービスは未登録。実物体認識、実空間座標、GUIへの埋め込みは未実装。
+- 配置はこの作業中のソース転送であり、Gitコミット・push・Piでのpullは実施していない。
+
 ## 2026-11-02：GPIOシャットダウンボタンの修正
 
 - GPIO3（物理5番）とGND（物理9番）のボタンを対象に実機調査。gpio-shutdown overlayと入力デバイス`/dev/input/event0`を確認。11:12:39 JSTのlogindログに`Power key pressed`があり、押下がOSに届くことを確認。

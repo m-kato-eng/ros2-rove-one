@@ -109,3 +109,7 @@ ROS_DOMAIN_ID=87 python3 src/pi4_motor_control/scripts/smoke_test.py
 - [ROS 2 Humble Pythonパッケージ構成](https://github.com/ros2/ros2_documentation/blob/humble/source/Tutorials/Beginner-Client-Libraries/Creating-Your-First-ROS2-Package.rst)
 - [RPi.GPIO PWM](https://sourceforge.net/p/raspberry-gpio-python/wiki/PWM/)
 - [Raspberry Pi GPIO・モーター接続](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html)
+
+## 自動走行
+
+`autonomous_driving` が目標座標から操舵・相対距離・速度を計算します。PCで手動／自動を選択でき、自動走行中も停止できます。[設定と停止条件](../../../docs/自動走行ノード仕様.md)。

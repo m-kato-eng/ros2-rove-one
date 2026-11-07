@@ -52,3 +52,29 @@ flowchart TB
 - [PC起動・操作方法](../pc_controller/README.md)
 - [ROSノード・実配線の準備](../ros2_ws/src/pi4_motor_control/README.md)
 - [作業・デバッグ記録](../../前回の作業ログ/2026-10-28_モーター制御開発.md)
+
+## カメラ・画像認識の追加（2026-11-02）
+
+モーター制御とは別に起動する。画像と結果はROS_DOMAIN_ID=88で提供し、
+PC表示はモーター指令とは別のSSHトンネルを使う。pc_controllerの画面内に映像・中央の赤線・目標を表示する。
+
+```mermaid
+flowchart LR
+    USB[Logitech C310] --> C[camera_capture]
+    C -->|JPEG / camera/image/compressed| R[object_recognition]
+    C -->|JPEG / camera/image/compressed| H[camera_http_bridge / 任意]
+    R -->|JSON / vision/detections| H
+    H -->|localhost HTTP / SSH tunnel| PC[PCブラウザー]
+    C -->|local_preview / 任意| PI[Pi画面]
+```
+
+現在の認識器はBrightGroundDetector。下半分を地面と仮定して明部・ライト照射点を探す。
+画像は320×240・10fps、認識は最大10fps。座標は画像左上原点のピクセル単位。
+地面は平坦・水平、水平線は画像中央として、赤線を使って手動でカメラを調整する。
+切断・期限切れ時に前回の検出座標を有効な結果として再配信しない。
+詳細・拡張提案は[カメラパッケージREADME](../ros2_ws/src/pi4_camera_vision/README.md)を参照。
+
+## 自動走行の追加
+
+`object_recognition` → `/vision/ground_target` → `autonomous_driving` → `autonomous/command` → `pc_bridge`（PCで手動／自動を選択）→ `motor_controller`。
+PCの停止・緊急停止と通信監視は両モード共通。[自動走行ノード仕様](自動走行ノード仕様.md)を参照。

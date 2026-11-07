@@ -62,6 +62,8 @@ def main():
 
     def on_status(msg):
         status = json.loads(msg.data)
+        status['command_source'] = source
+        status['autonomous'] = auto_state['command']
         if status['dry_run'] is not dry_run:
             stopping.set()
             raise RuntimeError('Bridge mode mismatch')
@@ -70,6 +72,25 @@ def main():
 
     subscription = node.create_subscription(
         String, namespace + '/motor_controller/status', on_status, 1)
+    auto_state = {'command': None, 'at': 0.0}
+
+    def on_auto(msg):
+        try:
+            value = json.loads(msg.data)
+            if (type(value.get('emergency_stop')) is not bool or
+                    any(type(value.get(k)) not in (int, float) or
+                        not math.isfinite(value[k]) or abs(value[k]) > 0.3
+                        for k in ('speed', 'turn'))):
+                raise ValueError('invalid autonomous command')
+            auto_state.update(command=value, at=time.monotonic())
+        except (ValueError, TypeError, AttributeError):
+            auto_state.update(command=None, at=0.0)
+
+    auto_subscription = node.create_subscription(
+        String, namespace + '/autonomous/command', on_auto, 1)
+    source = 'manual'
+    auto_process = None
+    auto_estopped = False
     process = None
     pending = []
     vector = [0.0, 0.0]
@@ -106,6 +127,10 @@ def main():
                 '-p', 'dry_run:=' + str(dry_run).lower(),
                 '-p', 'hardware_confirmed:=' + str(args.hardware).lower()],
                 stdout=log, stderr=subprocess.STDOUT, start_new_session=True)
+            auto_process = subprocess.Popen([
+                'ros2', 'run', 'pi4_motor_control', 'autonomous_driving', '--ros-args',
+                '-r', '__ns:=' + namespace], stdout=log, stderr=subprocess.STDOUT,
+                start_new_session=True)
             threading.Thread(target=reader, daemon=True).start()
             deadline = time.monotonic() + 20
             while not (enable.service_is_ready() and estop.service_is_ready() and
@@ -132,7 +157,15 @@ def main():
                         if time.monotonic() - received > 0.35:
                             disable()
                             raise ValueError('expired command')
-                        if op == 'drive':
+                        if op == 'source':
+                            value = message.get('value')
+                            if value not in ('manual', 'auto'):
+                                raise ValueError('source must be manual or auto')
+                            disable()
+                            source = value
+                            emit({'type': 'response', 'id': request_id, 'ok': True,
+                                  'message': 'source=' + source + '; reenable required'})
+                        elif op == 'drive':
                             x, z = message.get('linear', 0.0), message.get('angular', 0.0)
                             if (type(x) not in (int, float) or type(z) not in (int, float)
                                     or not math.isfinite(x) or not math.isfinite(z)):
@@ -178,6 +211,8 @@ def main():
                                 wheel = None
                                 vector[:] = [0.0, 0.0]
                                 publisher.publish(Twist())
+                            if op == 'estop' and not value:
+                                auto_estopped = False
                             request_service(enable if op == 'enable' else estop, value, request_id)
                         elif op == 'shutdown':
                             stopping.set()
@@ -196,12 +231,27 @@ def main():
                     emit({'type': 'event', 'message': 'heartbeat_timeout'})
                 if now - last_publish >= 0.1:
                     message = Twist()
-                    if fresh and wheel is not None:
+                    if fresh and source == 'auto':
+                        command = auto_state['command']
+                        auto_fresh = (command is not None and now-auto_state['at'] <= 0.35
+                                      and auto_process.poll() is None)
+                        if auto_fresh and command['emergency_stop']:
+                            if not auto_estopped:
+                                request_service(estop, True)
+                                auto_estopped = True
+                            publisher.publish(Twist())
+                        elif auto_fresh and not auto_estopped:
+                            wheel_publisher.publish(String(data=json.dumps({
+                                'mode': 'steer', 'speed': command['speed'], 'turn': command['turn']})))
+                        else:
+                            disable()
+                        last_publish = now
+                    elif fresh and wheel is not None:
                         wheel_publisher.publish(String(data=json.dumps(
                             wheel if isinstance(wheel, dict) else {'motor': wheel[0], 'speed': wheel[1]})))
                     elif fresh:
                         message.linear.x, message.angular.z = vector
-                    if wheel is None or not fresh:
+                    if source != 'auto' and (wheel is None or not fresh):
                         publisher.publish(message)
                     last_publish = now
                 for item in list(pending):
@@ -229,6 +279,13 @@ def main():
                 rclpy.spin_once(node, timeout_sec=0.02)
         except (Exception, BrokenPipeError):
             pass
+        if auto_process is not None and auto_process.poll() is None:
+            os.killpg(auto_process.pid, signal.SIGINT)
+            try:
+                auto_process.wait(timeout=5)
+            except subprocess.TimeoutExpired:
+                os.killpg(auto_process.pid, signal.SIGTERM)
+                auto_process.wait(timeout=5)
         if process is not None and process.poll() is None:
             os.killpg(process.pid, signal.SIGINT)
             try:
