@@ -28,6 +28,8 @@ def emit(message):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--hardware', action='store_true')
+    parser.add_argument('--target-topic', default='/vision/ground_target',
+                        help='Recognition target topic (also permits isolated dry-run tests)')
     args = parser.parse_args()
     dry_run = not args.hardware
     rclpy.init()
@@ -93,23 +95,36 @@ def main():
     auto_estopped = False
     process = None
     pending = []
+    disarm_future = None
     vector = [0.0, 0.0]
     wheel = None
     last_drive = None
     heartbeat_lost = False
     last_publish = 0.0
 
-    def request_service(client, value, request_id=None):
-        future = client.call_async(SetBool.Request(data=value))
-        pending.append((future, request_id, time.monotonic()))
+    def request_service(client, value, request_id=None, response_message=None):
+        nonlocal disarm_future
+        if client is enable and value is False and disarm_future is not None and not disarm_future.done():
+            # Multiple stale packets must not flood the same stop service.
+            if request_id is None:
+                return
+            future = disarm_future
+        else:
+            future = client.call_async(SetBool.Request(data=value))
+            if client is enable and value is False:
+                disarm_future = future
+        pending.append((future, request_id, time.monotonic(), response_message))
 
-    def disable():
+    def disable(request_id=None, response_message=None):
         nonlocal wheel
         wheel = None
         vector[:] = [0.0, 0.0]
         publisher.publish(Twist())
         if enable.service_is_ready():
-            request_service(enable, False)
+            request_service(enable, False, request_id, response_message)
+        elif request_id is not None:
+            emit({'type': 'response', 'id': request_id, 'ok': False,
+                  'message': 'motor enable service unavailable'})
 
     try:
         with (Path.home() / ('motor-pc-bridge-' + str(os.getpid()) + '.log')).open('w') as log:
@@ -129,7 +144,8 @@ def main():
                 stdout=log, stderr=subprocess.STDOUT, start_new_session=True)
             auto_process = subprocess.Popen([
                 'ros2', 'run', 'pi4_motor_control', 'autonomous_driving', '--ros-args',
-                '-r', '__ns:=' + namespace], stdout=log, stderr=subprocess.STDOUT,
+                '-r', '__ns:=' + namespace,
+                '-r', '/vision/ground_target:=' + args.target_topic], stdout=log, stderr=subprocess.STDOUT,
                 start_new_session=True)
             threading.Thread(target=reader, daemon=True).start()
             deadline = time.monotonic() + 20
@@ -155,16 +171,17 @@ def main():
                     try:
                         # Never execute commands that sat queued during a stall.
                         if time.monotonic() - received > 0.35:
-                            disable()
+                            if not heartbeat_lost:
+                                disable()
+                                heartbeat_lost = True
                             raise ValueError('expired command')
                         if op == 'source':
                             value = message.get('value')
                             if value not in ('manual', 'auto'):
                                 raise ValueError('source must be manual or auto')
-                            disable()
                             source = value
-                            emit({'type': 'response', 'id': request_id, 'ok': True,
-                                  'message': 'source=' + source + '; reenable required'})
+                            # Acknowledge only after the motor confirms disarming.
+                            disable(request_id, 'source=' + source + '; reenable required')
                         elif op == 'drive':
                             x, z = message.get('linear', 0.0), message.get('angular', 0.0)
                             if (type(x) not in (int, float) or type(z) not in (int, float)
@@ -255,15 +272,19 @@ def main():
                         publisher.publish(message)
                     last_publish = now
                 for item in list(pending):
-                    future, request_id, sent = item
+                    future, request_id, sent, response_message = item
                     if future.done():
                         result = future.result()
                         if request_id is not None:
                             emit({'type': 'response', 'id': request_id, 'ok': result.success,
-                                  'message': result.message})
+                                  'message': (response_message if result.success and response_message
+                                              else result.message)})
                         pending.remove(item)
                     elif now - sent > 3:
-                        disable()
+                        # Do not recursively enqueue stop requests on service failure.
+                        # End this session; cleanup and the motor watchdog stop output.
+                        stopping.set()
+                        emit({'type': 'event', 'message': 'service_timeout'})
                         pending.remove(item)
                         if request_id is not None:
                             emit({'type': 'response', 'id': request_id, 'ok': False,

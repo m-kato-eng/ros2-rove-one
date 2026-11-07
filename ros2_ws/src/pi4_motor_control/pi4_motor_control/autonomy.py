@@ -5,6 +5,8 @@ import math
 def plan(data, horizon=0.5):
     stop = dict(speed=0.0, turn=0.0, emergency_stop=False, reason='unknown',
                 relative_distance=None, horizontal_error=None)
+    if data is None:
+        return stop
     try:
         if data.get('target_valid') is not True or data.get('state') != 'tracking':
             return stop

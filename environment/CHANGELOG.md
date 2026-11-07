@@ -145,3 +145,19 @@
 - [制御プログラム開発記録](../../前回の作業ログ/2026-10-28_モーター制御開発.md)
 - [管理対象の分離](../../前回の作業ログ/2026-10-31_構成管理対象の分離.md)
 - 過去会話：[ラズパイ構築再開](https://chatgpt.com/c/6ada3f35-9c8c-83ec-95b7-8eb3335ef17d)、[ラズパイ制御相談確認](https://chatgpt.com/c/6ada3ad7-aa24-83ee-9c5f-0ae9e43bf4a8)
+
+## 2026-11-08 自動走行のPi反映（ライト追跡版）
+
+- PiのWi-Fi IPは192.168.1.23。192.168.1.21の登録済みSSHホスト鍵と同一であることを確認し、PC接続設定を更新。
+- Piの旧HEADは024330f。未登録カメラ実装を比較し、差分が左右方向計算の分離と対応テスト・READMEであることを確認。
+- 旧実装を `/home/mk/light-camera-before-autonomy-20261108.tar.gz` と `/home/mk/light-camera-before-autonomy-20261108-source` に保存。PCにもwork_dataへtarを保存。
+- pi4_motor_control / pi4_camera_visionをcolcon build。autonomous_driving実行ファイルを登録。
+- 認識器はBrightGroundDetector、bright_mode=light_spot。赤色レーザー方式は保留。
+- 未検出時の停止理由をunknownへ統一。指令元切替の応答はモーター無効化完了後に返す。
+- 起動時の古いheartbeatに対する停止要求を重複発行しない。サービス応答のtimeoutではセッションを終了して停止。
+- 専用目標トピックを使うROS統合試験validate_autonomous.pyを追加。合成ライト画像→実認識器→自動走行→PCブリッジ→dry-runモーターで試験。
+- Piで単体・ROS契約テスト53件合格。左右操舵・近接減速・Unknown停止・画像停止・PC停止・手動/自動切替・heartbeat途絶・緊急停止ラッチの統合試験が合格。
+- ユーザーサービスpi4-camera.serviceを再起動。初回はUSBカメラ再接続のため枚数不足、その後40枚・認識結果36件・9.91fpsでライブ試験合格。HTTP /targetでもlight_spotを確認。
+- 既存カメラはROS_DOMAIN_ID=88。合成ライトの自動走行試験はdomain 89と専用名前空間へ分離。実車のGPIO出力・走行は行っていない。
+- 起動操作：PCでSSH接続→自動走行→有効化。PCの停止/無効化・Space・Escは自動走行中も有効。初期設定はdry-run。
+- PCから192.168.1.23へのSSH往復smoke_testも合格。前後進・旋回・各輪・緊急停止・heartbeat断・再接続時無効化を確認。

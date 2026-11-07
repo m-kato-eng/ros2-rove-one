@@ -24,6 +24,7 @@ class AutonomyTests(unittest.TestCase):
         self.assertFalse(plan(target(y=0.749))['emergency_stop'])
 
     def test_unknown_and_malformed_stop(self):
+        self.assertEqual(plan(None)['reason'], 'unknown')
         for data in (None, {}, [], target(y=math.nan), target(x=True), target(x=2),
                      dict(target(), state='Unknown'), dict(target(), target_valid=False)):
             self.assertEqual(plan(data)['speed'], 0)
