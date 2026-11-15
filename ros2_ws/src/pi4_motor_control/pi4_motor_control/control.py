@@ -43,7 +43,10 @@ class Controller:
 
     def enable(self, value):
         self.stop('disabled')
-        if value and not self.estop:
+        if value:
+            # An explicit enable acknowledges the software emergency stop.
+            # stop() above discards all previous motion before rearming.
+            self.estop = False
             self.enabled = True
             self.last_command = self.clock()
             self.reason = 'awaiting_command'
@@ -74,8 +77,10 @@ class Controller:
         self.last_command = self.clock()
         self.reason = 'command'
 
-    def steer_command(self, speed, turn):
-        if not all(math.isfinite(v) for v in (speed, turn)):
+    def steer_command(self, speed, turn, steering_gain=1.0):
+        if (type(steering_gain) not in (int, float) or
+                not math.isfinite(steering_gain) or not 1 <= steering_gain <= 2 or
+                not all(math.isfinite(v) for v in (speed, turn))):
             self.stop('invalid_command')
             return
         self.tick()
@@ -86,11 +91,12 @@ class Controller:
         duty = lambda v: cfg.max_duty * max(-cfg.max_wheel_speed, min(cfg.max_wheel_speed, v)) / cfg.max_wheel_speed
         self.left = self.right = duty(speed)
         if speed == 0:
+            # Stationary turns use the original output in both modes.
             self.front = (duty(-turn), duty(turn))
         else:
             # Steering changes front duty by 30% of the signed driving duty.
             # Apply the same side multipliers in forward and reverse.
-            correction = self.left * (0.3 if turn > 0 else -0.3 if turn < 0 else 0)
+            correction = self.left * steering_gain * (0.3 if turn > 0 else -0.3 if turn < 0 else 0)
             clamp = lambda v: max(-cfg.max_duty, min(cfg.max_duty, v))
             self.front = (clamp(self.left - correction), clamp(self.right + correction))
         self.wheel = None

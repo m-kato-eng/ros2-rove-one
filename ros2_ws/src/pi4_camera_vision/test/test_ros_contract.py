@@ -159,6 +159,36 @@ def test_bright_target_requires_unique_frames_and_expiration_clears_it(ros):
         node.destroy_node()
 
 
+def test_red_laser_ros_target_and_duplicate_frame(ros):
+    from test_red_laser import picture
+    node = ObjectRecognition(parameter_overrides=[
+        Parameter('detector', value='pi4_camera_vision.red_laser:RedLaserDetector')])
+    try:
+        msg = message(node)
+        msg.data = picture([(230, 210, 2, (245, 20, 20))], white_core=True)
+        node._receive(msg)
+        node._recognize()
+        assert not node.last_ground_target['target_valid']
+        node._receive(msg)
+        node._recognize()
+        assert not node.last_ground_target['target_valid']
+        second = message(node)
+        second.data = msg.data
+        node._receive(second)
+        node._recognize()
+        assert node.last_ground_target['target_valid']
+        assert node.last_ground_target['mode'] == 'red_laser_spot'
+        assert node.last_ground_target['target']['target_normalized']['y'] >= 0.75
+        assert 'horizontal_error' not in node.last_ground_target['target']
+        missing = message(node)
+        missing.data = picture()
+        node._receive(missing)
+        node._recognize()
+        assert node.last_ground_target['target'] is None
+    finally:
+        node.destroy_node()
+
+
 def test_http_snapshot_stream_and_expired_coordinates():
     state = PreviewState(max_age=1.0)
     state.jpeg, state.image_at, state.sequence = jpeg(), time.monotonic(), 1

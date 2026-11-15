@@ -36,7 +36,9 @@ ros2 topic echo /motor_controller/status
 ros2 service call /motor_controller/enable std_srvs/srv/SetBool '{data: false}'
 # ソフトウェア緊急停止をラッチ
 ros2 service call /motor_controller/emergency_stop std_srvs/srv/SetBool '{data: true}'
-# ラッチ解除：この操作だけでは再走行しない
+# 有効化：緊急停止ラッチも解除する（旧指令は破棄）
+ros2 service call /motor_controller/enable std_srvs/srv/SetBool '{data: true}'
+# ラッチ解除のみ：この操作だけでは再走行しない
 ros2 service call /motor_controller/emergency_stop std_srvs/srv/SetBool '{data: false}'
 ```
 

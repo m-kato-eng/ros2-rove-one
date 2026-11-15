@@ -224,6 +224,7 @@ def main():
                                     raise ValueError('release direction controls before enable')
                                 if wheel is not None:
                                     raise ValueError('release direction controls before enable')
+                                auto_estopped = False
                             if op == 'estop' or not value:
                                 wheel = None
                                 vector[:] = [0.0, 0.0]
@@ -246,7 +247,7 @@ def main():
                     wheel = None
                     heartbeat_lost = True
                     emit({'type': 'event', 'message': 'heartbeat_timeout'})
-                if now - last_publish >= 0.1:
+                if now - last_publish >= 0.05:
                     message = Twist()
                     if fresh and source == 'auto':
                         command = auto_state['command']
@@ -259,7 +260,7 @@ def main():
                             publisher.publish(Twist())
                         elif auto_fresh and not auto_estopped:
                             wheel_publisher.publish(String(data=json.dumps({
-                                'mode': 'steer', 'speed': command['speed'], 'turn': command['turn']})))
+                                'mode': 'auto_steer', 'speed': command['speed'], 'turn': command['turn']})))
                         else:
                             disable()
                         last_publish = now

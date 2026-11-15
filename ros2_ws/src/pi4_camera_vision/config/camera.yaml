@@ -3,19 +3,23 @@ camera_capture:
     device: /dev/v4l/by-id/usb-046d_081b_F6390640-video-index0
     width: 320
     height: 240
-    fps: 10
+    fps: 20
     frame_id: camera_optical_frame
     frame_timeout_sec: 3.0
     reconnect_sec: 2.0
     local_preview: false
 object_recognition:
   ros__parameters:
-    detector: pi4_camera_vision.bright_ground:BrightGroundDetector
-    recognition_fps: 10.0
+    detector: pi4_camera_vision.red_laser:RedLaserDetector
+    recognition_fps: 20.0
     confidence_threshold: 0.5
     max_frame_age_sec: 0.3
     max_detections: 100
-    bright_mode: light_spot
+    bright_mode: red_laser_spot
+    laser_red_min: 100
+    laser_red_excess: 25
+    laser_red_contrast: 20
+    laser_max_area_ratio: 0.001
     brightness_min: 190
     contrast_min: 15
     min_area_px: 12

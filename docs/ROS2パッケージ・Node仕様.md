@@ -174,8 +174,8 @@ reasonの値：`startup`, `disabled`, `awaiting_command`, `command`, `command_ti
 |enable=false|即座に停止・無効化|再有効化が必要|
 |有効中に0.5秒指令なし|停止・無効化|指令再送だけでは復帰せず再有効化|
 |異常指令|停止・無効化|正常指令と再有効化|
-|emergency_stop=true|停止・無効化・ラッチ|falseで解除後、再有効化|
-|ラッチ中のenable=true|要求失敗、無効を維持|先にラッチを解除|
+|emergency_stop=true|停止・無効化・ラッチ|enable=trueで解除・再有効化。またはfalseで解除のみ|
+|ラッチ中のenable=true|旧指令を破棄し、ラッチ解除・有効化|新しい指令から走行可能|
 |通常終了|バックエンド停止・リソース解放|再起動後も無効開始|
 
 無効中の指令は保存・再生しない。有効化した時点から指令期限を計測するため、単独操作では先に10 Hz等で指令を送信してから有効化するとよい。
@@ -271,3 +271,5 @@ PC操作時はWindowsのプロジェクトルートから`ros2-rove-one/pc_contr
 
 `object_recognition` → `/vision/ground_target` → `autonomous_driving` → `autonomous/command` → `pc_bridge`（PCで手動／自動を選択）→ `motor_controller`。
 PCの停止・緊急停止と通信監視は両モード共通。[自動走行ノード仕様](自動走行ノード仕様.md)を参照。
+
+2026-11-10自動追従更新：wheel_commandのmode=auto_steerは自動走行専用ゲイン2（走行中の前輪±60%、その場旋回は従来出力）。手動mode=steerは±30%を維持。近接目標では前進0で左右へその場旋回する。

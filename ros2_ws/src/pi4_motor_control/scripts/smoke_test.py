@@ -100,12 +100,13 @@ def main():
             assert service(estop, True).success
             clear()
             state(lambda s: s['emergency_stop'] and not s['enabled'] and zero(s))
-            assert not service(enable, True).success
+            assert service(enable, True).success
+            assert service(estop, True).success
             assert service(estop, False).success
             command(0.2)
             clear()
             state(lambda s: not s['emergency_stop'] and not s['enabled'] and zero(s))
-            print('PASS latched stop, rejected arm, clear remains disarmed', flush=True)
+            print('PASS latched stop, explicit enable recovery, clear remains disarmed', flush=True)
 
             assert service(enable, True).success
             command(0.2)

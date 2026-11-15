@@ -82,11 +82,12 @@ class MotorNode(Node):
     def on_wheel_command(self, msg):
         try:
             command = json.loads(msg.data)
-            if command.get('mode') == 'steer':
+            if command.get('mode') in ('steer', 'auto_steer'):
                 speed, turn = command['speed'], command['turn']
                 if any(type(v) not in (int, float) for v in (speed, turn)):
                     raise ValueError('invalid steering command')
-                self.control.steer_command(speed, turn)
+                self.control.steer_command(
+                    speed, turn, steering_gain=2.0 if command['mode'] == 'auto_steer' else 1.0)
                 self.on_tick()
                 return
             motor, speed = command['motor'], command['speed']

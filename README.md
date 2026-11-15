@@ -1,5 +1,8 @@
 # ros2-rove-one
 
+2026-11-10：追尾対象の既定を床の赤色レーザー光点（red_laser_spot）へ変更。
+旧ライト照射版もconfig/camera-light.yamlで保存。自動走行の目標有効期限は300ms。
+
 Raspberry Pi 4とROS 2 Humbleによる4モーター制御・PC操作プロジェクト。
 
 このフォルダーをGitリポジトリのルートとする。Windowsでは`C:\_Project\_RaspPi4_ROS\ros2-rove-one`、Piでは`/home/mk/ros2-rove-one`へcloneして使用する。GitHub上のリポジトリ名は`ros2-rove-one`。

@@ -57,7 +57,7 @@ class App:
         ttk.Label(panel, textvariable=self.duties, font=('Consolas', 11)).pack(anchor='w')
         row = ttk.Frame(panel)
         row.pack(fill='x', pady=12)
-        ttk.Button(row, text='有効化', command=lambda: self.request('enable', True)).pack(side='left')
+        ttk.Button(row, text='有効化 / 緊急停止から復帰', command=lambda: self.request('enable', True)).pack(side='left')
         ttk.Button(row, text='停止 / 無効化', command=self.stop).pack(side='left', padx=8)
         ttk.Label(row, text='速度目標 m/s').pack(side='left', padx=(15, 5))
         speed_input = ttk.Spinbox(row, from_=0.02, to=0.3, increment=0.02, width=6,

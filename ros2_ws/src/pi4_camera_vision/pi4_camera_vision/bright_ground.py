@@ -35,10 +35,7 @@ class BrightGroundDetector:
         self.previous = None
         self.confirmed = 0
 
-    def detect(self, jpeg, width, height):
-        image = Image.open(BytesIO(jpeg)).convert('RGB')
-        if image.size != (width, height):
-            raise ValueError('decoded image size mismatch')
+    def _find_candidates(self, image, width, height):
         gray = image.convert('L').filter(ImageFilter.MedianFilter(3))
         pixels = np.asarray(gray, dtype=np.float32)
         start_y = height // 2
@@ -91,6 +88,13 @@ class BrightGroundDetector:
             candidates.append({'bbox_px': bbox, 'target_px': {'x': cx, 'y': cy},
                                'quality': quality, 'area_px': area,
                                'mean_brightness': float(values.mean()), 'local_contrast': local_contrast})
+        return candidates
+
+    def detect(self, jpeg, width, height):
+        image = Image.open(BytesIO(jpeg)).convert('RGB')
+        if image.size != (width, height):
+            raise ValueError('decoded image size mismatch')
+        candidates = self._find_candidates(image, width, height)
         candidates.sort(key=lambda item: item['quality'], reverse=True)
         state, reason, chosen = 'searching', 'no_candidate', None
         if candidates:
@@ -127,7 +131,7 @@ class BrightGroundDetector:
         self.last_target = {'schema_version': 1, 'state': state, 'reason': reason,
                             'target_valid': chosen is not None, 'target': chosen,
                             'mode': self.mode, 'ground_basis': 'lower_half_assumption',
-                            'config_id': 'lower-half-v1', 'calibration_id': None,
+                            'config_id': 'red-laser-v1' if self.mode == 'red_laser_spot' else 'lower-half-v1', 'calibration_id': None,
                             'candidate_count': len(candidates)}
         draw = ImageDraw.Draw(image)
         draw.line((0, height // 2, width - 1, height // 2), fill='red', width=1)
@@ -141,4 +145,4 @@ class BrightGroundDetector:
         output = BytesIO()
         image.save(output, format='JPEG', quality=80)
         self.last_debug = output.getvalue()
-        return [Detection('bright_ground', item['quality'], **item['bbox_px']) for item in candidates]
+        return [Detection(getattr(self, 'label', 'bright_ground'), item['quality'], **item['bbox_px']) for item in candidates]

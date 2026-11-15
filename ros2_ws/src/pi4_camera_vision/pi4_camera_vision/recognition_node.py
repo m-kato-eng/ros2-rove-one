@@ -25,9 +25,9 @@ class ObjectRecognition(Node):
             self.load_error = str(exc)
             self.get_logger().error(f'Detector load failed: {exc}')
         if self.detector is not None and hasattr(self.detector, 'configure'):
-            mode = parameter(self, 'bright_mode', 'light_spot')
-            if mode not in ('light_spot', 'bright_region'):
-                raise ValueError('bright_mode must be light_spot or bright_region')
+            mode = parameter(self, 'bright_mode', getattr(self.detector, 'mode', 'light_spot'))
+            if mode not in ('light_spot', 'bright_region', 'red_laser_spot'):
+                raise ValueError('invalid bright_mode')
             self.detector.configure(
                 mode=mode,
                 brightness=parameter(self, 'brightness_min', 190, 0, 255),
@@ -38,6 +38,12 @@ class ObjectRecognition(Node):
                 max_jump=parameter(self, 'max_jump_normalized', 0.20, 0.001, 1.0),
                 ambiguity_margin=parameter(self, 'ambiguity_margin', 0.08, 0.0, 1.0),
                 confidence_threshold=self.threshold)
+            if mode == 'red_laser_spot':
+                self.detector.configure(
+                    red_min=parameter(self, 'laser_red_min', 100, 0, 255),
+                    red_excess=parameter(self, 'laser_red_excess', 25, 1, 255),
+                    red_contrast=parameter(self, 'laser_red_contrast', 20, 1, 255),
+                    max_laser_area_ratio=parameter(self, 'laser_max_area_ratio', 0.001, 0.00001, 0.1))
         self.result_pub = self.create_publisher(String, 'vision/detections', 1)
         self.target_pub = self.create_publisher(String, 'vision/ground_target', 1)
         self.debug_pub = self.create_publisher(CompressedImage, 'vision/debug/image/compressed', image_qos())

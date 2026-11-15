@@ -53,7 +53,6 @@ def test_estop_latches_and_clear_needs_new_enable(machine):
     controller.enable(True)
     controller.command(0.2, 0)
     controller.emergency_stop(True)
-    assert not controller.enable(True)
     controller.command(0.2, 0)
     assert controller.tick() == (0, 0)
     controller.emergency_stop(False)
@@ -61,6 +60,12 @@ def test_estop_latches_and_clear_needs_new_enable(machine):
     controller.command(0.2, 0)
     assert controller.tick() == (0, 0)
     assert controller.enable(True)
+    controller.emergency_stop(True)
+    assert controller.enable(True)
+    assert not controller.estop
+    assert controller.outputs() == [0, 0, 0, 0]
+    controller.command(0.2, 0)
+    assert any(controller.outputs())
 
 
 @pytest.mark.parametrize('bad', [math.nan, math.inf, -math.inf])
@@ -176,3 +181,30 @@ def test_gpio_disable_precedes_direction_changes_and_cleanup():
     assert backend.duties == [0, 0, 0, 0]
     assert len([e for e in gpio.events if e[0] == 'stop']) == 4
     assert gpio.events[-1][0] == 'cleanup'
+
+
+def test_auto_doubles_driving_correction_and_stationary_is_original_for_both_modes():
+    controller = Controller(Limits(max_duty=0.8))
+    controller.enable(True)
+    controller.steer_command(0.1, 0.1, steering_gain=2)
+    assert controller.outputs() == pytest.approx([0.08, 0.2, 0.32, 0.2])
+    controller.steer_command(0, 0.1, steering_gain=2)
+    assert controller.outputs() == pytest.approx([-0.2, 0, 0.2, 0])
+    controller.steer_command(0, 0.3, steering_gain=2)
+    assert controller.outputs() == pytest.approx([-0.6, 0, 0.6, 0])
+    controller.steer_command(0, 0.1)
+    assert controller.outputs() == pytest.approx([-0.2, 0, 0.2, 0])
+    controller.steer_command(0.1, 0.1)
+    assert controller.outputs() == pytest.approx([0.14, 0.2, 0.26, 0.2])
+    controller.enable(False)
+    controller.steer_command(0, 0.1, steering_gain=2)
+    assert controller.outputs() == [0, 0, 0, 0]
+
+
+@pytest.mark.parametrize('gain', [True, 0, 3, math.nan, math.inf])
+def test_invalid_steering_gain_disarms(gain):
+    controller = Controller(Limits())
+    controller.enable(True)
+    controller.steer_command(0.1, 0.1, steering_gain=gain)
+    assert not controller.enabled
+    assert controller.outputs() == [0, 0, 0, 0]

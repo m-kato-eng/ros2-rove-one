@@ -1,0 +1,29 @@
+camera_capture:
+  ros__parameters:
+    device: /dev/v4l/by-id/usb-046d_081b_F6390640-video-index0
+    width: 320
+    height: 240
+    fps: 20
+    frame_id: camera_optical_frame
+    frame_timeout_sec: 3.0
+    reconnect_sec: 2.0
+    local_preview: false
+object_recognition:
+  ros__parameters:
+    detector: pi4_camera_vision.bright_ground:BrightGroundDetector
+    recognition_fps: 20.0
+    confidence_threshold: 0.5
+    max_frame_age_sec: 0.3
+    max_detections: 100
+    bright_mode: light_spot
+    brightness_min: 190
+    contrast_min: 15
+    min_area_px: 12
+    max_area_ratio: 0.25
+    confirm_frames: 2
+    max_jump_normalized: 0.20
+    ambiguity_margin: 0.08
+camera_http_bridge:
+  ros__parameters:
+    port: 8765
+    max_frame_age_sec: 2.0

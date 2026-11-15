@@ -31,7 +31,7 @@ def main():
     node = rclpy.create_node('validation', namespace=namespace)
     recognition = ObjectRecognition(namespace=namespace, parameter_overrides=[
         Parameter('detector', value='pi4_camera_vision.bright_ground:BrightGroundDetector'),
-        Parameter('recognition_fps', value=10.0),
+        Parameter('recognition_fps', value=20.0),
         Parameter('max_frame_age_sec', value=0.3),
         Parameter('bright_mode', value='light_spot'),
     ])
@@ -81,7 +81,7 @@ def main():
         if process.poll() is not None:
             raise RuntimeError('Bridge exited: ' + str(process.returncode))
         now = time.monotonic()
-        if now - last_send >= 0.1:
+        if now - last_send >= 0.05:
             if frames:
                 image = Image.new('RGB', (320, 240), (60, 60, 60))
                 if point is not None:
@@ -171,6 +171,9 @@ def main():
             request('enable', True)
             wait_status(lambda s: moving(s) and s['duties']['left_front'] < s['duties']['right_front'],
                         'left light steers left')
+            wait_status(lambda s: moving(s) and abs(s['duties']['left_front']/s['duties']['left_rear']-0.4) < 0.02
+                        and abs(s['duties']['right_front']/s['duties']['right_rear']-1.6) < 0.02,
+                        'automatic front correction is doubled')
             point = (0.8, 0.55)
             far = wait_status(lambda s: moving(s) and auto(s).get('turn', 0) < 0
                               and s['duties']['left_front'] > s['duties']['right_front'],
@@ -179,8 +182,10 @@ def main():
             wait_status(lambda s: moving(s) and 0 < auto(s).get('speed', 0) < auto(far)['speed']-0.03,
                         'near light slows vehicle')
             point = None
-            wait_status(lambda s: zero(s) and auto(s).get('reason') == 'unknown',
-                        'Unknown target stops')
+            wait_status(lambda s: moving(s) and auto(s).get('reason') == 'predicting',
+                        'missed target uses bounded prediction')
+            wait_status(lambda s: zero(s) and auto(s).get('reason') == 'prediction_expired',
+                        'prediction stops after one second')
             point = (0.5, 0.55)
             wait_status(moving, 'new target resumes after Unknown')
             frames = False
@@ -206,13 +211,40 @@ def main():
             request('enable', True)
             wait_status(moving, 'explicit reenable after heartbeat loss')
             point = (0.5, 0.80)
-            wait_status(lambda s: s['emergency_stop'] and zero(s), 'bottom quarter latches emergency stop')
+            wait_status(lambda s: s['enabled'] and not s['emergency_stop'] and zero(s)
+                        and auto(s).get('reason') == 'target_near_stop',
+                        'bottom quarter stops without latching')
+            point = (0.2, 0.80)
+            wait_status(lambda s: s['enabled'] and s['duties']['left_front'] < 0 < s['duties']['right_front']
+                        and s['duties']['left_rear'] == s['duties']['right_rear'] == 0,
+                        'near left target rotates in place')
+            point = None
+            wait_status(lambda s: zero(s), 'near target loss stops rotation')
+            point = (0.8, 0.80)
+            wait_status(lambda s: s['enabled'] and s['duties']['right_front'] < 0 < s['duties']['left_front']
+                        and s['duties']['left_rear'] == s['duties']['right_rear'] == 0,
+                        'near right target rotates in place')
+            point = (0.5, 0.80)
+            wait_status(lambda s: zero(s) and auto(s).get('reason') == 'target_near_stop',
+                        'centered near target stops rotation')
             point = (0.5, 0.55)
-            wait_status(lambda s: auto(s).get('speed', 0) > 0 and s['emergency_stop'] and zero(s),
-                        'fresh far target cannot release emergency latch')
+            wait_status(moving, 'target back in range automatically resumes')
+            request('estop', True)
+            wait_status(lambda s: s['emergency_stop'] and not s['enabled'] and zero(s),
+                        'PC emergency stop latches')
+            # Fresh target and heartbeat cannot clear the latch themselves.
+            deadline = time.monotonic() + 0.5
+            while time.monotonic() < deadline:
+                step()
+                assert status['emergency_stop'] and not status['enabled'] and zero(status)
+            request('enable', True)
+            wait_status(lambda s: not s['emergency_stop'] and moving(s),
+                        'single enable clears emergency and resumes')
+            request('estop', True)
+            wait_status(lambda s: s['emergency_stop'] and zero(s), 'repeat emergency stops again')
             request('estop', False)
             wait_status(lambda s: not s['emergency_stop'] and not s['enabled'] and zero(s),
-                        'clearing emergency still requires enable')
+                        'clear-only action remains disarmed')
             print('ALL AUTONOMOUS ROS DRY-RUN CHECKS PASSED', flush=True)
     finally:
         finished.set()

@@ -1,5 +1,13 @@
 # Pi側カメラ・画像認識
 
+2026-11-10更新：**既定を床の赤色レーザー光点の追跡へ変更**。
+config/camera.yamlはRedLaserDetector / red_laser_spotを選択する。
+下半分の微小な赤い点を検出し、赤い部分に連結した白い中心も扱う。
+赤成分・コントラストのしきい値は実レーザー・床・距離に合わせて調整する。
+旧ライト版の設定はconfig/camera-light.yamlとして保存した。
+以下の明部認識の説明は旧ライト版と共通機構についての説明。
+詳細は[レーザー光点仕様](../../../docs/床の赤色レーザー光点・検出追跡仕様.md)を参照。
+
 USBカメラを1プロセスだけで取得し、表示と認識へ分配するROS 2 Humbleパッケージ。
 初期設定では、画像下半分の明るい領域・ライト照射点を認識する。
 PillowとNumPyによる輝度解析で、学習済みAIモデルは不要。
@@ -224,3 +232,5 @@ ROS_DOMAIN_ID=88 python3 src/pi4_camera_vision/scripts/validate_live.py
 
 仕様確認元：[ROS Humble CompressedImage](https://github.com/ros2/common_interfaces/blob/humble/sensor_msgs/msg/CompressedImage.msg)、
 [rclpy Humble QoS](https://github.com/ros2/rclpy/blob/humble/rclpy/rclpy/qos.py)。
+
+2026-11-10：通常設定・ライト互換設定とも撮影と認識の目標を20fpsへ変更。実機実測は約15fps。未検出時の最大1秒予測は自動走行側で行う（認識は実測座標のみ）。
