@@ -6,7 +6,7 @@ setup(
     packages=find_packages(exclude=['test']),
     data_files=[
         ('share/ament_index/resource_index/packages', ['resource/pi4_camera_vision']),
-        ('share/pi4_camera_vision', ['package.xml', 'README.md']),
+        ('share/pi4_camera_vision', ['package.xml', 'README.md', 'LICENSE']),
         ('share/pi4_camera_vision/config', glob('config/*.yaml')),
         ('share/pi4_camera_vision/launch', glob('launch/*.launch.py')),
     ],
@@ -14,6 +14,7 @@ setup(
     maintainer='Pi4 project', maintainer_email='maintainer@example.invalid',
     description='USB camera capture and pluggable object recognition.',
     license='Apache-2.0',
+    license_files=['LICENSE'],
     entry_points={'console_scripts': [
         'camera_capture = pi4_camera_vision.capture_node:main',
         'object_recognition = pi4_camera_vision.recognition_node:main',

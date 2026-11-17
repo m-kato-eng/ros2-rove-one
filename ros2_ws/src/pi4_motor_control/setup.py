@@ -6,7 +6,7 @@ setup(
     packages=find_packages(exclude=['test']),
     data_files=[
         ('share/ament_index/resource_index/packages', ['resource/pi4_motor_control']),
-        ('share/pi4_motor_control', ['package.xml', 'README.md']),
+        ('share/pi4_motor_control', ['package.xml', 'README.md', 'LICENSE']),
         ('share/pi4_motor_control/config', glob('config/*.yaml')),
         ('share/pi4_motor_control/launch', glob('launch/*.launch.py')),
     ],
@@ -14,6 +14,7 @@ setup(
     maintainer='Pi4 project', maintainer_email='maintainer@example.invalid',
     description='Four motor L298N controller with a GPIO-free default mode.',
     license='Apache-2.0',
+    license_files=['LICENSE'],
     entry_points={'console_scripts': [
         'motor_controller = pi4_motor_control.node:main',
         'autonomous_driving = pi4_motor_control.autonomous_node:main',
