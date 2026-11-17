@@ -1,0 +1,487 @@
+{
+  "review_date": "2026-11-17",
+  "scope": "Attribution and conditions for the independently captured files; unrelated package components are not relicensed or redistributed by association.",
+  "sources": [
+    {
+      "notice_file": "LICENSES/third-party/alsa-base.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "alsa-base",
+      "version": "1.0.25+dfsg-0ubuntu7",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/a/alsa-driver/alsa-base_1.0.25+dfsg-0ubuntu7_all.deb",
+      "source_archive_sha256": "d0c99ed97cab93fb759be324947e26d79df81362106226baf353a4f5e2a39bd3",
+      "source_member": "usr/share/doc/alsa-base/copyright",
+      "notice_sha256": "3e6ed3af2bc4de6219d5216e715d27b36a0d18ea78048700b472bdde7508bd04"
+    },
+    {
+      "notice_file": "LICENSES/third-party/at-spi2-core.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "at-spi2-core",
+      "version": "2.44.0-3",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/a/at-spi2-core/at-spi2-core_2.44.0-3_arm64.deb",
+      "source_archive_sha256": "cb678c6c228510444ee32290c8bd66a39993131595cec84467a2759d2388f37b",
+      "source_member": "usr/share/doc/at-spi2-core/copyright",
+      "notice_sha256": "4c9fe678a08f789b1f48edac3865d307459dd2cc103ce7cce3bc1cad99692713"
+    },
+    {
+      "notice_file": "LICENSES/third-party/avahi-daemon.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "avahi-daemon",
+      "version": "0.8-5ubuntu5.5",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/a/avahi/avahi-daemon_0.8-5ubuntu5.5_arm64.deb",
+      "source_archive_sha256": "e5dee6820b035b7f13e026a6549d7a5dee944fd2d8991222e87e43f7a3307a4a",
+      "source_member": "usr/share/doc/avahi-daemon/copyright",
+      "notice_sha256": "d604305bf515c09da9bb985e08fa872d8e5e15e26c08dddb9367cb31a0c1c6bd"
+    },
+    {
+      "notice_file": "LICENSES/third-party/base-files.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "base-files",
+      "version": "12ubuntu4.7",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/b/base-files/base-files_12ubuntu4.7_arm64.deb",
+      "source_archive_sha256": "efeb75569bd6b3dae48094109c95f02d057cf5178c090c1a13670c613b101ec1",
+      "source_member": "usr/share/doc/base-files/copyright",
+      "notice_sha256": "cdb5461d8515002d0fe3babb764eec3877458b20f4e4bb16219f62ea953afeea"
+    },
+    {
+      "notice_file": "LICENSES/third-party/bluez.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "bluez",
+      "version": "5.64-0ubuntu1.6",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/b/bluez/bluez_5.64-0ubuntu1.6_arm64.deb",
+      "source_archive_sha256": "865c4bff4485dbb00d4f56c521d1215e38c28c2d66004878c9fb842c81d7c844",
+      "source_member": "usr/share/doc/bluez/copyright",
+      "notice_sha256": "59450e50d5b5b545f1b4fc89affbc565582099f39ba4c912771ff5bfc4835adb"
+    },
+    {
+      "notice_file": "LICENSES/third-party/deja-dup.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "deja-dup",
+      "version": "42.9-1ubuntu3",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/d/deja-dup/deja-dup_42.9-1ubuntu3_arm64.deb",
+      "source_archive_sha256": "985713a2d690d5d968aeddb4f66c9c3e20c2d677b7d0701896823cf32fe74c0e",
+      "source_member": "usr/share/doc/deja-dup/copyright",
+      "notice_sha256": "86da28adc23c38005ddcf533a6d618094c644d440d29ca20d6c5d9fd4dae4e22"
+    },
+    {
+      "notice_file": "LICENSES/third-party/evolution-data-server.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "evolution-data-server",
+      "version": "3.44.4-0ubuntu1.2",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/e/evolution-data-server/evolution-data-server_3.44.4-0ubuntu1.2_arm64.deb",
+      "source_archive_sha256": "df351fdc198199e836d4bc835eab87a619760d5580c13873f619bcd9d89e99f7",
+      "source_member": "usr/share/doc/evolution-data-server/copyright",
+      "notice_sha256": "bf74d16022fc4d6eb6281c9be43b07a0ec973dc9ca2cc7bf232867174863a0ba"
+    },
+    {
+      "notice_file": "LICENSES/third-party/gdm3.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "gdm3",
+      "version": "42.0-1ubuntu7.22.04.4",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gdm3/gdm3_42.0-1ubuntu7.22.04.4_arm64.deb",
+      "source_archive_sha256": "307021370bcc9fff6fc99b8fc6fff895c3af6ce6382c638fbb6798f7671fdc12",
+      "source_member": "usr/share/doc/gdm3/copyright",
+      "notice_sha256": "05e6a5bf2ea0b083d0550484eef174b55e352682cc95bde5265af327d6246452"
+    },
+    {
+      "notice_file": "LICENSES/third-party/geoclue-2.0.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "geoclue-2.0",
+      "version": "2.5.7-3ubuntu3",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/geoclue-2.0/geoclue-2.0_2.5.7-3ubuntu3_arm64.deb",
+      "source_archive_sha256": "92d352b786e1e2cccddccfb0e2480cd480953544503d9beeeb922f1e3a8fd8d5",
+      "source_member": "usr/share/doc/geoclue-2.0/copyright",
+      "notice_sha256": "f416091dfdde7f5e0a016dd73d4c21dd51488a8d7dc2e0efbb36f92011af84b4"
+    },
+    {
+      "notice_file": "LICENSES/third-party/gnome-disk-utility.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "gnome-disk-utility",
+      "version": "42.0-1ubuntu1",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gnome-disk-utility/gnome-disk-utility_42.0-1ubuntu1_arm64.deb",
+      "source_archive_sha256": "53123f22b62ff9bd373dd2ed17b14638965c5053e6bbd2101de172959d777d7a",
+      "source_member": "usr/share/doc/gnome-disk-utility/copyright",
+      "notice_sha256": "1db7fd2f86a354270d60397d3148c282b466295c084baa749d386002e369805d"
+    },
+    {
+      "notice_file": "LICENSES/third-party/gnome-initial-setup.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "gnome-initial-setup",
+      "version": "42.0.1-1ubuntu2.3",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gnome-initial-setup/gnome-initial-setup_42.0.1-1ubuntu2.3_arm64.deb",
+      "source_archive_sha256": "e87e2c8d9421d83a3d711b26e1ba6d409b088c569353e394f1d49a6e97f50608",
+      "source_member": "usr/share/doc/gnome-initial-setup/copyright",
+      "notice_sha256": "ec9f3b4de53427e3c84da0cc2fa19e8bb736e56f366b3c336d3b2130248caa03"
+    },
+    {
+      "notice_file": "LICENSES/third-party/gnome-keyring.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "gnome-keyring",
+      "version": "40.0-3ubuntu3",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gnome-keyring/gnome-keyring_40.0-3ubuntu3_arm64.deb",
+      "source_archive_sha256": "4bade3a25d7f2dd966daa104ed85575eb5d60a205bda7fdb3f2bbd1f26d3c1f8",
+      "source_member": "usr/share/doc/gnome-keyring/copyright",
+      "notice_sha256": "2f1f9b3779cb5f85a33539ac22bfbad31fa95299ad7c39bf2a329eb3a1a92954"
+    },
+    {
+      "notice_file": "LICENSES/third-party/gnome-settings-daemon.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "gnome-settings-daemon",
+      "version": "42.1-1ubuntu2.2",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gnome-settings-daemon/gnome-settings-daemon_42.1-1ubuntu2.2_arm64.deb",
+      "source_archive_sha256": "630b4252737515b1ff72ff3f0a9203fd2379790162fcda5a6e919d09f64c8939",
+      "source_member": "usr/share/doc/gnome-settings-daemon/copyright",
+      "notice_sha256": "3e13b65ba516492fcb843d5b5ba0a5aa3c04a117835eadc6b4685a01775483fb"
+    },
+    {
+      "notice_file": "LICENSES/third-party/gnome-shell.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "gnome-shell",
+      "version": "42.9-0ubuntu2.4",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gnome-shell/gnome-shell_42.9-0ubuntu2.4_arm64.deb",
+      "source_archive_sha256": "ca59e14cec31030353411559132f5b3a5cdf7d2ecdf50a47b55c68d69edaddc4",
+      "source_member": "usr/share/doc/gnome-shell/copyright",
+      "notice_sha256": "184875385a173b657eaf8e08db4de83b8cc818dc9540fce0edeb893c4bc8d84c"
+    },
+    {
+      "notice_file": "LICENSES/third-party/im-config.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "im-config",
+      "version": "0.50-2ubuntu22.04.1",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/i/im-config/im-config_0.50-2ubuntu22.04.1_all.deb",
+      "source_archive_sha256": "38dbf602124b885bc31edf63f67c0fc4a398546076d046355d2b1d8460456a8e",
+      "source_member": "usr/share/doc/im-config/copyright",
+      "notice_sha256": "6a888019a2fcb6adfb21cb71deb24dd8cf290ba04e33731e714c540500265dba"
+    },
+    {
+      "notice_file": "LICENSES/third-party/libkmod2.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "libkmod2",
+      "version": "29-1ubuntu1.1",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/k/kmod/libkmod2_29-1ubuntu1.1_arm64.deb",
+      "source_archive_sha256": "f8643d42edbda331870429e765b9c2545c52e8da615f5518d82cdb51f49edea2",
+      "source_member": "usr/share/doc/libkmod2/copyright",
+      "notice_sha256": "1c2bfdf8829ecfd2c4892236fc111d0afe642fbe714bdd9c52320b94f11daeef"
+    },
+    {
+      "notice_file": "LICENSES/third-party/linux-sound-base.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "linux-sound-base",
+      "version": "1.0.25+dfsg-0ubuntu7",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/a/alsa-driver/linux-sound-base_1.0.25+dfsg-0ubuntu7_all.deb",
+      "source_archive_sha256": "62cbc8c16ffb26ad8696cafe723dc61c88acf24a360993410e6e91938c3cbc54",
+      "source_member": "usr/share/doc/linux-sound-base/copyright",
+      "notice_sha256": "3e6ed3af2bc4de6219d5216e715d27b36a0d18ea78048700b472bdde7508bd04"
+    },
+    {
+      "notice_file": "LICENSES/third-party/modemmanager.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "modemmanager",
+      "version": "1.20.0-1~ubuntu22.04.4",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/m/modemmanager/modemmanager_1.20.0-1~ubuntu22.04.4_arm64.deb",
+      "source_archive_sha256": "7c4b8d6b5d2e1dbe0fcd043fd7ba03913fa4b07cb236739a63a1960f268a1b03",
+      "source_member": "usr/share/doc/modemmanager/copyright",
+      "notice_sha256": "c7919f5c2989fff218ceee25fd526ee7e6a7b96f6570b5de88ad721d49831b21"
+    },
+    {
+      "notice_file": "LICENSES/third-party/network-manager-gnome.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "network-manager-gnome",
+      "version": "1.24.0-1ubuntu3",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/n/network-manager-applet/network-manager-gnome_1.24.0-1ubuntu3_arm64.deb",
+      "source_archive_sha256": "5020ce23db2f15b5ce2751448bcf39af59713b875b668f1a8be2f86b643b50ec",
+      "source_member": "usr/share/doc/network-manager-gnome/copyright",
+      "notice_sha256": "ea643a7fbd04e3d93d71a3197cd947b7cfd15f3218984afc3cc6db52fe543114"
+    },
+    {
+      "notice_file": "LICENSES/third-party/network-manager.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "network-manager",
+      "version": "1.36.6-0ubuntu2.5",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/n/network-manager/network-manager_1.36.6-0ubuntu2.5_arm64.deb",
+      "source_archive_sha256": "65169d7006364fc3277957bef9814b05821acd146161526043da86739b0e54bf",
+      "source_member": "usr/share/doc/network-manager/copyright",
+      "notice_sha256": "37ff64aa5437a70719463325774ba17fd073a38b09e93943039fe32b52917a78"
+    },
+    {
+      "notice_file": "LICENSES/third-party/openssh-client.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "openssh-client",
+      "version": "1:8.9p1-3ubuntu0.18",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/o/openssh/openssh-client_8.9p1-3ubuntu0.18_arm64.deb",
+      "source_archive_sha256": "726f601068615d8d85a5f0b6e176b747eaacef8fc30fb4ee9f5118c9aea9b0a5",
+      "source_member": "usr/share/doc/openssh-client/copyright",
+      "notice_sha256": "b6be93136b065505bf4fa315914a8c31c2a07865e7b5152dc1cbca324d86c860"
+    },
+    {
+      "notice_file": "LICENSES/third-party/orca.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "orca",
+      "version": "42.0-1ubuntu2",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/o/orca/orca_42.0-1ubuntu2_all.deb",
+      "source_archive_sha256": "f736097695fe425693aac61c276f052e4b2549cd98514c93aabad35d99216e1d",
+      "source_member": "usr/share/doc/orca/copyright",
+      "notice_sha256": "5b70c9c6b97fcb6ae9b180c25ae7d4cb3abb2b4dc8024609256e412bb79c6da4"
+    },
+    {
+      "notice_file": "LICENSES/third-party/procps.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "procps",
+      "version": "2:3.3.17-6ubuntu2.1",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/p/procps/procps_3.3.17-6ubuntu2.1_arm64.deb",
+      "source_archive_sha256": "1427d78e933d0b47b562ffba54f21c8eb4b3141ca1d6d4ca97e649fda5693608",
+      "source_member": "usr/share/doc/procps/copyright",
+      "notice_sha256": "93bd3a940d4573f2be35f2a5a58c97d82224d6ad8f67a99fa2a04fb373947602"
+    },
+    {
+      "notice_file": "LICENSES/third-party/pulseaudio.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "pulseaudio",
+      "version": "1:15.99.1+dfsg1-1ubuntu2.2",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/p/pulseaudio/pulseaudio_15.99.1+dfsg1-1ubuntu2.2_arm64.deb",
+      "source_archive_sha256": "561b36c080bde913e4799b319f2847035f30102357a4a018d32594d7ecb901fc",
+      "source_member": "usr/share/doc/pulseaudio/copyright",
+      "notice_sha256": "aff3f1d729168de06e34d940dc493cc305a6e4a6278f1ac38ee52ec0f69e342c"
+    },
+    {
+      "notice_file": "LICENSES/third-party/rsyslog.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "rsyslog",
+      "version": "8.2112.0-2ubuntu2.5",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/r/rsyslog/rsyslog_8.2112.0-2ubuntu2.5_arm64.deb",
+      "source_archive_sha256": "d3a98c0601f96cf87eabb9f4e5c9a85a0f162e1f427cfc46628d1cb66b27bf91",
+      "source_member": "usr/share/doc/rsyslog/copyright",
+      "notice_sha256": "73eea0d41d1b20a0a9428bbc0a3127c65abdd46db4b700fb8e8b0e884f6cffdd"
+    },
+    {
+      "notice_file": "LICENSES/third-party/snapd.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "snapd",
+      "version": "2.76.3+ubuntu22.04.1",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/s/snapd/snapd_2.76.3+ubuntu22.04.1_arm64.deb",
+      "source_archive_sha256": "a3ce7bfa24291aca27ba0338b3655cf7478776bda0070d14df78388efd8c81df",
+      "source_member": "usr/share/doc/snapd/copyright",
+      "notice_sha256": "03020ea75ed0a70daded396e924367f3227276b1de1535be06a9e267e5cf85d3"
+    },
+    {
+      "notice_file": "LICENSES/third-party/spice-vdagent.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "spice-vdagent",
+      "version": "0.22.1-1ubuntu0.1",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/s/spice-vdagent/spice-vdagent_0.22.1-1ubuntu0.1_arm64.deb",
+      "source_archive_sha256": "b31967d1a9632f6dbf07bfc24f77ecd8fd811091644705fa7e7bd89650a6300d",
+      "source_member": "usr/share/doc/spice-vdagent/copyright",
+      "notice_sha256": "e174ef3341a0f3ae88c7c7a6142c3f81ed2f8d0445d8d0f4e997f6e39274ca37"
+    },
+    {
+      "notice_file": "LICENSES/third-party/system-config-printer.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "system-config-printer",
+      "version": "1.5.16-0ubuntu3",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/s/system-config-printer/system-config-printer_1.5.16-0ubuntu3_all.deb",
+      "source_archive_sha256": "48d736637c8a52a34d701ac8b2963c17724c0521bf1e990637b5392fc96b7a33",
+      "source_member": "usr/share/doc/system-config-printer/copyright",
+      "notice_sha256": "6388af8f80e48bfcd0b6480da2f1d3040830354a1cdf98965159ed0f6b581526"
+    },
+    {
+      "notice_file": "LICENSES/third-party/systemd-oomd.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "systemd-oomd",
+      "version": "249.11-0ubuntu3.23",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/s/systemd/systemd-oomd_249.11-0ubuntu3.23_arm64.deb",
+      "source_archive_sha256": "fdd5711749dba5faaaf16261f6738d5a98b89fe274285606ed03da239b117df8",
+      "source_member": "usr/share/doc/systemd-oomd/copyright",
+      "notice_sha256": "8541750aba2193c885f0c77df20870ef454c2ae8f905077105922bf3130108ad"
+    },
+    {
+      "notice_file": "LICENSES/third-party/systemd-timesyncd.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "systemd-timesyncd",
+      "version": "249.11-0ubuntu3.23",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/s/systemd/systemd-timesyncd_249.11-0ubuntu3.23_arm64.deb",
+      "source_archive_sha256": "77d641b533b0365abe7e69a85eb2a146723c96435897a8a30b988542342457f0",
+      "source_member": "usr/share/doc/systemd-timesyncd/copyright",
+      "notice_sha256": "8541750aba2193c885f0c77df20870ef454c2ae8f905077105922bf3130108ad"
+    },
+    {
+      "notice_file": "LICENSES/third-party/systemd.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "systemd",
+      "version": "249.11-0ubuntu3.23",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/s/systemd/systemd_249.11-0ubuntu3.23_arm64.deb",
+      "source_archive_sha256": "978846f25f95501a11175c9cb088ed7a1b02f42fb171a10e2085a4c69a63a0a7",
+      "source_member": "usr/share/doc/systemd/copyright",
+      "notice_sha256": "8541750aba2193c885f0c77df20870ef454c2ae8f905077105922bf3130108ad"
+    },
+    {
+      "notice_file": "LICENSES/third-party/tracker-miner-fs.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "tracker-miner-fs",
+      "version": "3.3.3-0ubuntu0.20.04.4",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/t/tracker-miners/tracker-miner-fs_3.3.3-0ubuntu0.20.04.4_arm64.deb",
+      "source_archive_sha256": "9a97a738d380cd5ecaf5d30ea2ee58d1cb52a2c38071df731aa3876243bdf719",
+      "source_member": "usr/share/doc/tracker-miner-fs/copyright",
+      "notice_sha256": "88c0eacba5286736d362e4ecd9eba19b25f711ed9cbbb3896a30b20674d5f9d3"
+    },
+    {
+      "notice_file": "LICENSES/third-party/ubuntu-report.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "ubuntu-report",
+      "version": "1.7.1ubuntu0.1",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/u/ubuntu-report/ubuntu-report_1.7.1ubuntu0.1_arm64.deb",
+      "source_archive_sha256": "4359cd2595a3a789118b02e77863bb2c3d6950745578b0c9df968cebc967b254",
+      "source_member": "usr/share/doc/ubuntu-report/copyright",
+      "notice_sha256": "3b03481c644bad2581eb2187c8fc9f8a002b3ec130d6922d5b70aba4dd6ce16b"
+    },
+    {
+      "notice_file": "LICENSES/third-party/ubuntu-session.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "ubuntu-session",
+      "version": "42.0-1ubuntu2",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gnome-session/ubuntu-session_42.0-1ubuntu2_all.deb",
+      "source_archive_sha256": "7bec919f77b03cd9e68938f593f78f1d0a7c2ac65ef7437376ecf65d0d49d47a",
+      "source_member": "usr/share/doc/ubuntu-session/copyright",
+      "notice_sha256": "f85cf41d8a107d8b7f1d66f6edabd25a983ec9851fb124cea9d5e0aa0799d08f"
+    },
+    {
+      "notice_file": "LICENSES/third-party/update-notifier.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "update-notifier",
+      "version": "3.192.54.8",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/u/update-notifier/update-notifier_3.192.54.8_arm64.deb",
+      "source_archive_sha256": "beaee01f7d9991ef54503539f1b8fd00200b9406c95fe88ebe6312c226425fae",
+      "source_member": "usr/share/doc/update-notifier/copyright",
+      "notice_sha256": "f2314660d0c6eb6ed12f8ee1acd3a82bb26805ab6d3778245382e53b06601f65"
+    },
+    {
+      "notice_file": "LICENSES/third-party/wpasupplicant.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "wpasupplicant",
+      "version": "2:2.10-6ubuntu2.4",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/w/wpa/wpasupplicant_2.10-6ubuntu2.4_arm64.deb",
+      "source_archive_sha256": "b3f5014f8cb10b0333fa8f9ded7c7cc9993da1660694e4e9258166fba2b6dd67",
+      "source_member": "usr/share/doc/wpasupplicant/copyright",
+      "notice_sha256": "9aebd4fa48a707a069d18fee53b98925956022f9e1da1821bce55288ff1a3246"
+    },
+    {
+      "notice_file": "LICENSES/third-party/xdg-user-dirs-gtk.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "xdg-user-dirs-gtk",
+      "version": "0.10-3build2",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/x/xdg-user-dirs-gtk/xdg-user-dirs-gtk_0.10-3build2_arm64.deb",
+      "source_archive_sha256": "118f850061d701b61a8a5334f25b608efafaa16652a721b127ef1de189f72c93",
+      "source_member": "usr/share/doc/xdg-user-dirs-gtk/copyright",
+      "notice_sha256": "282b6f2cc576428603f21f12bf488b7aaac9514a35de512850706c3d76ce6fd7"
+    },
+    {
+      "notice_file": "LICENSES/third-party/xdg-user-dirs.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "xdg-user-dirs",
+      "version": "0.17-2ubuntu4",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/x/xdg-user-dirs/xdg-user-dirs_0.17-2ubuntu4_arm64.deb",
+      "source_archive_sha256": "c75370131ef50ebd18558ad322fcf0d54acc935893e256800913d07671bb73b3",
+      "source_member": "usr/share/doc/xdg-user-dirs/copyright",
+      "notice_sha256": "8fea73a6a82aa48f7b00aa9f88a6a36935528f60e2f79799e521754e1621bcf4"
+    },
+    {
+      "notice_file": "LICENSES/third-party/xfce4-clipman.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "xfce4-clipman",
+      "version": "2:1.6.2-1",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/universe/x/xfce4-clipman-plugin/xfce4-clipman_1.6.2-1_arm64.deb",
+      "source_archive_sha256": "b3b943dc6d7344bc11007df07f202d295a624693527705660e9dd5d6c3fe4dcb",
+      "source_member": "usr/share/doc/xfce4-clipman/copyright",
+      "notice_sha256": "b4d8f955a4100db14207bca3188b902db30f137d2420b6e345bbd5efa64530bc"
+    },
+    {
+      "notice_file": "LICENSES/third-party/xfce4-notifyd.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "xfce4-notifyd",
+      "version": "0.6.3-1",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/universe/x/xfce4-notifyd/xfce4-notifyd_0.6.3-1_arm64.deb",
+      "source_archive_sha256": "fbedcace29e7a629f99514e7edcce0b07670211564916dc902687cda641522d8",
+      "source_member": "usr/share/doc/xfce4-notifyd/copyright",
+      "notice_sha256": "25454e7db418a96d3f27b73c2c54c8f73e5b616f92e2aa4b54036a516ef03718"
+    },
+    {
+      "notice_file": "LICENSES/third-party/xfce4-power-manager.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "xfce4-power-manager",
+      "version": "4.16.0-1",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/universe/x/xfce4-power-manager/xfce4-power-manager_4.16.0-1_arm64.deb",
+      "source_archive_sha256": "8a7ce6bad2447bdbad37efd6679aaf159fe48bbd0cfdf8fbb494a1b17432ff7c",
+      "source_member": "usr/share/doc/xfce4-power-manager/copyright",
+      "notice_sha256": "0d0f197b140dc95f045417b9e86dddb960dbb450ab80b1bfda5eb6eca2c9f224"
+    },
+    {
+      "notice_file": "LICENSES/third-party/xfce4-screensaver.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "xfce4-screensaver",
+      "version": "4.16.0-1",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/universe/x/xfce4-screensaver/xfce4-screensaver_4.16.0-1_arm64.deb",
+      "source_archive_sha256": "c998b385ecd910506a5e5f3c154147700b1afd33560d7163311d8e2f0ba0e257",
+      "source_member": "usr/share/doc/xfce4-screensaver/copyright",
+      "notice_sha256": "e3f3fe0291f7efe5d1c9e131e7500965d9cdafd27dcb5fa2e82db76850b894f6"
+    },
+    {
+      "notice_file": "LICENSES/third-party/xfce4-session.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "xfce4-session",
+      "version": "4.16.0-1ubuntu2",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/universe/x/xfce4-session/xfce4-session_4.16.0-1ubuntu2_arm64.deb",
+      "source_archive_sha256": "4bee27972ef7459485813e224ce218d49b1dde91096e4c6c76338080d1826538",
+      "source_member": "usr/share/doc/xfce4-session/copyright",
+      "notice_sha256": "3d8cf4dde8ad437ba98e834f233317de148dbc1ba95b5e66ef89df765212ec28"
+    },
+    {
+      "notice_file": "LICENSES/third-party/xfce4-settings.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "xfce4-settings",
+      "version": "4.16.2-1ubuntu2.22.04.1",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/universe/x/xfce4-settings/xfce4-settings_4.16.2-1ubuntu2.22.04.1_arm64.deb",
+      "source_archive_sha256": "c8227183605a31dc9fd4406b5bb006db542e6c1d5a4e7138a99d35deb9264c59",
+      "source_member": "usr/share/doc/xfce4-settings/copyright",
+      "notice_sha256": "439f86cdda91439ea52bafb31148d480c8947cf81adb1d9c471e8a4adfe901d8"
+    },
+    {
+      "notice_file": "LICENSES/third-party/xiccd.copyright",
+      "kind": "Ubuntu binary package copyright",
+      "package": "xiccd",
+      "version": "0.3.0-1",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/universe/x/xiccd/xiccd_0.3.0-1_arm64.deb",
+      "source_archive_sha256": "30d11894d72e1e6ec3584e8f7732de3d0ae7dfb6f7866493ad5a010eafa66784",
+      "source_member": "usr/share/doc/xiccd/copyright",
+      "notice_sha256": "76ea39b39b53eac4ff36473c3a9a247583040aa7f0ecd416508c58245d68c39e"
+    },
+    {
+      "notice_file": "LICENSES/third-party/grub2-source.copyright",
+      "kind": "Ubuntu source package copyright",
+      "package": "grub2",
+      "version": "2.06-2ubuntu7.2",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/grub2/grub2_2.06-2ubuntu7.2.debian.tar.xz",
+      "source_archive_sha256": "11e8a2fdad325d68b9500aa44065ab44a4d7e5e3f7c32a9a46636db335258952",
+      "source_member": "debian/copyright",
+      "notice_sha256": "0d0fc69bf818d5582685608bf6c673f9c088948c8f56c68f18b084c81946249a"
+    },
+    {
+      "notice_file": "LICENSES/third-party/kmod-source.copyright",
+      "kind": "Ubuntu source package copyright",
+      "package": "kmod",
+      "version": "29-1ubuntu1.1",
+      "source_url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/k/kmod/kmod_29-1ubuntu1.1.debian.tar.xz",
+      "source_archive_sha256": "e83ad53c93ec4ab78fc65bc625931fe2cf4bf6479476e7e8789ed3fe1b52640b",
+      "source_member": "debian/copyright",
+      "notice_sha256": "1c2bfdf8829ecfd2c4892236fc111d0afe642fbe714bdd9c52320b94f11daeef"
+    },
+    {
+      "notice_file": "LICENSES/third-party/snapd-template-headers.copyright",
+      "kind": "Upstream source attribution/license headers",
+      "package": "snapd",
+      "version": "2.77.1",
+      "source_url": "https://codeload.github.com/canonical/snapd/tar.gz/refs/tags/2.77.1",
+      "source_archive_sha256": "873f8853da6c27c0ebb7b0c6ddc1b4e396c6ccf5de237a2dd59bad4b9df74ec7",
+      "notice_sha256": "c9b4b10679b24b8cf9d7b04c342ecf5ced893619ec7d989d2dade5c0012c7fc3",
+      "source_member": "see per-header source paths in notice_file",
+      "limitation": "Exact Ubuntu packaging revision .1 unavailable; upstream release templates inspected."
+    }
+  ]
+}

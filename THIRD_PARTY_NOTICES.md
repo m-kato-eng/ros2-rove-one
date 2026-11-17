@@ -2,45 +2,53 @@
 
 ## 適用範囲
 
-自作ROSパッケージのApache-2.0宣言は、採取した第三者ファイルのライセンスを変更しません。設定ファイルを独立した資料として収録しています。元の著作権・ライセンス表示を保持し、今回の整備で採取内容を編集していません。
+自作ROSパッケージのApache-2.0宣言は、採取した第三者ファイルのライセンスを変更しません。第三者設定を独立した資料として収録し、配布元の著作権・条件・免責表示を [LICENSES/third-party/](LICENSES/third-party/README.md) に同梱しています。
 
-下表のパスは採取元のLinux上のパスです。各ファイルの保存先・SHA-256・確認状態は [全102ファイルの一覧](environment/THIRD_PARTY_FILES.csv) に記録しています。条件は `environment/config/observed-2026-11-01/files/`、`environment/snapshots/2026-11-01/files/` 内の同内容のコピー、および同スナップショットのJSON内の `content_b64` にも適用します。一部の補足採取ファイルはJSONとobservedコピーにのみ存在します。
+[全102ファイルの一覧](environment/THIRD_PARTY_FILES.csv) で、適用条件・保存先・ハッシュ・確認方法・著作権表示への対応を示します。条件と注記は、observed側、snapshot側、JSON内の同内容の `content_b64`、Git履歴中の同じ第三者素材にも対応します。ファイル内の明示的な表示は、パッケージ全体の一般表示より優先します。
 
-## ファイル内の表示で確認したライセンス
+## 2026-11-17の追加調査と整備
 
-| 採取元パス | 出典・採取時のパッケージ版 | ファイル内の指定・今回の扱い |
-| --- | --- | --- |
-| `/etc/systemd/system/dbus-org.freedesktop.Avahi.service` | Avahi / `avahi-daemon 0.8-5ubuntu5.5` | LGPL v2以降という表示に基づきLGPL-2.1を選択。以降の版を選べる元の表示も保持。 |
-| `/etc/systemd/system/dbus-org.freedesktop.oom1.service` | systemd / `249.11-0ubuntu3.23` | LGPL-2.1-or-later |
-| `/etc/systemd/system/dbus-org.freedesktop.resolve1.service` | systemd / `249.11-0ubuntu3.23` | LGPL-2.1-or-later |
-| `/etc/systemd/system/dbus-org.freedesktop.timesync1.service` | systemd / `249.11-0ubuntu3.23` | LGPL-2.1-or-later |
-| `/etc/xdg/autostart/org.gnome.DejaDup.Monitor.desktop` | Deja Dup / `42.9-1ubuntu3` | CC-BY-SA-4.0。原作者表示：Michael Terry。 |
+Ubuntu公式の64パッケージおよび必要な上流テンプレートを調べ、従来の「97件未確認」を次の確認状態に更新しました。
 
-LGPL対象には [LGPL-2.1本文](LICENSES/LGPL-2.1.txt) と、その参照先である [GPL v2本文](LICENSES/GPL-2.0.txt) を同梱しています。元の免責表示も保持しています。
+| 確認状態 | 件数 |
+| --- | ---: |
+| 採取時と同版のdeb内ファイルとバイト一致 | 80 |
+| 別のパッケージ改訂版のdeb内ファイルとバイト一致 | 2 |
+| 確認済みファイルのリンク先と同内容 | 1 |
+| 変更済みの既知テンプレート | 2 |
+| 生成元テンプレートを特定 | 7 |
+| 個別設定値・端末状態として内容確認 | 9 |
+| 出典候補は判明したが許諾条件が未解決 | 1 |
 
-Deja Dupの対象ファイルは [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) に基づいて提供します。[ライセンス全文](LICENSES/CC-BY-SA-4.0.txt)と免責条項を参照してください。既存の作者表示を保持し、今回の整備による内容変更はありません。
+これは102件全部の再配布条件への適合が完了したという表ではありません。[調査記録と制限](environment/LICENSE_REVIEW.md)を参照してください。
 
-上流の参照先：
+## 同梱した条件と表示
 
-- [Avahi 0.8のサービス定義](https://github.com/avahi/avahi/blob/v0.8/avahi-daemon/avahi-daemon.service.in)
-- [systemd v249のサービス定義](https://github.com/systemd/systemd/tree/v249/units)
-- [Deja Dup 42.9](https://gitlab.gnome.org/World/deja-dup/-/tree/42.9)
+- GPL対象：[GPL v2](LICENSES/GPL-2.0.txt)・[GPL v3](LICENSES/GPL-3.0.txt)本文と、該当する配布元の著作権・免責表示を同梱しています。v2本文をv3本文の代わりにはしていません。
+- LGPL対象：[LGPL 2.1本文](LICENSES/LGPL-2.1.txt) を同梱しています。元の表示がv2以降を選べるものは、元の選択肢を保持したうえで2.1の条件を提供しています。
+- wpaサービス定義：BSD-3-Clauseの[著作権・条件・免責文](LICENSES/third-party/wpasupplicant.copyright)を同梱しています。
+- OpenSSHサービス定義：Debianパッケージ部分のBSD-2-Clauseについて[元の表示](LICENSES/third-party/openssh-client.copyright)を同梱しています。OpenSSH内の別の構成要素の条件を、このサービス定義へ一律に割り当てません。
+- Deja Dupの `org.gnome.DejaDup.Monitor.desktop`：ファイル内の作者表示 Michael Terry とCC-BY-SA-4.0表示を保持し、[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) の[全文・免責条項](LICENSES/CC-BY-SA-4.0.txt)を同梱しています。パッケージの一般GPL表示で、ファイル固有のCC表示を上書きしません。
 
-これらは配布元の参照先であり、Ubuntu側の加工・インストール時の置換を含む採取ファイルが、上流テンプレートと同一であるという主張ではありません。採取後の原本一致については既存の `environment/snapshots/2026-11-01/PROVENANCE.json` とハッシュ記録を参照してください。
+配布元copyrightの全文には、パッケージ内の未収録ファイルの条件も含まれます。その原文を保持することは、当該コード・バイナリを本リポジトリで再配布しているという意味ではありません。適用対象の判断はファイル一覧と併せて行います。
 
-## 未確認事項
+## 変更済み設定と生成物
 
-残る97件は、ファイル内に上記のような明示的なライセンス表示を確認できていません。ライセンスなし・著作権なし・Apache-2.0と推定せず、一覧の `package_provenance_pending` として扱います。これにはOSの設定、udevルール、サービス・自動起動・Xセッション定義、端末固有の設定が含まれます。
+GDM・GRUB等の上流との差分は[変更注記](environment/THIRD_PARTY_MODIFICATIONS.md)に記録し、GDM・GRUBの保存済みコピーには隣接する `.license` も付けています。採取日と実際の変更日を区別し、不明な日付・作業者は推測で補っていません。
 
-収録版に対応するUbuntuパッケージのファイル所有情報と `/usr/share/doc/<package>/copyright`、必要に応じたソースパッケージとの照合は未完了です。完全な権利確認や、リポジトリ全体の配布条件への適合を保証する一覧ではありません。
+Snap出力のテンプレート材については[上流2.77.1の著作権・ライセンスヘッダー](LICENSES/third-party/snapd-template-headers.copyright)も保持しています。生成器のライセンスだけを理由に、出力すべてが自動的にGPLになるとは扱いません。
 
-パッケージ一覧・依存宣言・importだけを根拠に、そこに挙がるソフトウェア全部をこのリポジトリで再配布しているとは扱いません。将来バイナリや依存ソフトそのものを同梱する場合は、その配布物について別途確認してください。
+## 残る許諾確認1件
+
+`/boot/firmware/config.txt` の複数の説明文はCanonical pi-gadgetのテンプレートに一致しますが、参照した22-arm64ブランチで適用ライセンスの表示を見つけられていません。[公開元の固定参照](https://github.com/canonical/pi-gadget/tree/3943d98730213c81a39bee1f3f4780028bc8c85c)が、任意の再配布許諾の根拠になるとは判断していません。
+
+対象にはobserved・snapshot・JSON・Git履歴の同内容も含まれます。今回、この素材の削除・履歴変更は行っていません。許諾確認、または履歴中の複製も考慮した公開資料の整理が必要です。この1件をApache・GPL・ファームウェアバイナリの独自ライセンスに推測で割り当てません。
 
 ## 更新時の手順
 
-1. 新しい採取内容の出典、パッケージ版、保存先、SHA-256を記録する。
-2. ファイル内表示と配布元の条件を確認し、一覧と必要なライセンス本文を更新する。
-3. 複製とJSON内のBase64コピーも対象に含め、作者・免責・ライセンス表示を保持する。
-4. 第三者ファイルを変更した場合は、変更内容・日付を記録し、変更版の配布条件も確認する。
+1. 採取元、パッケージ版、保存先、SHA-256、確認方法を記録する。
+2. 個別表示・配布元の該当条件を確認し、一覧と必要な本文・著作権表示を更新する。
+3. 複製とBase64コピーも対象に含め、作者・条件・免責表示を保持する。
+4. 上流から変更されたものは差分と、根拠のある日付を記録する。
 
-履歴中のコピーにも元の条件が適用されます。この整備は、過去の配布状況を調査したり、過去の不備の解消を断定したりするものではありません。
+過去の配布状況や、短い設定の著作物性について法的な結論を確定したものではありません。将来バイナリや依存ソフト自体を同梱する場合は、追加した配布物について別途確認してください。

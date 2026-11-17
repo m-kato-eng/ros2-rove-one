@@ -1,0 +1,13 @@
+SPDX-License-Identifier: GPL-2.0-or-later
+
+Associated file: custom.conf
+Captured content SHA-256: 9fb4277ab3e12a25d3914d51d9235b990ad33f4d345d9bac9b9c690059022027
+Copyright, redistribution conditions and disclaimer: LICENSES/third-party/gdm3.copyright (repository root).
+
+Modification/distribution notice recorded on 2026-11-17:
+This is a modified upstream configuration template captured on 2026-11-01.
+Automatic-login entries enabled; commented upstream sample entries removed.
+The original local edit date and editor are not established; the capture date is not asserted to be the edit date.
+This .license notice is newly added on 2026-11-17; the associated captured file bytes have not been changed by this licensing update.
+The same modification notice applies to the identical content_b64 payload in environment/snapshots/2026-11-01/snapshot.json and to copies in Git history.
+See environment/THIRD_PARTY_MODIFICATIONS.md for comparison sources and limitations.

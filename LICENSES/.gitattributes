@@ -1,0 +1,3 @@
+# Keep downloaded license and attribution originals byte-for-byte.
+*.txt -text
+third-party/*.copyright -text

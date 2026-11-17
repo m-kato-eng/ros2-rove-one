@@ -1,0 +1,456 @@
+Snapd upstream 2.77.1 template-source copyright and license headers
+
+Source: https://github.com/canonical/snapd/tree/2.77.1
+Scope: headers from the inspected interfaces/builtin, interfaces/udev and wrappers/internal template sources.
+These notices identify source template material; they do not assert that every generated output is automatically GPL-licensed.
+Implementation code and tests are not included here.
+
+Source files: interfaces/builtin/accel.go, interfaces/builtin/devlxd.go, interfaces/builtin/dm_multipath.go, interfaces/builtin/firmware_updater_support.go, interfaces/builtin/gpio_chardev.go, interfaces/builtin/iscsi_initiator.go, interfaces/builtin/kerberos_tickets.go, interfaces/builtin/mediatek_accel.go, interfaces/builtin/nvme_control.go, interfaces/builtin/pipewire.go, interfaces/builtin/ros_snapd_support.go, interfaces/builtin/snap_fde_control.go, interfaces/builtin/usb_gadget.go
+/*
+ * Copyright (C) 2025 Canonical Ltd
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+Source files: interfaces/builtin/account_control.go, interfaces/builtin/accounts_service.go, interfaces/builtin/autopilot.go, interfaces/builtin/avahi_control.go, interfaces/builtin/broadcom_asic_control.go, interfaces/builtin/classic_support.go, interfaces/builtin/desktop.go, interfaces/builtin/desktop_legacy.go, interfaces/builtin/gpg_keys.go, interfaces/builtin/gpg_public_keys.go, interfaces/builtin/gpio_memory_control.go, interfaces/builtin/greengrass_support.go, interfaces/builtin/hardware_random_control.go, interfaces/builtin/hardware_random_observe.go, interfaces/builtin/maliit.go, interfaces/builtin/media_hub.go, interfaces/builtin/netlink_audit.go, interfaces/builtin/netlink_connector.go, interfaces/builtin/network_setup_control.go, interfaces/builtin/ofono.go, interfaces/builtin/online_accounts_service.go, interfaces/builtin/password_manager_service.go, interfaces/builtin/raw_usb.go, interfaces/builtin/spi.go, interfaces/builtin/ssh_keys.go, interfaces/builtin/ssh_public_keys.go, interfaces/builtin/storage_framework_service.go, interfaces/builtin/thumbnailer_service.go
+/*
+ * Copyright (C) 2017 Canonical Ltd
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+Source files: interfaces/builtin/acrn_support.go, interfaces/builtin/allegro_vcu.go, interfaces/builtin/dm_crypt.go, interfaces/builtin/dsp.go, interfaces/builtin/ion_memory_control.go, interfaces/builtin/kernel_module_load.go, interfaces/builtin/media_control.go, interfaces/builtin/mount_control.go, interfaces/builtin/netlink_driver.go, interfaces/builtin/polkit.go, interfaces/builtin/polkit_agent.go, interfaces/builtin/pwm.go, interfaces/builtin/raw_input.go, interfaces/builtin/scsi_generic.go, interfaces/builtin/sd_control.go, interfaces/builtin/snap_refresh_control.go, interfaces/builtin/snap_themes_control.go, interfaces/builtin/tee.go, interfaces/builtin/xilinx_dma.go
+/*
+ * Copyright (C) 2021 Canonical Ltd
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+Source files: interfaces/builtin/adb_support.go, interfaces/builtin/audio_playback.go, interfaces/builtin/audio_record.go, interfaces/builtin/calendar_service.go, interfaces/builtin/can_bus.go, interfaces/builtin/cifs_mount.go, interfaces/builtin/common_files.go, interfaces/builtin/contacts_service.go, interfaces/builtin/cpu_control.go, interfaces/builtin/daemon_notify.go, interfaces/builtin/device_buttons.go, interfaces/builtin/dvb.go, interfaces/builtin/empty.go, interfaces/builtin/hostname_control.go, interfaces/builtin/juju_client_observe.go, interfaces/builtin/kernel_module_observe.go, interfaces/builtin/personal_files.go, interfaces/builtin/screencast_legacy.go, interfaces/builtin/system_files.go
+/*
+ * Copyright (C) 2018 Canonical Ltd
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+Source files: interfaces/builtin/all.go, interfaces/builtin/avahi_observe.go, interfaces/builtin/bool_file.go, interfaces/builtin/content.go, interfaces/builtin/dbus.go, interfaces/builtin/dcdbas_control.go, interfaces/builtin/docker.go, interfaces/builtin/gsettings.go, interfaces/builtin/hardware_observe.go, interfaces/builtin/i2c.go, interfaces/builtin/libvirt.go, interfaces/builtin/locale_control.go, interfaces/builtin/mount_observe.go, interfaces/builtin/network_bind.go, interfaces/builtin/network_observe.go, interfaces/builtin/network_setup_observe.go, interfaces/builtin/openvswitch.go, interfaces/builtin/openvswitch_support.go, interfaces/builtin/screen_inhibit_control.go, interfaces/builtin/shutdown.go, interfaces/builtin/snapd_control.go, interfaces/builtin/system_observe.go, interfaces/builtin/system_trace.go, interfaces/builtin/timeserver_control.go, interfaces/builtin/timezone_control.go, interfaces/builtin/unity8_calendar.go, interfaces/builtin/unity8_contacts.go, interfaces/builtin/unity8_pim_common.go, interfaces/builtin/upower_observe.go, interfaces/builtin/utils.go
+/*
+ * Copyright (C) 2016 Canonical Ltd
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+Source files: interfaces/builtin/alsa.go, interfaces/builtin/bluetooth_control.go, interfaces/builtin/bluez.go, interfaces/builtin/browser_support.go, interfaces/builtin/camera.go, interfaces/builtin/framebuffer.go, interfaces/builtin/fwupd.go, interfaces/builtin/hidraw.go, interfaces/builtin/iio.go, interfaces/builtin/io_ports_control.go, interfaces/builtin/kernel_module_control.go, interfaces/builtin/location_control.go, interfaces/builtin/location_observe.go, interfaces/builtin/log_observe.go, interfaces/builtin/lxd.go, interfaces/builtin/lxd_support.go, interfaces/builtin/modem_manager.go, interfaces/builtin/mpris.go, interfaces/builtin/network_manager.go, interfaces/builtin/opengl.go, interfaces/builtin/optical_drive.go, interfaces/builtin/physical_memory_control.go, interfaces/builtin/physical_memory_observe.go, interfaces/builtin/pkcs11.go, interfaces/builtin/ppp.go, interfaces/builtin/pulseaudio.go, interfaces/builtin/serial_port.go, interfaces/builtin/time_control.go, interfaces/builtin/tpm.go, interfaces/builtin/ubuntu_download_manager.go, interfaces/builtin/uhid.go, interfaces/builtin/unity7.go, interfaces/builtin/unity8.go
+/*
+ * Copyright (C) 2016-2017 Canonical Ltd
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+Source files: interfaces/builtin/apparmor_observe.go, interfaces/builtin/kernel_sched_ext_control.go, interfaces/builtin/podman.go, interfaces/builtin/ubuntu_pro_control.go, interfaces/builtin/vsock_guest.go, interfaces/builtin/xdg_portal_permission_store.go
+/*
+ * Copyright (C) 2026 Canonical Ltd
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+Source files: interfaces/builtin/appstream_metadata.go, interfaces/builtin/desktop_launch.go, interfaces/builtin/display_control.go, interfaces/builtin/gpio_control.go, interfaces/builtin/intel_mei.go, interfaces/builtin/jack1.go, interfaces/builtin/login_session_control.go, interfaces/builtin/login_session_observe.go, interfaces/builtin/multipass_support.go, interfaces/builtin/network_manager_observe.go, interfaces/builtin/packagekit_control.go, interfaces/builtin/raw_volume.go, interfaces/builtin/system_backup.go, interfaces/builtin/u2f_devices.go, interfaces/builtin/uio.go
+/*
+ * Copyright (C) 2019 Canonical Ltd
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+Source files: interfaces/builtin/auditd_support.go, interfaces/builtin/checkbox_support.go, interfaces/builtin/confdb.go, interfaces/builtin/intel_qat.go, interfaces/builtin/kernel_firmware_control.go, interfaces/builtin/microceph_support.go, interfaces/builtin/nfs_mount.go, interfaces/builtin/nomad_support.go, interfaces/builtin/remoteproc.go, interfaces/builtin/snap_interfaces_requests_control.go, interfaces/builtin/snap_refresh_observe.go
+/*
+ * Copyright (C) 2024 Canonical Ltd
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+Source files: interfaces/builtin/block_devices.go
+/*
+ * Copyright (C) 2019-2023 Canonical Ltd
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+Source files: interfaces/builtin/common.go, interfaces/builtin/core_support.go, interfaces/builtin/fuse_support.go, interfaces/builtin/network.go, interfaces/builtin/process_control.go, interfaces/builtin/removable_media.go, interfaces/builtin/udisks2.go, interfaces/builtin/x11.go, interfaces/udev/udev.go
+/*
+ * Copyright (C) 2016-2018 Canonical Ltd
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+Source files: interfaces/builtin/cuda_driver_libs.go, interfaces/builtin/egl_driver_libs.go, interfaces/builtin/gbm_driver_libs.go, interfaces/builtin/helpers.go, interfaces/builtin/nvidia_video_driver_libs.go, interfaces/builtin/opengl_driver_libs.go, interfaces/builtin/opengles_driver_libs.go, interfaces/builtin/vulkan_driver_libs.go
+/*
+ * Copyright (C) Canonical Ltd
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+Source files: interfaces/builtin/cups.go, interfaces/builtin/fpga.go, interfaces/builtin/gconf.go, interfaces/builtin/hugepages_control.go, interfaces/builtin/kernel_crypto_api.go, interfaces/builtin/microstack_support.go, interfaces/builtin/network_status.go, interfaces/builtin/power_control.go, interfaces/builtin/ptp.go, interfaces/builtin/system_packages_doc.go, interfaces/builtin/system_source_code.go, interfaces/builtin/uinput.go, interfaces/builtin/vcio.go
+/*
+ * Copyright (C) 2020 Canonical Ltd
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+Source files: interfaces/builtin/cups_control.go, interfaces/builtin/firewall_control.go
+/*
+ * Copyright (C) 2016-2020 Canonical Ltd
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+Source files: interfaces/builtin/custom_device.go
+/*
+ * Copyright (C) 2022-2024 Canonical Ltd
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+Source files: interfaces/builtin/docker_support.go, interfaces/builtin/network_control.go
+/*
+ * Copyright (C) 2016-2023 Canonical Ltd
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+Source files: interfaces/builtin/gpio.go
+/*
+ * Copyright (C) 2016-2021 Canonical Ltd
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+Source files: interfaces/builtin/home.go, interfaces/udev/backend.go
+/*
+ * Copyright (C) 2016-2024 Canonical Ltd
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+Source files: interfaces/builtin/joystick.go, interfaces/builtin/kubernetes_support.go, interfaces/builtin/wayland.go, interfaces/udev/spec.go
+/*
+ * Copyright (C) 2017-2018 Canonical Ltd
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+Source files: interfaces/builtin/kvm.go
+/*
+ * Copyright (C) 2017-2019 Canonical Ltd
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+Source files: interfaces/builtin/microceph.go, interfaces/builtin/microovn.go, interfaces/builtin/posix_mq.go, interfaces/builtin/shared_memory.go, interfaces/builtin/userns.go
+/*
+ * Copyright (C) 2022 Canonical Ltd
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+Source files: interfaces/builtin/mir.go
+/*
+ * Copyright (c) 2016-2018 Canonical Ltd
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more dtails.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.
+ *
+ */
+
+Source files: interfaces/builtin/nvidia_drivers_support.go, interfaces/builtin/pcscd.go, interfaces/builtin/ros_opt_data.go, wrappers/internal/journal_conf_gen.go, wrappers/internal/service_slice_gen.go, wrappers/internal/service_socket_gen.go, wrappers/internal/service_status.go, wrappers/internal/service_timer_gen.go, wrappers/internal/service_unit_gen.go
+/*
+ * Copyright (C) 2023 Canonical Ltd
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+Source files: interfaces/builtin/qualcomm_ipc_router.go
+/*
+ * Copyright (C) 2021-2023 Canonical Ltd
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
+Source files: interfaces/builtin/steam_support.go
+/*
+ * Copyright (C) 2022-2026 Canonical Ltd
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
